@@ -186,56 +186,6 @@
             </objects>
             <point key="canvasLocation" x="2924" y="-357.57121439280365"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="OJB-aZ-UpL">
-            <objects>
-                <viewController id="6Pa-Tv-y3f" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sYU-YJ-Bcf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="3TU-Hl-8ii"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="fmM-Ez-PLr"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wq8-X0-9kc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3855" y="1154"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="Sx9-Y8-tho">
-            <objects>
-                <viewController id="O0I-wp-c4x" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9tj-Y2-qln">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NFL-Bd-bPM"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="ndC-Z0-dnj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="elo-IF-VTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3855" y="491"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="VMV-Dm-6Yo">
-            <objects>
-                <tabBarController id="gvx-lt-wUd" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dgh-rk-YCX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="O0I-wp-c4x" kind="relationship" relationship="viewControllers" id="ars-y6-af2"/>
-                        <segue destination="6Pa-Tv-y3f" kind="relationship" relationship="viewControllers" id="4es-5s-Hes"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aq8-of-Ajs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2924" y="814"/>
-        </scene>
     </scenes>
     <resources>
         <image name="overflow_logo" width="375" height="371"/>
