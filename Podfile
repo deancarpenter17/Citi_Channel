@@ -7,6 +7,10 @@ target 'InternProject' do
 
   # Pods for InternProject
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'Firebase/Database'
+
 
   target 'InternProjectTests' do
     inherit! :search_paths

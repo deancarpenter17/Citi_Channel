@@ -10,14 +10,20 @@
 		058304DFC4B4E7C271A1B108 /* Pods_InternProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702431383EEBE34E4D4D19C0 /* Pods_InternProjectUITests.framework */; };
 		244C8BF2522B1307BA076788 /* Pods_InternProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC68681D015F27374A279AD /* Pods_InternProject.framework */; };
 		CB716A9FEBBF6C662DF826E3 /* Pods_InternProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */; };
+		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */; };
-		E3449B2D20E2BB8B009CD696 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B2C20E2BB8B009CD696 /* ViewController.swift */; };
 		E3449B3020E2BB8B009CD696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3449B2E20E2BB8B009CD696 /* Main.storyboard */; };
 		E3449B3220E2BB8E009CD696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3449B3120E2BB8E009CD696 /* Assets.xcassets */; };
 		E3449B3520E2BB8E009CD696 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3449B3320E2BB8E009CD696 /* LaunchScreen.storyboard */; };
 		E3449B4020E2BB8E009CD696 /* InternProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B3F20E2BB8E009CD696 /* InternProjectTests.swift */; };
 		E3449B4B20E2BB8E009CD696 /* InternProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B4A20E2BB8E009CD696 /* InternProjectUITests.swift */; };
-		E3449B5920E2BC4D009CD696 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3449B5820E2BC4D009CD696 /* GoogleService-Info.plist */; };
+		E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EED8020E41C7900BF3984 /* SplashScreenViewController.swift */; };
+		E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EED8520E4826800BF3984 /* RoundedLoginButton.swift */; };
+		E35EED8820E4837800BF3984 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E35EED8720E4837800BF3984 /* GoogleService-Info.plist */; };
+		E375231020E993000017691A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E375230F20E993000017691A /* Tag.swift */; };
+		E375231A20EB26320017691A /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E375231920EB26320017691A /* TagCollectionViewCell.swift */; };
+		E375231C20EBF0740017691A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E375231B20EBF0740017691A /* HomeViewController.swift */; };
+		E3B095B220E6D8D4004DB9D0 /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B095B120E6D8D4004DB9D0 /* FirebaseAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +52,9 @@
 		A880F9F24E415AE5682C83CA /* Pods-InternProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectTests/Pods-InternProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8ED3A24C2DECDB32F0F7084 /* Pods-InternProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectUITests/Pods-InternProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C87B4051FC694B738024396E /* Pods-InternProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProject/Pods-InternProject.debug.xcconfig"; sourceTree = "<group>"; };
+		E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTagsViewController.swift; sourceTree = "<group>"; };
 		E3449B2720E2BB8B009CD696 /* InternProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3449B2C20E2BB8B009CD696 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E3449B2F20E2BB8B009CD696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3449B3120E2BB8E009CD696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3449B3420E2BB8E009CD696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,7 +65,13 @@
 		E3449B4620E2BB8E009CD696 /* InternProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InternProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3449B4A20E2BB8E009CD696 /* InternProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternProjectUITests.swift; sourceTree = "<group>"; };
 		E3449B4C20E2BB8E009CD696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3449B5820E2BC4D009CD696 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E35EED8020E41C7900BF3984 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		E35EED8520E4826800BF3984 /* RoundedLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLoginButton.swift; sourceTree = "<group>"; };
+		E35EED8720E4837800BF3984 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E375230F20E993000017691A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		E375231920EB26320017691A /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		E375231B20EBF0740017691A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E3B095B120E6D8D4004DB9D0 /* FirebaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
 		F764294D8C25CFD94DEE0855 /* Pods-InternProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectUITests/Pods-InternProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +113,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E30D91F620E87D780053EB55 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E35EED8220E4822700BF3984 /* Buttons */,
+				E375231920EB26320017691A /* TagCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E30D91F720E87E410053EB55 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E35EED8020E41C7900BF3984 /* SplashScreenViewController.swift */,
+				E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */,
+				E375231B20EBF0740017691A /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E30D91F820E87E630053EB55 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3B095B120E6D8D4004DB9D0 /* FirebaseAPI.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E3449B1E20E2BB8B009CD696 = {
 			isa = PBXGroup;
 			children = (
@@ -126,13 +165,16 @@
 		E3449B2920E2BB8B009CD696 /* InternProject */ = {
 			isa = PBXGroup;
 			children = (
-				E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */,
-				E3449B2C20E2BB8B009CD696 /* ViewController.swift */,
 				E3449B2E20E2BB8B009CD696 /* Main.storyboard */,
-				E3449B3120E2BB8E009CD696 /* Assets.xcassets */,
 				E3449B3320E2BB8E009CD696 /* LaunchScreen.storyboard */,
+				E30D91F820E87E630053EB55 /* Models */,
+				E30D91F620E87D780053EB55 /* Views */,
+				E30D91F720E87E410053EB55 /* Controllers */,
+				E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */,
+				E3449B3120E2BB8E009CD696 /* Assets.xcassets */,
 				E3449B3620E2BB8E009CD696 /* Info.plist */,
-				E3449B5820E2BC4D009CD696 /* GoogleService-Info.plist */,
+				E35EED8720E4837800BF3984 /* GoogleService-Info.plist */,
+				E375230F20E993000017691A /* Tag.swift */,
 			);
 			path = InternProject;
 			sourceTree = "<group>";
@@ -153,6 +195,14 @@
 				E3449B4C20E2BB8E009CD696 /* Info.plist */,
 			);
 			path = InternProjectUITests;
+			sourceTree = "<group>";
+		};
+		E35EED8220E4822700BF3984 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E35EED8520E4826800BF3984 /* RoundedLoginButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		EDC78F416A5CAE050BDA6C87 /* Pods */ = {
@@ -180,6 +230,7 @@
 				E3449B2420E2BB8B009CD696 /* Frameworks */,
 				E3449B2520E2BB8B009CD696 /* Resources */,
 				A7DFE982FEFC48C568957087 /* [CP] Embed Pods Frameworks */,
+				CF0A4AF8AF7B2E525B11E9FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3449B3520E2BB8E009CD696 /* LaunchScreen.storyboard in Resources */,
-				E3449B5920E2BC4D009CD696 /* GoogleService-Info.plist in Resources */,
+				E35EED8820E4837800BF3984 /* GoogleService-Info.plist in Resources */,
 				E3449B3220E2BB8E009CD696 /* Assets.xcassets in Resources */,
 				E3449B3020E2BB8B009CD696 /* Main.storyboard in Resources */,
 			);
@@ -325,12 +376,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-InternProject/Pods-InternProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +411,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF0A4AF8AF7B2E525B11E9FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InternProject/Pods-InternProject-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InternProject/Pods-InternProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2A75353C7D7C0AF2EE4D446 /* [CP] Check Pods Manifest.lock */ = {
@@ -381,8 +456,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3449B2D20E2BB8B009CD696 /* ViewController.swift in Sources */,
+				E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */,
+				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
+				E375231020E993000017691A /* Tag.swift in Sources */,
+				E375231C20EBF0740017691A /* HomeViewController.swift in Sources */,
+				E375231A20EB26320017691A /* TagCollectionViewCell.swift in Sources */,
+				E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */,
 				E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */,
+				E3B095B220E6D8D4004DB9D0 /* FirebaseAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
