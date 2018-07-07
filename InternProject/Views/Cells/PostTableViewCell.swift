@@ -16,8 +16,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     
     //    @IBOutlet weak var postTitleLbl: UILabel!
-//    @IBOutlet weak var nameLbl: UILabel!
-//    @IBOutlet weak var tagLbl: UILabel!
+    //    @IBOutlet weak var nameLbl: UILabel!
+    //    @IBOutlet weak var tagLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

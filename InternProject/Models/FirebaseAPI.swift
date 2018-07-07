@@ -96,6 +96,8 @@ class FirebaseAPI: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
     func signoutUser() {
         try? Auth.auth().signOut()
         print("User signed out")
+        let splashNavVC: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SplashNavVC") as UIViewController
+        self.appDelegate.navigateTo(viewController: splashNavVC)
     }
     
 }
