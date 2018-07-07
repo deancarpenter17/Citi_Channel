@@ -24,9 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Current User Display Name: \(displayName)")
                 print("Current User Email: \(email)")
             }
+//
+//            let tagNavController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TagNavController")
+//            self.navigateTo(viewController: tagNavController)
             
-            let tagNavController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TagNavController")
-            self.navigateTo(viewController: tagNavController)
+            let homeTabController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabController")
+            self.navigateTo(viewController: homeTabController)
         } else {
             //User Not logged in
             print("not logged in..........")

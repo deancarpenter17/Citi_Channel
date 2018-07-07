@@ -8,12 +8,19 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+     let post = ["First Post", "Second Post", "Third Post", "Fourth Post"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.separatorColor = UIColor(white: 1, alpha: 1)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        addNavImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +29,35 @@ class HomeViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return post.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
+        
+        if let cell = cell as? PostTableViewCell {
+            let thePost = post[indexPath.row]
+            cell.postTitleLbl.text = thePost
+        }
+        
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let descriptionVC = mainStoryBoard.instantiateViewController(withIdentifier: "DetailedPostViewController") as! DetailedPostViewController
+        
+        descriptionVC.postTitle = post[indexPath.row]
+        descriptionVC.postAuthor = post[indexPath.row]
+        descriptionVC.postDescrip = post[indexPath.row]
+        
+        self.navigationController?.pushViewController(descriptionVC, animated: true)
+    }
 
 }

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		058304DFC4B4E7C271A1B108 /* Pods_InternProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702431383EEBE34E4D4D19C0 /* Pods_InternProjectUITests.framework */; };
 		244C8BF2522B1307BA076788 /* Pods_InternProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC68681D015F27374A279AD /* Pods_InternProject.framework */; };
+		76CC989420F1450900E25E2B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989320F1450900E25E2B /* PostTableViewCell.swift */; };
+		76CC989620F1460100E25E2B /* DetailedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989520F1460100E25E2B /* DetailedPostTableViewCell.swift */; };
+		76CC989820F1479D00E25E2B /* DetailedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989720F1479D00E25E2B /* DetailedPostViewController.swift */; };
+		76CC989A20F1496F00E25E2B /* CreatePostPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989920F1496F00E25E2B /* CreatePostPopupViewController.swift */; };
+		76CC989D20F149C500E25E2B /* LogoExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989C20F149C500E25E2B /* LogoExtention.swift */; };
+		76CD485120F008E7008E758A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76CD485020F008E6008E758A /* GoogleService-Info.plist */; };
 		CB716A9FEBBF6C662DF826E3 /* Pods_InternProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */; };
 		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */; };
@@ -19,7 +25,6 @@
 		E3449B4B20E2BB8E009CD696 /* InternProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B4A20E2BB8E009CD696 /* InternProjectUITests.swift */; };
 		E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EED8020E41C7900BF3984 /* SplashScreenViewController.swift */; };
 		E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EED8520E4826800BF3984 /* RoundedLoginButton.swift */; };
-		E35EED8820E4837800BF3984 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E35EED8720E4837800BF3984 /* GoogleService-Info.plist */; };
 		E375231020E993000017691A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E375230F20E993000017691A /* Tag.swift */; };
 		E375231A20EB26320017691A /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E375231920EB26320017691A /* TagCollectionViewCell.swift */; };
 		E375231C20EBF0740017691A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E375231B20EBF0740017691A /* HomeViewController.swift */; };
@@ -47,6 +52,12 @@
 		35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F5C8E7E9A7C94EBD82B37C /* Pods-InternProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectTests/Pods-InternProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		702431383EEBE34E4D4D19C0 /* Pods_InternProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CC989320F1450900E25E2B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		76CC989520F1460100E25E2B /* DetailedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostTableViewCell.swift; sourceTree = "<group>"; };
+		76CC989720F1479D00E25E2B /* DetailedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostViewController.swift; sourceTree = "<group>"; };
+		76CC989920F1496F00E25E2B /* CreatePostPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostPopupViewController.swift; sourceTree = "<group>"; };
+		76CC989C20F149C500E25E2B /* LogoExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoExtention.swift; sourceTree = "<group>"; };
+		76CD485020F008E6008E758A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8713B279A45A9BEBF89CC6C9 /* Pods-InternProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternProject/Pods-InternProject.release.xcconfig"; sourceTree = "<group>"; };
 		9EC68681D015F27374A279AD /* Pods_InternProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A880F9F24E415AE5682C83CA /* Pods-InternProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectTests/Pods-InternProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,7 +78,6 @@
 		E3449B4C20E2BB8E009CD696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E35EED8020E41C7900BF3984 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		E35EED8520E4826800BF3984 /* RoundedLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLoginButton.swift; sourceTree = "<group>"; };
-		E35EED8720E4837800BF3984 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E375230F20E993000017691A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		E375231920EB26320017691A /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		E375231B20EBF0740017691A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +113,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76CC989220F144D200E25E2B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				76CC989320F1450900E25E2B /* PostTableViewCell.swift */,
+				76CC989520F1460100E25E2B /* DetailedPostTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		76CC989B20F149AF00E25E2B /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				76CC989C20F149C500E25E2B /* LogoExtention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		76D89AD2298E216B4EE004CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +155,8 @@
 				E35EED8020E41C7900BF3984 /* SplashScreenViewController.swift */,
 				E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */,
 				E375231B20EBF0740017691A /* HomeViewController.swift */,
+				76CC989720F1479D00E25E2B /* DetailedPostViewController.swift */,
+				76CC989920F1496F00E25E2B /* CreatePostPopupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +172,8 @@
 		E3449B1E20E2BB8B009CD696 = {
 			isa = PBXGroup;
 			children = (
+				76CC989B20F149AF00E25E2B /* Extentions */,
+				76CC989220F144D200E25E2B /* Cells */,
 				E3449B2920E2BB8B009CD696 /* InternProject */,
 				E3449B3E20E2BB8E009CD696 /* InternProjectTests */,
 				E3449B4920E2BB8E009CD696 /* InternProjectUITests */,
@@ -173,7 +204,7 @@
 				E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */,
 				E3449B3120E2BB8E009CD696 /* Assets.xcassets */,
 				E3449B3620E2BB8E009CD696 /* Info.plist */,
-				E35EED8720E4837800BF3984 /* GoogleService-Info.plist */,
+				76CD485020F008E6008E758A /* GoogleService-Info.plist */,
 				E375230F20E993000017691A /* Tag.swift */,
 			);
 			path = InternProject;
@@ -328,7 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3449B3520E2BB8E009CD696 /* LaunchScreen.storyboard in Resources */,
-				E35EED8820E4837800BF3984 /* GoogleService-Info.plist in Resources */,
+				76CD485120F008E7008E758A /* GoogleService-Info.plist in Resources */,
 				E3449B3220E2BB8E009CD696 /* Assets.xcassets in Resources */,
 				E3449B3020E2BB8B009CD696 /* Main.storyboard in Resources */,
 			);
@@ -460,10 +491,15 @@
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
 				E375231020E993000017691A /* Tag.swift in Sources */,
 				E375231C20EBF0740017691A /* HomeViewController.swift in Sources */,
+				76CC989820F1479D00E25E2B /* DetailedPostViewController.swift in Sources */,
 				E375231A20EB26320017691A /* TagCollectionViewCell.swift in Sources */,
 				E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */,
 				E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */,
+				76CC989620F1460100E25E2B /* DetailedPostTableViewCell.swift in Sources */,
 				E3B095B220E6D8D4004DB9D0 /* FirebaseAPI.swift in Sources */,
+				76CC989420F1450900E25E2B /* PostTableViewCell.swift in Sources */,
+				76CC989A20F1496F00E25E2B /* CreatePostPopupViewController.swift in Sources */,
+				76CC989D20F149C500E25E2B /* LogoExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
