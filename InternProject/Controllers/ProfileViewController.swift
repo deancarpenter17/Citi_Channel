@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        addNavImage()
     }
     
     @IBAction func signOut(_ sender: UIBarButtonItem) {

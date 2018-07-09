@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class CreatePostPopupViewController: UIViewController {
     
     @IBOutlet weak var userPostTitle: UITextField!
