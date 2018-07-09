@@ -14,6 +14,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var postAuthorLbl: UILabel!
     @IBOutlet weak var postDescriptionText: UITextView!
     
+ 
     var postTitle = ""
     var postAuthor = ""
     var postDescrip = ""

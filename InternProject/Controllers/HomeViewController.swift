@@ -12,7 +12,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
-     let post = ["First Post", "Second Post", "Third Post", "Fourth Post"]
+     let post = ["First Post", "Second Post", "Third Post", "Fourth Post","Fifth Post","Sixth Post","Seventh Post","Eighth Post"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.showsVerticalScrollIndicator = false
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -39,6 +42,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         if let cell = cell as? PostTableViewCell {
             let thePost = post[indexPath.row]
