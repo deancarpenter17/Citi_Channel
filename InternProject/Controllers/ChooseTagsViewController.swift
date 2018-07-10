@@ -8,12 +8,10 @@
 
 import UIKit
 
-class ChooseTagsViewController: UIViewController, UICollectionViewDataSource {
+class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var tagCollectionView: UICollectionView!
-    
-    @IBOutlet weak var beachBackground: UIImageView!
-    
+        
     var tags = [Tag]()
     
     override func viewDidLoad() {
@@ -21,11 +19,31 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource {
         self.navigationController?.isNavigationBarHidden = true
         //self.navigationItem.title = "Welcome \(FirebaseAPI.shared.currentUser?.displayName ?? "")"
         tagCollectionView.dataSource = self
+        tagCollectionView.delegate = self
         
-        tags.append(contentsOf: [Tag(name: "Java"), Tag(name: "Angular"), Tag(name: "IT SUPPORT"), Tag(name: "Android"), Tag(name: "Swift"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test"), Tag(name: "Test")])
+        tags.append(contentsOf: [Tag(name: "Java"), Tag(name: "Angular"), Tag(name: "IT Support"), Tag(name: "Android"), Tag(name: "Swift"), Tag(name: "Microservices"), Tag(name: "Security"), Tag(name: "Cloud")])
         setupCollectionViewLayout()
-        blurBackground()
     }
+    
+    @IBAction func submitTagsPressed(_ sender: UIButton) {
+        if let indexPaths = tagCollectionView.indexPathsForSelectedItems {
+            let tagsCount = indexPaths.count
+            print(tagsCount)
+            var selectedTags: [Tag] = []
+            if tagsCount == 0 {
+                // TODO: Create alert for this
+                print("you must select at least 1 tag!")
+            } else {
+                for indexPath in indexPaths {
+                    selectedTags.append(tags[indexPath.row])
+                }
+            }
+            FirebaseAPI.shared.save(tags: selectedTags)
+            let homeTabController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabController")
+            FirebaseAPI.shared.appDelegate.navigateTo(viewController: homeTabController)
+        }
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tags.count
@@ -36,6 +54,32 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TagCollectionViewCell
         cell.tagName.text = tags[indexPath.row].name
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        print("selected")
+        let cell = collectionView.cellForItem(at: indexPath)
+        
+        if let state = cell?.isSelected {
+            if state {
+                return false
+            }
+        }
+        cell?.layer.borderWidth = 2.0
+        cell?.layer.borderColor = UIColor.gray.cgColor
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
+        let cell = collectionView.cellForItem(at: indexPath)
+        if let state = cell?.isSelected {
+            if !state {
+                return false
+            }
+        }
+        cell?.layer.borderWidth = 0.0
+        cell?.layer.borderColor = UIColor.clear.cgColor
+        return true
     }
     
     func setupCollectionViewLayout() {
@@ -60,16 +104,9 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource {
         
         //apply defined layout to collectionview
         tagCollectionView!.collectionViewLayout = layout
-    }
-    
-    func blurBackground() {
-        self.beachBackground.image = UIImage(named: "cartoon_beach")
         
-        let blurEffect = UIBlurEffect(style: .light)
-        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
-        blurredEffectView.frame = self.beachBackground.bounds
-        blurredEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.beachBackground.addSubview(blurredEffectView)
+        tagCollectionView.allowsMultipleSelection = true
+        
         
     }
 }

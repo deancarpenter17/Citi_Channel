@@ -76,9 +76,39 @@ class FirebaseAPI: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
             }
             // User is signed in
             print("**********user is signed in*************)")
-            // If user is signed in, transfer to TagViewController if they haven't chosen tags, else go to home screen
-            let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TagNavController")
-            self.appDelegate.navigateTo(viewController: rootController)
+            
+            // If user created an account, go to tags screen. otherwise go to home screen
+            if let user = self.currentUser {
+                // Check to see if user has logged in before
+                self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                    let users = snapshot.value as? NSDictionary
+                    // if user exists in Firebase database
+                    if let _ = users?[user.uid] {
+                        DispatchQueue.main.async {
+                            let homeTabController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabController")
+                            self.appDelegate.navigateTo(viewController: homeTabController)
+                        }
+                    } else {
+                        if let user = self.currentUser {
+                            // Register user in Firebase database
+                            let currentUser = [
+                                "name": user.displayName,
+                                "email": user.email,
+                                "uid": user.uid,
+                                ]
+                            
+                            self.ref.child("users/\(user.uid)").setValue(currentUser)
+                            DispatchQueue.main.async {
+                                let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TagNavController")
+                                self.appDelegate.navigateTo(viewController: rootController)
+                            }
+                        }
+                    }
+                }) { (error) in
+                    print("Error querying all users!")
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
     
@@ -98,6 +128,30 @@ class FirebaseAPI: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
         print("User signed out")
         let splashNavVC: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SplashNavVC") as UIViewController
         self.appDelegate.navigateTo(viewController: splashNavVC)
+    }
+    
+    // Mark: - Firebase Database Ops
+    
+    // sets the user's tags
+    func save(tags: [Tag]) {
+        // Convert Tag array into a valid JSON object (arrays are not valid)
+        var tagsDict = [String: String]()
+        for tag in tags {
+            tagsDict[tag.name] = tag.name
+        }
+        if let user = currentUser {
+            self.ref.child("users/\(user.uid)/tags").setValue(tagsDict)
+        }
+    }
+    
+    // THIS FUNCTION IS ONLY USED TO LOAD DEFAULT TAGS INITIALLY IN FIREBASE
+    func tempSave(tags: [Tag]) {
+        // Convert Tag array into a valid JSON object (arrays are not valid)
+        var tagsDict = [String: String]()
+        for tag in tags {
+            tagsDict[tag.name] = tag.name
+        }
+        self.ref.child("tags").setValue(tagsDict)
     }
     
 }

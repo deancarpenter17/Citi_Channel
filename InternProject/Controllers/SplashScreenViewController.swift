@@ -27,11 +27,4 @@ class SplashScreenViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
-    
-    @IBAction func googleSigninButtonPressed(_ sender: Any) {
-        FirebaseAPI.shared.signInWithGoogle(shouldSignInSilently: false)
-    }
-    
-    
-    
 }
