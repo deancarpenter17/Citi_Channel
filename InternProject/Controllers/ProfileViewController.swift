@@ -15,10 +15,16 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        addNavImage()
+        //Sets nav title
+        self.navigationItem.title = "Profile"
     }
     
     @IBAction func signOut(_ sender: UIBarButtonItem) {
         FirebaseAPI.shared.signoutUser()
+    }
+    
+    @IBAction func myTagsBtnClicked(_ sender: Any) {
+        let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TagNavController")
+        self.present(rootController, animated: true, completion: nil)
     }
 }

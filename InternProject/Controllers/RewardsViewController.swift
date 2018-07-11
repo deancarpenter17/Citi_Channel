@@ -14,7 +14,9 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        addNavImage()
+        
+        //sets nav title to rewards
+        self.navigationItem.title = "Rewards"
     }
 
     override func didReceiveMemoryWarning() {

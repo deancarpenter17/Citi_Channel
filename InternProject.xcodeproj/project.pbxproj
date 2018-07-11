@@ -12,6 +12,8 @@
 		76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */; };
 		76C3BBF320F3EE1900938B46 /* RewardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */; };
 		76C3BBF520F3EE6400938B46 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */; };
+		76C3BBF720F509BA00938B46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76C3BBF620F509BA00938B46 /* GoogleService-Info.plist */; };
+		76C6C70120F5433700D146E1 /* CreateSolutionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C6C70020F5433700D146E1 /* CreateSolutionPopupViewController.swift */; };
 		76CC989420F1450900E25E2B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989320F1450900E25E2B /* PostTableViewCell.swift */; };
 		76CC989620F1460100E25E2B /* DetailedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989520F1460100E25E2B /* DetailedPostTableViewCell.swift */; };
 		76CC989820F1479D00E25E2B /* DetailedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989720F1479D00E25E2B /* DetailedPostViewController.swift */; };
@@ -20,7 +22,6 @@
 		CB716A9FEBBF6C662DF826E3 /* Pods_InternProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */; };
 		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E32C60B920F1589D00B4787C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60B820F1589D00B4787C /* ProfileViewController.swift */; };
-		E32C60BB20F440E200B4787C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E32C60BA20F440E200B4787C /* GoogleService-Info.plist */; };
 		E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60BC20F45E9300B4787C /* LoginViewController.swift */; };
 		E32C60BF20F45EB000B4787C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60BE20F45EB000B4787C /* SignupViewController.swift */; };
 		E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */; };
@@ -61,6 +62,8 @@
 		76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		76C3BBF620F509BA00938B46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76C6C70020F5433700D146E1 /* CreateSolutionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSolutionPopupViewController.swift; sourceTree = "<group>"; };
 		76CC989320F1450900E25E2B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		76CC989520F1460100E25E2B /* DetailedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostTableViewCell.swift; sourceTree = "<group>"; };
 		76CC989720F1479D00E25E2B /* DetailedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		C87B4051FC694B738024396E /* Pods-InternProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProject/Pods-InternProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTagsViewController.swift; sourceTree = "<group>"; };
 		E32C60B820F1589D00B4787C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		E32C60BA20F440E200B4787C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E32C60BC20F45E9300B4787C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E32C60BE20F45EB000B4787C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		E3449B2720E2BB8B009CD696 /* InternProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */,
 				E32C60BC20F45E9300B4787C /* LoginViewController.swift */,
 				E32C60BE20F45EB000B4787C /* SignupViewController.swift */,
+				76C6C70020F5433700D146E1 /* CreateSolutionPopupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,8 +233,8 @@
 				E3449B2E20E2BB8B009CD696 /* Main.storyboard */,
 				E3449B3120E2BB8E009CD696 /* Assets.xcassets */,
 				E3449B3320E2BB8E009CD696 /* LaunchScreen.storyboard */,
-				E32C60BA20F440E200B4787C /* GoogleService-Info.plist */,
 				E3449B3620E2BB8E009CD696 /* Info.plist */,
+				76C3BBF620F509BA00938B46 /* GoogleService-Info.plist */,
 			);
 			path = InternProject;
 			sourceTree = "<group>";
@@ -385,9 +388,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3449B3520E2BB8E009CD696 /* LaunchScreen.storyboard in Resources */,
-				E32C60BB20F440E200B4787C /* GoogleService-Info.plist in Resources */,
 				E3449B3220E2BB8E009CD696 /* Assets.xcassets in Resources */,
 				E3449B3020E2BB8B009CD696 /* Main.storyboard in Resources */,
+				76C3BBF720F509BA00938B46 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +522,7 @@
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
 				E375231020E993000017691A /* Tag.swift in Sources */,
 				E375231C20EBF0740017691A /* HomeViewController.swift in Sources */,
+				76C6C70120F5433700D146E1 /* CreateSolutionPopupViewController.swift in Sources */,
 				76C3BBF520F3EE6400938B46 /* LeaderboardTableViewCell.swift in Sources */,
 				E32C60B920F1589D00B4787C /* ProfileViewController.swift in Sources */,
 				E32C60BF20F45EB000B4787C /* SignupViewController.swift in Sources */,
@@ -705,15 +709,17 @@
 			baseConfigurationReference = C87B4051FC694B738024396E /* Pods-InternProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DTMU96G24N;
+				DEVELOPMENT_TEAM = VHR8SJQWXF;
 				INFOPLIST_FILE = InternProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = citi.step2.InternProject1;
+				PRODUCT_BUNDLE_IDENTIFIER = internproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -724,15 +730,17 @@
 			baseConfigurationReference = 8713B279A45A9BEBF89CC6C9 /* Pods-InternProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DTMU96G24N;
+				DEVELOPMENT_TEAM = VHR8SJQWXF;
 				INFOPLIST_FILE = InternProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = citi.step2.InternProject1;
+				PRODUCT_BUNDLE_IDENTIFIER = internproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

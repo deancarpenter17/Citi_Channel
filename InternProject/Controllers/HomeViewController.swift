@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         tableView.separatorColor = UIColor(white: 1, alpha: 1)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        addNavImage()
+        self.navigationItem.title = "Home"
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +60,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         descriptionVC.postTitle = post[indexPath.row]
         descriptionVC.postAuthor = post[indexPath.row]
         descriptionVC.postDescrip = post[indexPath.row]
-        
+    
         self.navigationController?.pushViewController(descriptionVC, animated: true)
     }
 

@@ -27,7 +27,12 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         postTitleLbl.text! = postTitle
         postAuthorLbl.text! = postAuthor
         postDescriptionText.text! = postDescrip
-        addNavImage()
+        
+        //Make nav title the title of the post selected
+        self.navigationItem.title = postTitle
+        
+        //Makes nav back button white to go with color scheme
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     override func didReceiveMemoryWarning() {
