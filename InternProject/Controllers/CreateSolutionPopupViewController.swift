@@ -13,11 +13,22 @@ class CreateSolutionPopupViewController: UIViewController {
     
     @IBOutlet weak var solutionDescriptionTextField: UITextView!
     
-    var tabBarHome: UITabBarItem = UITabBarItem()
-    var tabBarRewards: UITabBarItem = UITabBarItem()
-    var tabBarProfile: UITabBarItem = UITabBarItem()
-    
     @IBAction func closeSolutionPage(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func answerDescripNotEmpty() {
+        if solutionDescriptionTextField.text == "" {
+            let alert = UIAlertController(title: "Error Posting Solution!", message: "Please fill in all fields.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            //Store answer description and users name to DB here
+        }
+    }
+    
+    @IBAction func solutionSubmitClicked(_ sender: Any) {
+        answerDescripNotEmpty()
+    }
+    
 }

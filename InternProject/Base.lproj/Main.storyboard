@@ -599,17 +599,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-QG-ggh">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Loy-QG-ggh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d9q-j0-wFc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbT-qJ-Yb6">
-                                            <rect key="frame" x="34" y="122" width="307" height="622"/>
+                                            <rect key="frame" x="34" y="122" width="307" height="656"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 6" translatesAutoresizingMaskIntoConstraints="NO" id="2Ag-82-ePZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="307" height="622"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="307" height="656"/>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akv-RM-pYQ">
                                                     <rect key="frame" x="17" y="46.666666666666657" width="265" height="30"/>
@@ -619,20 +619,20 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MAX-md-ZDl">
-                                                    <rect key="frame" x="17" y="124.00000000000003" width="265" height="313.66666666666674"/>
+                                                    <rect key="frame" x="17" y="124.00000000000003" width="265" height="347.66666666666674"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.098779965750000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDD-Em-BPk">
-                                                    <rect key="frame" x="17" y="500" width="265" height="30"/>
+                                                    <rect key="frame" x="17" y="534" width="265" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yz7-lP-AD3">
-                                                    <rect key="frame" x="17" y="548" width="265" height="48"/>
+                                                    <rect key="frame" x="17" y="582" width="265" height="48"/>
                                                     <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="L1p-82-asP"/>
@@ -645,7 +645,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUu-Iu-SMj">
-                                                    <rect key="frame" x="17" y="471.66666666666663" width="265" height="20.333333333333314"/>
+                                                    <rect key="frame" x="17" y="505.66666666666657" width="265" height="20.333333333333314"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -720,7 +720,7 @@
                             <constraint firstItem="Loy-QG-ggh" firstAttribute="top" secondItem="gyL-bV-Mi0" secondAttribute="top" id="bwC-fZ-G8a"/>
                             <constraint firstItem="Loy-QG-ggh" firstAttribute="trailing" secondItem="VO3-qb-Tp5" secondAttribute="trailing" id="fOX-Gi-pE9"/>
                             <constraint firstItem="Loy-QG-ggh" firstAttribute="leading" secondItem="VO3-qb-Tp5" secondAttribute="leading" id="gGX-9U-Bx0"/>
-                            <constraint firstItem="Loy-QG-ggh" firstAttribute="bottom" secondItem="VO3-qb-Tp5" secondAttribute="bottom" id="v5c-al-653"/>
+                            <constraint firstItem="Loy-QG-ggh" firstAttribute="bottom" secondItem="VO3-qb-Tp5" secondAttribute="bottom" constant="34" id="v5c-al-653"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VO3-qb-Tp5"/>
                     </view>
@@ -975,6 +975,9 @@
                                                     <state key="normal" title="Submit">
                                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="solutionSubmitClicked:" destination="yI5-Pz-qjT" eventType="touchUpInside" id="Czx-VK-sjn"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
