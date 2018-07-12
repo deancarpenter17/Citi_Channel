@@ -635,7 +635,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbT-qJ-Yb6">
-                                            <rect key="frame" x="34" y="122" width="307" height="656"/>
+                                            <rect key="frame" x="34" y="114" width="307" height="656"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 6" translatesAutoresizingMaskIntoConstraints="NO" id="2Ag-82-ePZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="307" height="656"/>
@@ -731,12 +731,12 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="lbT-qJ-Yb6" firstAttribute="top" secondItem="COc-qg-Aer" secondAttribute="bottom" constant="21" id="69n-2L-n9b"/>
+                                        <constraint firstItem="lbT-qJ-Yb6" firstAttribute="top" secondItem="COc-qg-Aer" secondAttribute="bottom" constant="13" id="69n-2L-n9b"/>
                                         <constraint firstItem="COc-qg-Aer" firstAttribute="leading" secondItem="d9q-j0-wFc" secondAttribute="leading" constant="307" id="9mz-OT-h0D"/>
                                         <constraint firstItem="COc-qg-Aer" firstAttribute="top" secondItem="d9q-j0-wFc" secondAttribute="top" constant="67" id="GE0-91-RSe"/>
-                                        <constraint firstItem="lbT-qJ-Yb6" firstAttribute="top" secondItem="d9q-j0-wFc" secondAttribute="top" constant="122" id="GQ8-aj-Edz"/>
+                                        <constraint firstItem="lbT-qJ-Yb6" firstAttribute="top" secondItem="d9q-j0-wFc" secondAttribute="top" constant="114" id="GQ8-aj-Edz"/>
                                         <constraint firstItem="lbT-qJ-Yb6" firstAttribute="centerX" secondItem="d9q-j0-wFc" secondAttribute="centerX" id="YJC-R7-Dhm"/>
-                                        <constraint firstAttribute="bottom" secondItem="lbT-qJ-Yb6" secondAttribute="bottom" constant="34" id="aPu-1b-zsK"/>
+                                        <constraint firstAttribute="bottom" secondItem="lbT-qJ-Yb6" secondAttribute="bottom" constant="42" id="aPu-1b-zsK"/>
                                         <constraint firstItem="lbT-qJ-Yb6" firstAttribute="trailing" secondItem="COc-qg-Aer" secondAttribute="trailing" id="pqb-oX-DLJ"/>
                                         <constraint firstAttribute="trailing" secondItem="COc-qg-Aer" secondAttribute="trailing" constant="34" id="yRy-J8-utC"/>
                                     </constraints>
@@ -977,7 +977,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5t-Hr-NFu">
-                                            <rect key="frame" x="41" y="106" width="292" height="566"/>
+                                            <rect key="frame" x="41" y="122" width="292" height="566"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 6" translatesAutoresizingMaskIntoConstraints="NO" id="I4S-lR-Ru9">
@@ -1013,7 +1013,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gly-K6-0BV">
-                                            <rect key="frame" x="307" y="49" width="34" height="34"/>
+                                            <rect key="frame" x="307" y="67" width="34" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="CloseBtn"/>
                                             <connections>
