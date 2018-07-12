@@ -14,7 +14,8 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var postAuthorLbl: UILabel!
     @IBOutlet weak var postDescriptionText: UITextView!
     
- 
+    @IBOutlet weak var solutionTableView: UITableView!
+    
     var postTitle = ""
     var postAuthor = ""
     var postDescrip = ""
@@ -33,6 +34,9 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         
         //Makes nav back button white to go with color scheme
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        //Remove side scroll on solution tableview
+        solutionTableView.showsVerticalScrollIndicator = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,6 +54,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let solutionCell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath)
+
         
         
         return solutionCell

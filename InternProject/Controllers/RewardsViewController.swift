@@ -10,6 +10,8 @@ import UIKit
 
 class RewardsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var rewardsCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +19,11 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
         
         //sets nav title to rewards
         self.navigationItem.title = "Rewards"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //removes scroll bar
+        rewardsCollectionView.showsHorizontalScrollIndicator = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,11 +41,12 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let rewardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "rewardCell", for: indexPath) as! RewardsCollectionViewCell
         
+        
         return rewardCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        //If user wants the reward we have to check if they have enough points if they do then get that reward.
     }
     //END OF COLLECTION VIEW
     
