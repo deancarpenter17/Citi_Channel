@@ -24,6 +24,7 @@
 		E32C60B920F1589D00B4787C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60B820F1589D00B4787C /* ProfileViewController.swift */; };
 		E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60BC20F45E9300B4787C /* LoginViewController.swift */; };
 		E32C60BF20F45EB000B4787C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60BE20F45EB000B4787C /* SignupViewController.swift */; };
+		E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60C020F848DB00B4787C /* AlertViewController.swift */; };
 		E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */; };
 		E3449B3020E2BB8B009CD696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3449B2E20E2BB8B009CD696 /* Main.storyboard */; };
 		E3449B3220E2BB8E009CD696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3449B3120E2BB8E009CD696 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		E32C60B820F1589D00B4787C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E32C60BC20F45E9300B4787C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E32C60BE20F45EB000B4787C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		E32C60C020F848DB00B4787C /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		E3449B2720E2BB8B009CD696 /* InternProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3449B2F20E2BB8B009CD696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				E375230F20E993000017691A /* Tag.swift */,
+				E32C60C020F848DB00B4787C /* AlertViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */,
+				E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */,
 				76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */,
 				E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */,
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,

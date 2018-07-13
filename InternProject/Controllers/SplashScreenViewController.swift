@@ -8,15 +8,11 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
 
-class SplashScreenViewController: UIViewController, GIDSignInUIDelegate {
-    
-    @IBOutlet weak var googleSignInButton: GIDSignInButton!
+class SplashScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
