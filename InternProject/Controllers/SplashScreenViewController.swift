@@ -20,7 +20,7 @@ class SplashScreenViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
 }
