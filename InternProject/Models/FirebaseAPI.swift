@@ -139,12 +139,38 @@ class FirebaseAPI: NSObject {
         }
         
         let postDict: [String: Any] = [
-            "owner": post.owner,
+            "ownerUID": post.ownerUID,
+            "ownerName": post.ownerName,
             "postDescription": post.description,
             "postTags": tagsArrayToString,
             "postTitle": post.title,
         ]
-        self.ref.child("posts/\(post.uid)").setValue(postDict)
+        self.ref.child("posts/\(post.postUID)").setValue(postDict)
+    }
+    
+    func readPosts(completion: @escaping ([Post]) -> Void) {
+        self.ref.child("posts").observe(DataEventType.value, with: { (snapshot) in
+            let postsDict = snapshot.value as? [String : AnyObject] ?? [:]
+            var posts = [Post]()
+            // Convert postsDict to [Post]
+            for postsDictKey in postsDict {
+                let postUID = postsDictKey.key as String
+                let ownerName = postsDict[postsDictKey.key]!["ownerName"] as? String ?? ""
+                let ownerUID = postsDict[postsDictKey.key]!["ownerUID"] as? String ?? ""
+                let postDescription = postsDict[postsDictKey.key]!["postDescription"] as? String ?? ""
+                let postTagsStrings = postsDict[postsDictKey.key]!["postTags"] as? [String] ?? []
+                // Convert [String] to [Post]
+                var postTags = [Tag]()
+                for tag in postTagsStrings {
+                    postTags.append(Tag(name: tag))
+                }
+                let postTitle = postsDict[postsDictKey.key]!["postTitle"] as? String ?? ""
+                let post = Post(ownerUID: ownerUID, ownerName: ownerName, description: postDescription, tags: postTags, title: postTitle, postUID: postUID)
+                posts.append(post)
+            }
+            print(posts)
+            completion(posts)
+        })
     }
     
     // THIS FUNCTION IS ONLY USED TO LOAD DEFAULT TAGS INITIALLY IN FIREBASE

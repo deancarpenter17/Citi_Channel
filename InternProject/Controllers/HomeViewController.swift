@@ -12,15 +12,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     
-     let post = ["First Post", "Second Post", "Third Post", "Fourth Post","Fifth Post","Sixth Post","Seventh Post","Eighth Post"]
+    var posts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        tableView.separatorColor = UIColor(white: 1, alpha: 1)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        self.navigationItem.title = "Home"
+        
+        FirebaseAPI.shared.readPosts() { newPosts in
+            DispatchQueue.main.async {
+                self.posts = newPosts
+                self.tableView.reloadData()
+            }
+        }
+        
+        setupViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +41,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return post.count
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,11 +49,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         if let cell = cell as? PostTableViewCell {
-            let thePost = post[indexPath.row]
-            cell.postTitleLbl.text = thePost
+            let thePost = posts[indexPath.row]
+            cell.postTitleLbl.text = thePost.title
         }
-        
-        
+                
         return cell
     }
     
@@ -57,11 +60,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let descriptionVC = mainStoryBoard.instantiateViewController(withIdentifier: "DetailedPostViewController") as! DetailedPostViewController
         
-        descriptionVC.postTitle = post[indexPath.row]
-        descriptionVC.postAuthor = post[indexPath.row]
-        descriptionVC.postDescrip = post[indexPath.row]
+        descriptionVC.postTitle = posts[indexPath.row].title
+        descriptionVC.postAuthor = posts[indexPath.row].ownerUID
+        descriptionVC.postDescrip = posts[indexPath.row].description
     
         self.navigationController?.pushViewController(descriptionVC, animated: true)
+    }
+    
+    func setupViews() {
+        // Do any additional setup after loading the view.
+        tableView.separatorColor = UIColor(white: 1, alpha: 1)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationItem.title = "Home"
     }
 
 }

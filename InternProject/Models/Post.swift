@@ -9,9 +9,10 @@
 import Foundation
 
 struct Post {
-    var owner: String
+    var ownerUID: String
+    var ownerName: String
     var description: String
     var tags: [Tag]
     var title: String
-    var uid: String
+    var postUID: String
 }

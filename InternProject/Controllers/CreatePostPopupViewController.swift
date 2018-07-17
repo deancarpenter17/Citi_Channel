@@ -39,8 +39,11 @@ class CreatePostPopupViewController: UIViewController {
         if !textFieldsEmpty() {
             if let user = FirebaseAPI.shared.currentUser {
                 let uid = UUID().uuidString
-                post = Post(owner: user.uid ?? "", description: userPostDescrip.text, tags: [Tag(name: userPostTags.text!)], title: userPostTitle.text!, uid: uid)
+                post = Post(ownerUID: user.uid, ownerName: user.displayName!, description: userPostDescrip.text, tags: [Tag(name: userPostTags.text!)], title: userPostTitle.text!, postUID: uid)
                 FirebaseAPI.shared.save(post: post!)
+                
+                // Once they click submit, let's pop back to the HomeViewController
+                self.performSegueToReturnBack()
             } else {
                 print("Error posting! No user is signed in!")
             }
