@@ -26,7 +26,7 @@ class FirebaseAPI: NSObject {
         super.init()
     }
     
-    // MARK: Firebase Authentication
+    // MARK: - Firebase Initialization
     
     func setupFirebase() {
         // Use Firebase library to configure APIs
@@ -36,83 +36,13 @@ class FirebaseAPI: NSObject {
         FirebaseAPI.shared.ref = Database.database().reference()
     }
     
-    //    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-    //        // ...
-    //        if let error = error {
-    //            print("Error signing user in!")
-    //            print(error.localizedDescription)
-    //            return
-    //        }
-    //
-    //        //get a Google ID token and Google access token from the GIDAuthentication object and exchange them for a Firebase credential:
-    //        guard let authentication = user.authentication else { return }
-    //        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-    //                                                       accessToken: authentication.accessToken)
-    //
-    //
-    //        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-    //            if let error = error {
-    //                print("Error exchanging Google/Firebase tokens!")
-    //                print(error.localizedDescription)
-    //                return
-    //            }
-    //            // User is signed in
-    //            print("**********user is signed in*************)")
-    //
-    //            // If user created an account, go to tags screen. otherwise go to home screen
-    //            if let user = self.currentUser {
-    //                // Check to see if user has logged in before
-    //                self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-    //                    let users = snapshot.value as? NSDictionary
-    //                    // if user exists in Firebase database
-    //                    if let _ = users?[user.uid] {
-//                            DispatchQueue.main.async {
-//                                let homeTabController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabController")
-//                                self.appDelegate.navigateTo(viewController: homeTabController)
-//                            }
-    //                    } else {
-    //                        if let user = self.currentUser {
-    //                            // Register user in Firebase database
-    //                            let currentUser = [
-    //                                "name": user.displayName,
-    //                                "email": user.email,
-    //                                "uid": user.uid,
-    //                                ]
-    //
-    //                            self.ref.child("users/\(user.uid)").setValue(currentUser)
-//                                DispatchQueue.main.async {
-//                                    let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TagNavController")
-//                                    self.appDelegate.navigateTo(viewController: rootController)
-    //                            }
-    //                        }
-    //                    }
-    //                }) { (error) in
-    //                    print("Error querying all users!")
-    //                    print(error.localizedDescription)
-    //                }
-    //            }
-    //        }
-    //    }
-    //
+    // MARK: Firebase Authentication
+
     func signoutUser() {
         try? Auth.auth().signOut()
         print("User signed out")
         let splashNavVC: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SplashNavVC") as UIViewController
         self.appDelegate.navigateTo(viewController: splashNavVC)
-    }
-    
-    // Mark: - Firebase Database Ops
-    
-    // sets the user's tags
-    func save(tags: [Tag]) {
-        // Convert Tag array into a valid JSON object (arrays are not valid)
-        var tagsDict = [String: String]()
-        for tag in tags {
-            tagsDict[tag.name] = tag.name
-        }
-        if let user = currentUser {
-            self.ref.child("users/\(user.uid)/tags").setValue(tagsDict)
-        }
     }
     
     func signupUser(username: String, password: String, email: String, completion: @escaping (Bool, String) -> Void) {
@@ -180,6 +110,41 @@ class FirebaseAPI: NSObject {
                 }
             }
         }
+    }
+    
+    // MARK: - Firebase Database Operations
+    
+    // Sets the user's tags
+    func save(tags: [Tag]) {
+        // Convert Tag array into a valid JSON object (arrays are not valid)
+        var tagsDict = [String: String]()
+        for tag in tags {
+            tagsDict[tag.name] = tag.name
+        }
+        if let user = currentUser {
+            self.ref.child("users/\(user.uid)/tags").setValue(tagsDict)
+        }
+    }
+    
+    // Saves a user's post
+    func save(post: Post) {
+        var tagsArrayToString: [String] {
+            get {
+                var tags = [String]()
+                for tag in post.tags {
+                    tags.append(tag.name)
+                }
+                return tags
+            }
+        }
+        
+        let postDict: [String: Any] = [
+            "owner": post.owner,
+            "postDescription": post.description,
+            "postTags": tagsArrayToString,
+            "postTitle": post.title,
+        ]
+        self.ref.child("posts/\(post.uid)").setValue(postDict)
     }
     
     // THIS FUNCTION IS ONLY USED TO LOAD DEFAULT TAGS INITIALLY IN FIREBASE

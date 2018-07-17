@@ -27,6 +27,7 @@
 		E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60C020F848DB00B4787C /* AlertViewController.swift */; };
 		E32C60C720F92B7400B4787C /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60C620F92B7400B4787C /* StringExtensions.swift */; };
 		E32C60C920F9400E00B4787C /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60C820F9400E00B4787C /* ViewControllerExtensions.swift */; };
+		E32C60CB20FD87A300B4787C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60CA20FD87A300B4787C /* Post.swift */; };
 		E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */; };
 		E3449B3020E2BB8B009CD696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3449B2E20E2BB8B009CD696 /* Main.storyboard */; };
 		E3449B3220E2BB8E009CD696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3449B3120E2BB8E009CD696 /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		E32C60C020F848DB00B4787C /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		E32C60C620F92B7400B4787C /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		E32C60C820F9400E00B4787C /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		E32C60CA20FD87A300B4787C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E3449B2720E2BB8B009CD696 /* InternProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3449B2A20E2BB8B009CD696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3449B2F20E2BB8B009CD696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -195,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				E3B095B120E6D8D4004DB9D0 /* FirebaseAPI.swift */,
+				E375230F20E993000017691A /* Tag.swift */,
+				E32C60CA20FD87A300B4787C /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,7 +206,6 @@
 		E32C60B720F1563F00B4787C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E375230F20E993000017691A /* Tag.swift */,
 				E32C60C020F848DB00B4787C /* AlertViewController.swift */,
 			);
 			path = Helpers;
@@ -507,6 +510,7 @@
 				E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */,
 				E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */,
 				76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */,
+				E32C60CB20FD87A300B4787C /* Post.swift in Sources */,
 				E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */,
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
 				E375231020E993000017691A /* Tag.swift in Sources */,
