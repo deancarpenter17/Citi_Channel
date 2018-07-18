@@ -116,33 +116,19 @@ class FirebaseAPI: NSObject {
     
     // Sets the user's tags
     func save(tags: [Tag]) {
-        // Convert Tag array into a valid JSON object (arrays are not valid)
-        var tagsDict = [String: String]()
-        for tag in tags {
-            tagsDict[tag.name] = tag.name
-        }
         if let user = currentUser {
-            self.ref.child("users/\(user.uid)/tags").setValue(tagsDict)
+            self.ref.child("users/\(user.uid)/tags").setValue(tagsToStringsArray(tagArray: tags))
         }
     }
     
     // Saves a user's post
     func save(post: Post) {
-        var tagsArrayToString: [String] {
-            get {
-                var tags = [String]()
-                for tag in post.tags {
-                    tags.append(tag.name)
-                }
-                return tags
-            }
-        }
         
         let postDict: [String: Any] = [
             "ownerUID": post.ownerUID,
             "ownerName": post.ownerName,
             "postDescription": post.description,
-            "postTags": tagsArrayToString,
+            "postTags": tagsToStringsArray(tagArray: post.tags),
             "postTitle": post.title,
         ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
@@ -194,6 +180,16 @@ class FirebaseAPI: NSObject {
                     completion(false)
                 }
             })
+    }
+    
+    // MARK: - Helper functions
+    
+    func tagsToStringsArray(tagArray: [Tag]) -> [String] {
+        var tags = [String]()
+        for tag in tagArray {
+            tags.append(tag.name)
+        }
+        return tags
     }
     
 }
