@@ -17,12 +17,6 @@ class DetailedPostTableViewCell: UITableViewCell {
     @IBOutlet weak var answerThumbsDownCount: UILabel!
     @IBOutlet weak var answerTitleLbl: UILabel!
     
-//    @IBOutlet weak var answerTitleLbl: UILabel!
-//    @IBOutlet weak var answerDescriptionText: UITextView!
-//    @IBOutlet weak var answerTimeStampLbl: UILabel!
-//    @IBOutlet weak var answerThumbsUpCount: UILabel!
-//    @IBOutlet weak var answerThumbsDownCount: UILabel!
-    
     var thumbsUpCount = 0
     var thumbsDownCount = 0
     

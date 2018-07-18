@@ -61,8 +61,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let descriptionVC = mainStoryBoard.instantiateViewController(withIdentifier: "DetailedPostViewController") as! DetailedPostViewController
         
         descriptionVC.postTitle = posts[indexPath.row].title
-        descriptionVC.postAuthor = posts[indexPath.row].ownerUID
+        descriptionVC.postAuthor = posts[indexPath.row].ownerName
         descriptionVC.postDescrip = posts[indexPath.row].description
+        descriptionVC.postUID = posts[indexPath.row].postUID
     
         self.navigationController?.pushViewController(descriptionVC, animated: true)
     }

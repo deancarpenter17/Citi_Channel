@@ -123,7 +123,6 @@ class FirebaseAPI: NSObject {
     
     // Saves a user's post
     func save(post: Post) {
-        
         let postDict: [String: Any] = [
             "ownerUID": post.ownerUID,
             "ownerName": post.ownerName,
@@ -132,6 +131,19 @@ class FirebaseAPI: NSObject {
             "postTitle": post.title,
         ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
+    }
+    
+    // Saves a solution to a user's post
+    func save(solution: String, postUID: String, userUID: String, username: String) {
+        let initialRating = 1
+        let solutionDict: [String : Any] = [
+            "solution": solution,
+            "ownerName": username,
+            "ownerUID": userUID,
+            "rating": initialRating
+        ]
+        
+        self.ref.child("posts/\(postUID)/solutions/\(userUID)").setValue(solutionDict)
     }
     
     func readPosts(completion: @escaping ([Post]) -> Void) {
@@ -156,6 +168,27 @@ class FirebaseAPI: NSObject {
             }
             print(posts)
             completion(posts)
+        })
+    }
+    
+    func readSolutions(postUID: String, completion: @escaping ([Solution]) -> Void) {
+        self.ref.child("posts/\(postUID)/solutions").observe(DataEventType.value, with: { (snapshot) in
+            let solutionsDict = snapshot.value as? [String : AnyObject] ?? [:]
+            print(solutionsDict)
+            var solutions = [Solution]()
+            // Convert solutionsDict to [Solution]
+            for solutionsDictKey in solutionsDict {
+                let ownerName = solutionsDict[solutionsDictKey.key]!["ownerName"] as? String ?? ""
+                let ownerUID = solutionsDict[solutionsDictKey.key]!["ownerUID"] as? String ?? ""
+                let solutionText = solutionsDict[solutionsDictKey.key]!["solution"] as? String ?? ""
+                let rating = solutionsDict[solutionsDictKey.key]!["rating"] as? Int ?? 1
+                
+                let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, rating: rating)
+                print("Solution: \(solution.solution)")
+                solutions.append(solution)
+            }
+            print(solutions)
+            completion(solutions)
         })
     }
     

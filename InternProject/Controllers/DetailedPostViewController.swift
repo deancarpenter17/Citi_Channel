@@ -19,10 +19,58 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     var postTitle = ""
     var postAuthor = ""
     var postDescrip = ""
+    var postUID: String?
+    
+    var solutions = [Solution]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+        
+        // Set the listener on the solutions for this particular post
+        if let postUID = postUID {
+            FirebaseAPI.shared.readSolutions(postUID: postUID) { newSolutions in
+                DispatchQueue.main.async {
+                    self.solutions = newSolutions
+                    self.solutionTableView.reloadData()
+                }
+            }
+        } else {
+            print("Error! Unable to get postUID on DetailedPostViewController!")
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return solutions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let solutionCell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath) as! DetailedPostTableViewCell
+        solutionCell.answerDescriptionText.text = solutions[indexPath.row].solution
+        solutionCell.answerTitleLbl.text = solutions[indexPath.row].username
+        
+        return solutionCell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CreateSolutionSegue" {
+            if let createSolutionVC = segue.destination as? CreateSolutionPopupViewController {
+                createSolutionVC.postUID = postUID
+            }
+        }
+    }
+    
+    fileprivate func setupViews() {
         // Do any additional setup after loading the view.
         
         postTitleLbl.text! = postTitle
@@ -38,25 +86,19 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         //Remove side scroll on solution tableview
         solutionTableView.showsVerticalScrollIndicator = false
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let solutionCell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath)
-
-        
-        
-        return solutionCell
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

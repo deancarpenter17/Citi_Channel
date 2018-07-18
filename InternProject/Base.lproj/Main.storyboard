@@ -1158,7 +1158,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yI5-Pz-qjT" kind="showDetail" id="Yxe-si-sOB"/>
+                                    <segue destination="yI5-Pz-qjT" kind="showDetail" identifier="CreateSolutionSegue" id="Yxe-si-sOB"/>
                                 </connections>
                             </button>
                         </subviews>
