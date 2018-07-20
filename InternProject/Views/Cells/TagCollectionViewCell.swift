@@ -11,4 +11,9 @@ import UIKit
 class TagCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tagName: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
 }

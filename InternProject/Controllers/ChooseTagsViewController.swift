@@ -11,21 +11,21 @@ import UIKit
 class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var tagCollectionView: UICollectionView!
-        
+    @IBOutlet weak var saveTagsButton: RoundedLoginButton!
+    
+    
     var tags = [Tag]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
-        //self.navigationItem.title = "Welcome \(FirebaseAPI.shared.currentUser?.displayName ?? "")"
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         
-        tags.append(contentsOf: [Tag(name: "Java"), Tag(name: "Angular"), Tag(name: "IT Support"), Tag(name: "Android"), Tag(name: "Swift"), Tag(name: "Microservices"), Tag(name: "Security"), Tag(name: "Cloud")])
+        tags.append(contentsOf: [Tag(name: "Java"), Tag(name: "Angular"), Tag(name: "IT Support"), Tag(name: "Android"), Tag(name: "Swift"), Tag(name: "Microservices"), Tag(name: "Security"), Tag(name: "Cloud"), Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud")])
         setupCollectionViewLayout()
     }
     
-    @IBAction func submitTagsPressed(_ sender: UIButton) {
+    @IBAction func saveTagsPressed(_ sender: RoundedLoginButton) {
         if let indexPaths = tagCollectionView.indexPathsForSelectedItems {
             let tagsCount = indexPaths.count
             print(tagsCount)
@@ -44,7 +44,6 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tags.count
     }
@@ -53,6 +52,8 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         let identifier = "TagCollectionViewCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TagCollectionViewCell
         cell.tagName.text = tags[indexPath.row].name
+        cell.layer.cornerRadius = 5
+        cell.layer.masksToBounds = true
         return cell
     }
     
@@ -66,7 +67,9 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
             }
         }
         cell?.layer.borderWidth = 2.0
-        cell?.layer.borderColor = UIColor.gray.cgColor
+        cell?.layer.borderColor = UIColor.black.cgColor
+        // Citi red color
+        //cell?.layer.backgroundColor = UIColor(red: 219.0/255, green: 35.0/255, blue: 11.0/255, alpha: 0.95).cgColor
         return true
     }
     
@@ -80,6 +83,14 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         cell?.layer.borderWidth = 0.0
         cell?.layer.borderColor = UIColor.clear.cgColor
         return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.saveTagsButton.isHidden = shouldHideSaveButton()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        self.saveTagsButton.isHidden = shouldHideSaveButton()
     }
     
     func setupCollectionViewLayout() {
@@ -104,9 +115,25 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         
         //apply defined layout to collectionview
         tagCollectionView!.collectionViewLayout = layout
-        
         tagCollectionView.allowsMultipleSelection = true
         
+        self.saveTagsButton.isHidden = shouldHideSaveButton()
         
     }
+    
+    // If at least one tag is selected, show the save bar button item
+    func shouldHideSaveButton() -> Bool {
+        return self.tagCollectionView.indexPathsForSelectedItems?.count == 0
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

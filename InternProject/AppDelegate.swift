@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             let homeTabController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HomeTabController")
+            // Uncomment this to test Tag View Controller screen
+            //let homeTabController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TagNavController")
             self.navigateTo(viewController: homeTabController)
         } else {
             //User Not logged in
