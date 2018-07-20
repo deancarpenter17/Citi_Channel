@@ -70,7 +70,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func setupViews() {
         // Do any additional setup after loading the view.
-        tableView.separatorColor = UIColor(white: 1, alpha: 1)
+
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.title = "Home"
     }
