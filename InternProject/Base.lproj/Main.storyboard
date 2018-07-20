@@ -936,7 +936,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDD-Em-BPk">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDD-Em-BPk" customClass="SearchTextField" customModule="SearchTextField">
                                                     <rect key="frame" x="17" y="534" width="265" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>
@@ -1038,7 +1038,7 @@
                     </view>
                     <connections>
                         <outlet property="userPostDescrip" destination="MAX-md-ZDl" id="qGf-Qv-XUp"/>
-                        <outlet property="userPostTags" destination="HDD-Em-BPk" id="nFW-nc-XkR"/>
+                        <outlet property="userPostTags" destination="HDD-Em-BPk" id="NEG-7f-Hov"/>
                         <outlet property="userPostTitle" destination="akv-RM-pYQ" id="tRR-aY-TFo"/>
                     </connections>
                 </viewController>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SearchTextField
 
 class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 

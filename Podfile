@@ -9,6 +9,7 @@ target 'InternProject' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod "SearchTextField"
 
 
   target 'InternProjectTests' do

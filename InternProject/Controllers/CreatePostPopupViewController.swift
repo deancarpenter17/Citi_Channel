@@ -8,19 +8,31 @@
 
 import Foundation
 import UIKit
-
+import SearchTextField
 
 class CreatePostPopupViewController: UIViewController {
     
     @IBOutlet weak var userPostTitle: UITextField!
     @IBOutlet weak var userPostDescrip: UITextView!
-    @IBOutlet weak var userPostTags: UITextField!
+    @IBOutlet weak var userPostTags: SearchTextField!
     
     var post: Post?
+    var tags = [Tag]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO: retrieve the available tags from Firebase
+        FirebaseAPI.shared.readTags() { (tags) in
+            self.tags = tags
+            self.userPostTags.theme.bgColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.98)
+            self.userPostTags.theme.borderColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+            self.userPostTags.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.98)
+            // Need to convert [Tag] to [String] for this filterStrings method
+            var tagsStringArray = [String]()
+            for tag in self.tags {
+                tagsStringArray.append(tag.name)
+            }
+            self.userPostTags.filterStrings(tagsStringArray)
+        }
         
     }
     
