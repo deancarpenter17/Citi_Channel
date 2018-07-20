@@ -13,7 +13,6 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var tagCollectionView: UICollectionView!
     @IBOutlet weak var saveTagsButton: RoundedLoginButton!
     
-    
     var tags = [Tag]()
     
     override func viewDidLoad() {
@@ -21,7 +20,12 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         
-        tags.append(contentsOf: [Tag(name: "Java"), Tag(name: "Angular"), Tag(name: "IT Support"), Tag(name: "Android"), Tag(name: "Swift"), Tag(name: "Microservices"), Tag(name: "Security"), Tag(name: "Cloud"), Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud"),Tag(name: "Cloud")])
+        FirebaseAPI.shared.readTags() { (tags) in
+            DispatchQueue.main.async {
+                self.tags = tags
+                self.tagCollectionView.reloadData()
+            }
+        }
         setupCollectionViewLayout()
     }
     

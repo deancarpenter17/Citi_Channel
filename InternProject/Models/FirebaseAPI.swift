@@ -192,6 +192,17 @@ class FirebaseAPI: NSObject {
         })
     }
     
+    func readTags(completion: @escaping ([Tag]) -> Void) {
+        self.ref.child("tags").observe(DataEventType.value, with: { (snapshot) in
+            let tagsStringArray = snapshot.value as? [String] ?? []
+            var tagsArray = [Tag]()
+            for stringTag in tagsStringArray {
+                tagsArray.append(Tag(name: stringTag))
+            }
+            completion(tagsArray)
+        })
+    }
+    
     // THIS FUNCTION IS ONLY USED TO LOAD DEFAULT TAGS INITIALLY IN FIREBASE
     func tempSave(tags: [Tag]) {
         // Convert Tag array into a valid JSON object (arrays are not valid)
