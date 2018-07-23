@@ -570,7 +570,7 @@
                                                                 <constraint firstAttribute="width" constant="343" id="sYY-tE-5M2"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                            <color key="textColor" red="0.0" green="0.22745098039215686" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-fs-vE4">
@@ -1130,6 +1130,9 @@
                                                     <state key="normal" title="0 Replies ➡︎">
                                                         <color key="titleColor" red="0.84313725490196079" green="0.19215686274509802" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="Xip-Fl-uzD" kind="showDetail" id="TyQ-uk-0UR"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIY-v5-M1X">
                                                     <rect key="frame" x="15" y="11" width="229" height="23"/>
@@ -1313,6 +1316,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IvU-38-QM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7557.6000000000004" y="419.70443349753697"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ELa-cB-tow">
+            <objects>
+                <viewController id="Xip-Fl-uzD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9h0-11-toP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="igc-Vx-Xj9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYv-Mp-RhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7254" y="1169"/>
         </scene>
         <!--Rewards View Controller-->
         <scene sceneID="8bO-ib-YXB">
