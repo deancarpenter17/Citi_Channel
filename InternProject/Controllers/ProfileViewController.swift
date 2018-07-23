@@ -11,6 +11,11 @@ import Firebase
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var pointsLbl: UILabel!
+    @IBOutlet weak var numPostsLbl: UILabel!
+    @IBOutlet weak var numSolutionsLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

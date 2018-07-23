@@ -853,6 +853,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameLbl" destination="xuo-xe-xQU" id="1Rz-xX-nIf"/>
+                        <outlet property="numPostsLbl" destination="TrU-UX-RJB" id="wIG-Ty-dee"/>
+                        <outlet property="numSolutionsLbl" destination="I2x-DC-Xhx" id="BjE-MJ-uZS"/>
+                        <outlet property="pointsLbl" destination="xkp-eH-P7T" id="Ns8-bh-4OX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6n4-Pi-Ore" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
