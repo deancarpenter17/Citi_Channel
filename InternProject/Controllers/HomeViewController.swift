@@ -23,7 +23,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             }
         }
-        
         setupViews()
     }
 
@@ -60,7 +59,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.nameLbl.text = "By: \(thePost.ownerName)"
             
         }
-                
         return cell
     }
     
@@ -78,7 +76,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func setupViews() {
         // Do any additional setup after loading the view.
-
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.title = "Home"
     }
