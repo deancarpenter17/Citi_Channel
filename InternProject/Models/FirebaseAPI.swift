@@ -139,12 +139,11 @@ class FirebaseAPI: NSObject {
     
     // Saves a solution to a user's post
     func save(solution: String, postUID: String, userUID: String, username: String) {
-        let initialRating = 1
         let solutionDict: [String : Any] = [
             "solution": solution,
             "ownerName": username,
             "ownerUID": userUID,
-            "rating": initialRating
+            "score": ScoreConstants.InitialSolutionUpvotes
         ]
         
         self.ref.child("posts/\(postUID)/solutions/\(userUID)").setValue(solutionDict)
@@ -188,9 +187,9 @@ class FirebaseAPI: NSObject {
                 let ownerName = solutionsDict[solutionsDictKey.key]!["ownerName"] as? String ?? ""
                 let ownerUID = solutionsDict[solutionsDictKey.key]!["ownerUID"] as? String ?? ""
                 let solutionText = solutionsDict[solutionsDictKey.key]!["solution"] as? String ?? ""
-                let rating = solutionsDict[solutionsDictKey.key]!["rating"] as? Int ?? 1
+                let score = solutionsDict[solutionsDictKey.key]!["score"] as? Int ?? 1
                 
-                let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, rating: rating)
+                let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, rating: score)
                 print("Solution: \(solution.solution)")
                 solutions.append(solution)
             }
