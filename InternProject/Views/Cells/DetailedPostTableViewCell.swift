@@ -13,7 +13,6 @@ class DetailedPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var answerDescriptionText: UITextView!
     @IBOutlet weak var answerTimeStampLbl: UILabel!
-    @IBOutlet weak var answerThumbsUpCount: UILabel!
     @IBOutlet weak var answerThumbsDownCount: UILabel!
     @IBOutlet weak var answerTitleLbl: UILabel!
     
@@ -33,7 +32,7 @@ class DetailedPostTableViewCell: UITableViewCell {
     
     @IBAction func thumbsUpClicked(_ sender: Any) {
         thumbsUpCount += 1
-        answerThumbsUpCount.text = thumbsUpCount.description
+        answerThumbsDownCount.text = thumbsUpCount.description
     }
     
     @IBAction func thumbsDownClicked(_ sender: Any) {
