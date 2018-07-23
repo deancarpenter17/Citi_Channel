@@ -597,6 +597,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="descriptionLbl" destination="dMn-fs-vE4" id="cdd-sD-AX8"/>
                                                     <outlet property="nameLbl" destination="zxO-11-vnA" id="T7s-YP-hOx"/>
                                                     <outlet property="postTitleLbl" destination="AEB-Cw-rUc" id="uzu-VJ-gBM"/>
                                                     <outlet property="tagLbl" destination="Pfa-Jg-cAd" id="rVe-aF-tja"/>

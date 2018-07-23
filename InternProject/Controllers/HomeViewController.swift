@@ -51,6 +51,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let cell = cell as? PostTableViewCell {
             let thePost = posts[indexPath.row]
             cell.postTitleLbl.text = thePost.title
+            var tagString = ""
+            for tag in thePost.tags {
+                tagString += " \(tag.name)"
+            }
+            cell.tagLbl.text = tagString
+            cell.descriptionLbl.text = thePost.description
+            cell.nameLbl.text = "By: \(thePost.ownerName)"
+            
         }
                 
         return cell
