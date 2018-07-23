@@ -72,8 +72,9 @@ class FirebaseAPI: NSObject {
                             let userToSave = [
                                 "name": username,
                                 "email": email,
-                                "uid": user.uid
-                            ]
+                                "uid": user.uid,
+                                "totalScore": 0
+                                ] as [String : Any]
                             // Save to Firebase.
                             self.ref.child("users/\(user.uid)").setValue(userToSave)
                             
@@ -131,6 +132,9 @@ class FirebaseAPI: NSObject {
             "postTitle": post.title,
         ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
+        
+        // Now update the User's score who created the new Post
+        updateUsersTotalScore(by: ScoreConstants.PostScore, forUserUID: post.ownerUID)
     }
     
     // Saves a solution to a user's post
@@ -144,6 +148,9 @@ class FirebaseAPI: NSObject {
         ]
         
         self.ref.child("posts/\(postUID)/solutions/\(userUID)").setValue(solutionDict)
+        
+        // Finally, update the user's total score for creating a solution
+        updateUsersTotalScore(by: ScoreConstants.SolutionScore, forUserUID: userUID)
     }
     
     func readPosts(completion: @escaping ([Post]) -> Void) {
@@ -211,6 +218,22 @@ class FirebaseAPI: NSObject {
             tagsDict[tag.name] = tag.name
         }
         self.ref.child("tags").setValue(tagsDict)
+    }
+    
+    func updateUsersTotalScore(by addedScore: Int, forUserUID: String) {
+        self.ref.child("users/\(forUserUID)/totalScore").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var currentScore = currentData.value as? Int, let currentUserUid = self.currentUser {
+                print(currentScore)
+                currentScore += addedScore
+                currentData.value = currentScore
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func checkUserNameAlreadyExist(newUserName: String, completion: @escaping(Bool) -> Void) {
