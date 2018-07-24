@@ -73,7 +73,9 @@ class FirebaseAPI: NSObject {
                                 "name": username,
                                 "email": email,
                                 "uid": user.uid,
-                                "totalScore": 0
+                                "totalScore": 0,
+                                "totalNumSolutions": 0,
+                                "totalNumPosts": 0
                                 ] as [String : Any]
                             // Save to Firebase.
                             self.ref.child("users/\(user.uid)").setValue(userToSave)
@@ -133,8 +135,11 @@ class FirebaseAPI: NSObject {
         ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
         
-        // Now update the User's score who created the new Post
+        // update the user's score who created the new Post
         updateUsersTotalScore(by: ScoreConstants.PostScore, forUserUID: post.ownerUID)
+        
+        // update user's total number of posts
+        incrementUsersPostCount(forUserUID: post.ownerUID)
     }
     
     // Saves a solution to a user's post
@@ -148,8 +153,11 @@ class FirebaseAPI: NSObject {
         
         self.ref.child("posts/\(postUID)/solutions/\(userUID)").setValue(solutionDict)
         
-        // Finally, update the user's total score for creating a solution
+        // update the user's total score for creating a solution
         updateUsersTotalScore(by: ScoreConstants.SolutionScore, forUserUID: userUID)
+        
+        // update the user's total number of solutions
+        incrementUsersSolutionCount(forUserUID: userUID)
     }
     
     func readPosts(completion: @escaping ([Post]) -> Void) {
@@ -172,7 +180,6 @@ class FirebaseAPI: NSObject {
                 let post = Post(ownerUID: ownerUID, ownerName: ownerName, description: postDescription, tags: postTags, title: postTitle, postUID: postUID)
                 posts.append(post)
             }
-            print(posts)
             completion(posts)
         })
     }
@@ -189,8 +196,7 @@ class FirebaseAPI: NSObject {
                 let solutionText = solutionsDict[solutionsDictKey.key]!["solution"] as? String ?? ""
                 let score = solutionsDict[solutionsDictKey.key]!["score"] as? Int ?? 1
                 
-                let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, rating: score)
-                print("Solution: \(solution.solution)")
+                let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, score: score)
                 solutions.append(solution)
             }
             print(solutions)
@@ -222,9 +228,60 @@ class FirebaseAPI: NSObject {
     func updateUsersTotalScore(by addedScore: Int, forUserUID: String) {
         self.ref.child("users/\(forUserUID)/totalScore").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
             if var currentScore = currentData.value as? Int, let currentUserUid = self.currentUser {
-                print(currentScore)
                 currentScore += addedScore
                 currentData.value = currentScore
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func updateSolutionScore(by addedScore: Int, postUID: String, ownerUID: String) {
+        
+        if let currentUserName = self.currentUser?.displayName {
+            
+            // First, record that the user has voted on this solution so they can't continue voting
+            self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").setValue(addedScore)
+            
+            self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/score").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+                if var currentScore = currentData.value as? Int {
+                    currentScore += addedScore
+                    currentData.value = currentScore
+                    return TransactionResult.success(withValue: currentData)
+                }
+                return TransactionResult.success(withValue: currentData)
+            }) { (error, committed, snapshot) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func incrementUsersSolutionCount(forUserUID: String) {
+        self.ref.child("users/\(forUserUID)/totalNumSolutions").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var currentTotalNumSolutions = currentData.value as? Int {
+                currentTotalNumSolutions += 1
+                currentData.value = currentTotalNumSolutions
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func incrementUsersPostCount(forUserUID: String) {
+        self.ref.child("users/\(forUserUID)/totalNumPosts").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var currentTotalNumPosts = currentData.value as? Int {
+                currentTotalNumPosts += 1
+                currentData.value = currentTotalNumPosts
                 return TransactionResult.success(withValue: currentData)
             }
             return TransactionResult.success(withValue: currentData)
@@ -246,6 +303,40 @@ class FirebaseAPI: NSObject {
                     completion(false)
                 }
             })
+    }
+    
+    func getUserVoteHistory(postUID: String, ownerUID: String, completion: @escaping (Int) -> Void) {
+        if let currentUserName = self.currentUser?.displayName {
+            ref.child("/posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                if snapshot.exists() {
+                    if let scoreValue = snapshot.value as? Int {
+                        completion(scoreValue)
+                    }
+                    
+                } else {
+                    completion(0)
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    func getUserStatistics(userUID: String, completion: @escaping (Int, Int, Int) -> Void) {
+        self.ref.child("users/\(userUID)/").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let responseDict = snapshot.value as? NSDictionary {
+                if let totalScore = responseDict["totalScore"] as? Int, let totalNumPosts = responseDict["totalNumPosts"] as? Int, let totalNumSolutions = responseDict["totalNumSolutions"] as? Int {
+                    completion(totalScore, totalNumPosts, totalNumSolutions)
+                }
+            } else {
+                print("Error retrieving user statistics!")
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     // MARK: - Helper functions

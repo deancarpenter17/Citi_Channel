@@ -18,4 +18,8 @@ struct ScoreConstants {
     // Each time a solution is upvoted, increment by this amount
     static let UpvoteIncrementScore = 1
     static let AcceptedSolutionScore = 10
+    
+    static let UserPreviouslyUpvoted = 1
+    static let UserPreviouslyDownvoted = -1
+    static let UserPreviouslyNotVoted = 0
 }

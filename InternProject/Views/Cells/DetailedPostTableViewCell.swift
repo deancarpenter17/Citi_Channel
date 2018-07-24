@@ -13,31 +13,63 @@ class DetailedPostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var answerDescriptionText: UITextView!
     @IBOutlet weak var answerTimeStampLbl: UILabel!
-    @IBOutlet weak var answerThumbsDownCount: UILabel!
     @IBOutlet weak var answerTitleLbl: UILabel!
+    @IBOutlet weak var solutionScore: UILabel!
+    @IBOutlet weak var upvoteButton: UIButton!
+    @IBOutlet weak var downvoteButton: UIButton!
     
-    var thumbsUpCount = 0
-    var thumbsDownCount = 0
+    var ownerUID: String?
+    var postUID: String?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // total score for the solution
+    var score: Int? {
+        didSet {
+            solutionScore.text = score?.description
+        }
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    // how to user voted previously
+    var userVoteHistory: Int? {
+        didSet {
+            switch self.userVoteHistory {
+            case ScoreConstants.UserPreviouslyUpvoted:
+                upvoteButton.backgroundColor = UIColor.blue
+            case ScoreConstants.UserPreviouslyDownvoted:
+                downvoteButton.backgroundColor = UIColor.red
+            default:
+                break
+            }
+        }
     }
     
     @IBAction func thumbsUpClicked(_ sender: Any) {
-        thumbsUpCount += 1
-        answerThumbsDownCount.text = thumbsUpCount.description
+        if userVoteHistory == ScoreConstants.UserPreviouslyNotVoted, let ownerUID = ownerUID, let postUID = postUID {
+            if var score = score {
+                score += 1
+                self.score = score
+                userVoteHistory = ScoreConstants.UserPreviouslyUpvoted
+            }
+            // Update solutions total score, which adds the current user to the "scorers" ref to keep track of votes
+            FirebaseAPI.shared.updateSolutionScore(by: 1, postUID: postUID, ownerUID: ownerUID)
+            
+            // Update the solution owner's total score
+            FirebaseAPI.shared.updateUsersTotalScore(by: 1, forUserUID: ownerUID)
+            
+        }
     }
     
     @IBAction func thumbsDownClicked(_ sender: Any) {
-        thumbsDownCount -= 1
-        answerThumbsDownCount.text = thumbsDownCount.description
+        if userVoteHistory == ScoreConstants.UserPreviouslyNotVoted, let ownerUID = ownerUID, let postUID = postUID {
+            if var score = score {
+                score -= 1
+                self.score = score
+                userVoteHistory = ScoreConstants.UserPreviouslyDownvoted
+            }
+            // Update solutions total score, which adds the current user to the "scorers" ref to keep track of votes
+            FirebaseAPI.shared.updateSolutionScore(by: -1, postUID: postUID, ownerUID: ownerUID)
+            
+            // Update the solution owner's total score
+            FirebaseAPI.shared.updateUsersTotalScore(by: -1, forUserUID: ownerUID)
+        }
     }
     
 }

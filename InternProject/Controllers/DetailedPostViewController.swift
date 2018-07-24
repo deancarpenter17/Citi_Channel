@@ -58,7 +58,19 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         let solutionCell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath) as! DetailedPostTableViewCell
         solutionCell.answerDescriptionText.text = solutions[indexPath.row].solution
         solutionCell.answerTitleLbl.text = solutions[indexPath.row].username
-        
+        solutionCell.score = solutions[indexPath.row].score
+        solutionCell.ownerUID = solutions[indexPath.row].ownerUID
+        if let postUID = postUID {
+            solutionCell.postUID = postUID
+            FirebaseAPI.shared.getUserVoteHistory(postUID: postUID, ownerUID: solutions[indexPath.row].ownerUID) { (score) in
+                DispatchQueue.main.async {
+                    solutionCell.userVoteHistory = score
+                    print("Users vote history: \(score)")
+                }
+            }
+        } else {
+            print("Error! Can't get post UID!!")
+        }
         return solutionCell
     }
     

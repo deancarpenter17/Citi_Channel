@@ -12,6 +12,5 @@ struct Solution {
     var solution: String
     var username: String
     var ownerUID: String
-    var rating: Int
-    // var timestamp: ?????
+    var score: Int
 }
