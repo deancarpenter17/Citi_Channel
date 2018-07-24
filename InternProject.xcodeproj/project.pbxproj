@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		058304DFC4B4E7C271A1B108 /* Pods_InternProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 702431383EEBE34E4D4D19C0 /* Pods_InternProjectUITests.framework */; };
 		244C8BF2522B1307BA076788 /* Pods_InternProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC68681D015F27374A279AD /* Pods_InternProject.framework */; };
+		761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761348BD21077E670009CE0D /* SolutionReplyViewController.swift */; };
+		761348C0210782F70009CE0D /* SolutionReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761348BF210782F70009CE0D /* SolutionReplyCell.swift */; };
 		76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */; };
 		76C3BBF320F3EE1900938B46 /* RewardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */; };
 		76C3BBF520F3EE6400938B46 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */; };
@@ -65,6 +67,8 @@
 		35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F5C8E7E9A7C94EBD82B37C /* Pods-InternProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectTests/Pods-InternProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		702431383EEBE34E4D4D19C0 /* Pods_InternProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		761348BD21077E670009CE0D /* SolutionReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionReplyViewController.swift; sourceTree = "<group>"; };
+		761348BF210782F70009CE0D /* SolutionReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionReplyCell.swift; sourceTree = "<group>"; };
 		76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				76CC989520F1460100E25E2B /* DetailedPostTableViewCell.swift */,
 				76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */,
 				76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */,
+				761348BF210782F70009CE0D /* SolutionReplyCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 				E32C60BC20F45E9300B4787C /* LoginViewController.swift */,
 				E32C60BE20F45EB000B4787C /* SignupViewController.swift */,
 				76C6C70020F5433700D146E1 /* CreateSolutionPopupViewController.swift */,
+				761348BD21077E670009CE0D /* SolutionReplyViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -519,12 +525,14 @@
 				E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */,
 				E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */,
 				76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */,
+				761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */,
 				E32C60CB20FD87A300B4787C /* Post.swift in Sources */,
 				E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */,
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
 				E310856B21065A2F004C008E /* Constants.swift in Sources */,
 				E375231020E993000017691A /* Tag.swift in Sources */,
 				E32C60C720F92B7400B4787C /* StringExtensions.swift in Sources */,
+				761348C0210782F70009CE0D /* SolutionReplyCell.swift in Sources */,
 				E375231C20EBF0740017691A /* HomeViewController.swift in Sources */,
 				76C6C70120F5433700D146E1 /* CreateSolutionPopupViewController.swift in Sources */,
 				76C3BBF520F3EE6400938B46 /* LeaderboardTableViewCell.swift in Sources */,
