@@ -43,6 +43,8 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
         super.viewDidLoad()
         //sets nav title to rewards
         self.navigationItem.title = "Rewards"
+        
+        rewardsTableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
