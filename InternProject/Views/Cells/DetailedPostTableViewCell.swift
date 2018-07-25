@@ -11,12 +11,12 @@ import UIKit
 
 class DetailedPostTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var answerDescriptionText: UITextView!
-    @IBOutlet weak var answerTimeStampLbl: UILabel!
-    @IBOutlet weak var answerTitleLbl: UILabel!
-    @IBOutlet weak var solutionScore: UILabel!
-    @IBOutlet weak var upvoteButton: UIButton!
-    @IBOutlet weak var downvoteButton: UIButton!
+    @IBOutlet weak var answerNameLbl: UILabel!
+    @IBOutlet weak var answerDescriptionLbl: UILabel!
+    @IBOutlet weak var solutionScoreLbl: UILabel!
+    @IBOutlet weak var thumbsUpBtn: UIButton!
+    @IBOutlet weak var thumbsDownBtn: UIButton!
+    
     
     var ownerUID: String?
     var postUID: String?
@@ -24,7 +24,7 @@ class DetailedPostTableViewCell: UITableViewCell {
     // total score for the solution
     var score: Int? {
         didSet {
-            solutionScore.text = score?.description
+            solutionScoreLbl.text = score?.description
         }
     }
     // how to user voted previously
@@ -32,9 +32,9 @@ class DetailedPostTableViewCell: UITableViewCell {
         didSet {
             switch self.userVoteHistory {
             case ScoreConstants.UserPreviouslyUpvoted:
-                upvoteButton.backgroundColor = UIColor.blue
+                thumbsUpBtn.backgroundColor = UIColor.blue
             case ScoreConstants.UserPreviouslyDownvoted:
-                downvoteButton.backgroundColor = UIColor.red
+                thumbsDownBtn.backgroundColor = UIColor.red
             default:
                 break
             }

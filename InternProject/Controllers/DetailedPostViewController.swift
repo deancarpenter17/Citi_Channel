@@ -12,9 +12,15 @@ import UIKit
 class DetailedPostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var postTitleLbl: UILabel!
     @IBOutlet weak var postAuthorLbl: UILabel!
-    @IBOutlet weak var postDescriptionText: UITextView!
+
+    @IBOutlet weak var wrapperView: UIView!
+    @IBOutlet weak var postDecripLbl: UILabel!
     
-    @IBOutlet weak var solutionTableView: UITableView!
+    @IBOutlet weak var rapperView: UIView!
+//    @IBOutlet weak var postAuthLbl: UILabel!
+//    @IBOutlet weak var postDesLbl: UILabel!
+    
+    @IBOutlet weak var solutionTblView: UITableView!
     
     var postTitle = ""
     var postAuthor = ""
@@ -33,12 +39,17 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
             FirebaseAPI.shared.getSolutions(postUID: postUID) { newSolutions in
                 DispatchQueue.main.async {
                     self.solutions = newSolutions
-                    self.solutionTableView.reloadData()
+                    self.solutionTblView.reloadData()
                 }
             }
         } else {
             print("Error! Unable to get postUID on DetailedPostViewController!")
         }
+        
+        self.solutionTblView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0);
+        
+        solutionTblView.estimatedSectionHeaderHeight = 100
+        solutionTblView.sectionHeaderHeight = UITableViewAutomaticDimension
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,8 +67,9 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let solutionCell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath) as! DetailedPostTableViewCell
-        solutionCell.answerDescriptionText.text = solutions[indexPath.row].solution
-        solutionCell.answerTitleLbl.text = solutions[indexPath.row].username
+        solutionCell.answerDescriptionLbl.text = solutions[indexPath.row].solution
+
+        solutionCell.answerNameLbl.text = solutions[indexPath.row].username
         solutionCell.score = solutions[indexPath.row].score
         solutionCell.ownerUID = solutions[indexPath.row].ownerUID
         if let postUID = postUID {
@@ -74,6 +86,20 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         return solutionCell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cellIdentifier = "sectionHeader"
+        let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? sectionHeaderView
+        
+        sectionHeaderCell?.titleLabel.text = postTitle
+        sectionHeaderCell?.descriptionLbl.text = postDescrip
+        sectionHeaderCell?.contentView.backgroundColor = UIColor.gray
+        return sectionHeaderCell?.contentView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreateSolutionSegue" {
             if let createSolutionVC = segue.destination as? CreateSolutionPopupViewController {
@@ -85,9 +111,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     fileprivate func setupViews() {
         // Do any additional setup after loading the view.
         
-        postTitleLbl.text! = postTitle
-        postAuthorLbl.text! = postAuthor
-        postDescriptionText.text! = postDescrip
+
         
         //Make nav title the title of the post selected
         self.navigationItem.title = "Post"
@@ -96,10 +120,12 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         //Remove side scroll on solution tableview
-        solutionTableView.showsVerticalScrollIndicator = false
+        solutionTblView.showsVerticalScrollIndicator = false
+        
+        solutionTblView.tableFooterView = UIView()
     }
-}
 
+}
 
 
 

@@ -78,6 +78,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationItem.title = "Home"
+        tableView.tableFooterView = UIView()
     }
 
 }
