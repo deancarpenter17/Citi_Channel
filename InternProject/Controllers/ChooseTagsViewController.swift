@@ -21,7 +21,7 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         
-        FirebaseAPI.shared.readTags() { (tags) in
+        FirebaseAPI.shared.getTags() { (tags) in
             DispatchQueue.main.async {
                 self.tags = tags
                 self.tagCollectionView.reloadData()

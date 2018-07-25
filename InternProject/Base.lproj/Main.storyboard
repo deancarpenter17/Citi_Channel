@@ -750,7 +750,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plf-BT-XrQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posts:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plf-BT-XrQ">
                                         <rect key="frame" x="116" y="77" width="42" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="Lor-CO-a7K"/>
@@ -1690,6 +1690,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="rewardsCollectionView" destination="KWI-rH-G27" id="Kwp-z4-QP8"/>
+                        <outlet property="rewardsTableView" destination="m8P-7L-RCh" id="w3a-A1-tkk"/>
+                        <outlet property="scoreLabel" destination="PbO-dc-uSV" id="S4f-ai-RKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5N-nx-bis" userLabel="First Responder" sceneMemberID="firstResponder"/>

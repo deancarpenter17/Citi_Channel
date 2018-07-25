@@ -37,7 +37,7 @@ class FirebaseAPI: NSObject {
     }
     
     // MARK: Firebase Authentication
-
+    
     func signoutUser() {
         try? Auth.auth().signOut()
         print("User signed out")
@@ -46,7 +46,7 @@ class FirebaseAPI: NSObject {
     }
     
     func signupUser(username: String, password: String, email: String, completion: @escaping (Bool, String) -> Void) {
-    
+        
         self.checkUserNameAlreadyExist(newUserName: username) { isExist in
             if isExist {
                 completion(false, "Username already exists! Try again.")
@@ -57,9 +57,9 @@ class FirebaseAPI: NSObject {
                         completion(true, error?.localizedDescription ?? "Could not create user")
                         return
                     }
-    
+                    
                     guard user != nil else { return }
-    
+                    
                     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                     changeRequest?.displayName = username
                     changeRequest?.commitChanges(completion: {( error ) in
@@ -67,10 +67,10 @@ class FirebaseAPI: NSObject {
                             completion(true, error?.localizedDescription ?? "error in commit changes!")
                             return
                         }
-    
+                        
                         if let user = self.currentUser {
                             let userToSave = [
-                                "name": username,
+                                "username": username,
                                 "email": email,
                                 "uid": user.uid,
                                 "totalScore": 0,
@@ -89,7 +89,7 @@ class FirebaseAPI: NSObject {
                         } else {
                             completion(true, error?.localizedDescription ?? "Error retrieving current user!")
                         }
-    
+                        
                     })
                 })
             }
@@ -132,7 +132,7 @@ class FirebaseAPI: NSObject {
             "postDescription": post.description,
             "postTags": tagsToStringsArray(tagArray: post.tags),
             "postTitle": post.title,
-        ]
+            ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
         
         // update the user's score who created the new Post
@@ -160,7 +160,7 @@ class FirebaseAPI: NSObject {
         incrementUsersSolutionCount(forUserUID: userUID)
     }
     
-    func readPosts(completion: @escaping ([Post]) -> Void) {
+    func getPosts(completion: @escaping ([Post]) -> Void) {
         self.ref.child("posts").observe(DataEventType.value, with: { (snapshot) in
             let postsDict = snapshot.value as? [String : AnyObject] ?? [:]
             var posts = [Post]()
@@ -184,17 +184,17 @@ class FirebaseAPI: NSObject {
         })
     }
     
-    func readSolutions(postUID: String, completion: @escaping ([Solution]) -> Void) {
+    func getSolutions(postUID: String, completion: @escaping ([Solution]) -> Void) {
         self.ref.child("posts/\(postUID)/solutions").observe(DataEventType.value, with: { (snapshot) in
             let solutionsDict = snapshot.value as? [String : AnyObject] ?? [:]
             print(solutionsDict)
             var solutions = [Solution]()
             // Convert solutionsDict to [Solution]
             for solutionsDictKey in solutionsDict {
-                let ownerName = solutionsDict[solutionsDictKey.key]!["ownerName"] as? String ?? ""
-                let ownerUID = solutionsDict[solutionsDictKey.key]!["ownerUID"] as? String ?? ""
-                let solutionText = solutionsDict[solutionsDictKey.key]!["solution"] as? String ?? ""
-                let score = solutionsDict[solutionsDictKey.key]!["score"] as? Int ?? 1
+                let ownerName = solutionsDict[solutionsDictKey.key]?["ownerName"] as? String ?? ""
+                let ownerUID = solutionsDict[solutionsDictKey.key]?["ownerUID"] as? String ?? ""
+                let solutionText = solutionsDict[solutionsDictKey.key]?["solution"] as? String ?? ""
+                let score = solutionsDict[solutionsDictKey.key]?["score"] as? Int ?? 1
                 
                 let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, score: score)
                 solutions.append(solution)
@@ -204,7 +204,7 @@ class FirebaseAPI: NSObject {
         })
     }
     
-    func readTags(completion: @escaping ([Tag]) -> Void) {
+    func getTags(completion: @escaping ([Tag]) -> Void) {
         self.ref.child("tags").observe(DataEventType.value, with: { (snapshot) in
             let tagsStringArray = snapshot.value as? [String] ?? []
             var tagsArray = [Tag]()
@@ -212,6 +212,30 @@ class FirebaseAPI: NSObject {
                 tagsArray.append(Tag(name: stringTag))
             }
             completion(tagsArray)
+        })
+    }
+    
+    func getUsers(completion: @escaping ([UserNF]) -> Void) {
+        self.ref.child("users").observe(DataEventType.value, with: { (snapshot) in
+            let dict = snapshot.value as? [String: AnyObject] ?? [:]
+            var users = [UserNF]()
+            for usersDictKey in dict {
+                let tagsStringArray = dict[usersDictKey.key]?["tags"] as? [String] ?? []
+                var tagsArray = [Tag]()
+                for stringTag in tagsStringArray {
+                    tagsArray.append(Tag(name: stringTag))
+                }
+                let username = dict[usersDictKey.key]?["username"] as? String ?? ""
+                let email = dict[usersDictKey.key]?["email"] as? String ?? ""
+                let uid = dict[usersDictKey.key]?["uid"] as? String ?? ""
+                let totalScore = dict[usersDictKey.key]?["totalScore"] as? Int ?? 0
+                let totalNumPosts = dict[usersDictKey.key]?["totalNumPosts"] as? Int ?? 0
+                let totalNumSolutions = dict[usersDictKey.key]?["totalNumSolutions"] as? Int ?? 0
+                let user = UserNF(uid: uid, email: email, username: username, tags: tagsArray, totalScore: totalScore, totalNumSolutions: totalNumSolutions, totalNumPosts: totalNumPosts)
+                users.append(user)
+            }
+            
+            completion(users)
         })
     }
     

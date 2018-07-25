@@ -11,19 +11,38 @@ import UIKit
 class RewardsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var rewardsCollectionView: UICollectionView!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var rewardsTableView: UITableView!
+    
+    var users = [UserNF]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Get the total score and all the users for the leaderboard
+        if let currentUser = FirebaseAPI.shared.currentUser {
+            FirebaseAPI.shared.getUserStatistics(userUID: currentUser.uid) { (totalScore, _, _) in
+                DispatchQueue.main.async {
+                    self.scoreLabel.text = totalScore.description
+                }
+            }
+            
+            FirebaseAPI.shared.getUsers() { (users) in
+                DispatchQueue.main.async {
+                    self.users = users
+                    self.users = self.users.sorted(by: { (user1, user2) -> Bool in
+                        return user1.totalScore > user2.totalScore
+                    })
+                    self.rewardsTableView.reloadData()
+                }
+            }
+        }
+        //removes scroll bar
+        rewardsCollectionView.showsHorizontalScrollIndicator = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
         //sets nav title to rewards
         self.navigationItem.title = "Rewards"
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //removes scroll bar
-        rewardsCollectionView.showsHorizontalScrollIndicator = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,8 +50,7 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
     
-    //START OF COLLECTION VIEW
-    //NEEDED COLLECTION VIEW FUNCTIONS
+    // MARK: - CollectionView functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //dumby variable making sure it works
         return 6
@@ -48,25 +66,26 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //If user wants the reward we have to check if they have enough points if they do then get that reward.
     }
-    //END OF COLLECTION VIEW
     
-    //START OF TABLE VIEW
-    //NEEDED TABLE VIEW FUNCTION
+    
+    // MARK: - TableView Functions
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //dumby variable making sure it works
-        return 10
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let leaderboardCell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCell", for: indexPath)
+        let leaderboardCell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCell", for: indexPath) as! LeaderboardTableViewCell
+        leaderboardCell.rankPointsLbl.text = users[indexPath.row].totalScore.description
+        leaderboardCell.rankNameLbl.text = users[indexPath.row].username
+        leaderboardCell.rankingLbl.text = (indexPath.row + 1).description
         
         return leaderboardCell
     }
-    //END OF TABLE VIEW
     
     
     @IBAction func signOut(_ sender: UIBarButtonItem) {

@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FirebaseAPI.shared.readPosts() { newPosts in
+        FirebaseAPI.shared.getPosts() { newPosts in
             DispatchQueue.main.async {
                 self.posts = newPosts
                 self.tableView.reloadData()

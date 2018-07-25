@@ -30,7 +30,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         
         // Set the listener on the solutions for this particular post
         if let postUID = postUID {
-            FirebaseAPI.shared.readSolutions(postUID: postUID) { newSolutions in
+            FirebaseAPI.shared.getSolutions(postUID: postUID) { newSolutions in
                 DispatchQueue.main.async {
                     self.solutions = newSolutions
                     self.solutionTableView.reloadData()

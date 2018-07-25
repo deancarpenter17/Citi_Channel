@@ -21,7 +21,7 @@ class CreatePostPopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseAPI.shared.readTags() { (tags) in
+        FirebaseAPI.shared.getTags() { (tags) in
             self.tags = tags
             self.userPostTags.theme.bgColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.98)
             self.userPostTags.theme.borderColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
