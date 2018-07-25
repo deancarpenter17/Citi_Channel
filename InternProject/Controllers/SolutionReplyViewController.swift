@@ -10,10 +10,10 @@ import UIKit
 
 class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var replyTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,8 +25,13 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func replyButtonPressed(_ sender: UIButton) {
+        if let replyText = replyTextField.text, !replyText.isEmpty {
+            
+        }
+    }
     
-  //START OF TABLE VIEW
+    // MARK: - TableView lifecycle functions
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -41,6 +46,4 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
         
         return replyCell
     }
-    //END OF TABLE VIEW
-    
 }

@@ -1374,6 +1374,9 @@
                                                     <state key="normal" title="Reply">
                                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="replyButtonPressed:" destination="Xip-Fl-uzD" eventType="touchUpInside" id="dGM-5y-GQN"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1400,6 +1403,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="igc-Vx-Xj9"/>
                     </view>
+                    <connections>
+                        <outlet property="replyTextField" destination="Wf4-uu-aSe" id="2Lt-4Y-mvU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYv-Mp-RhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
