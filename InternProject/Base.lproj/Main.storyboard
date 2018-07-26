@@ -1099,34 +1099,41 @@
                                                     <rect key="frame" x="15" y="40" width="269" height="149"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="269" id="5DI-i2-M1c"/>
-                                                        <constraint firstAttribute="height" constant="149" id="JYa-QA-A2C"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oH8-qP-D03" userLabel="Thumbs Down">
-                                                    <rect key="frame" x="322" y="110" width="31" height="29"/>
+                                                    <rect key="frame" x="322" y="118.33333333333331" width="31" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="31" id="Ds3-xa-v3T"/>
+                                                        <constraint firstAttribute="height" constant="29" id="sNo-2w-cNU"/>
+                                                    </constraints>
                                                     <state key="normal" image="Thumb Down"/>
                                                     <connections>
                                                         <action selector="thumbsDownClicked:" destination="ODO-bc-5w9" eventType="touchUpInside" id="Spe-i5-7ng"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eE-v0-9By">
-                                                    <rect key="frame" x="332" y="79" width="11" height="21"/>
+                                                    <rect key="frame" x="332" y="89.333333333333329" width="11" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzb-w6-dZV" userLabel="Thumbs Up">
-                                                    <rect key="frame" x="322" y="42" width="31" height="29"/>
+                                                    <rect key="frame" x="322" y="42" width="31" height="39.333333333333343"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="31" id="6hF-Uf-b1U"/>
+                                                        <constraint firstAttribute="height" constant="39.329999999999998" id="eZR-Tx-nJw"/>
+                                                    </constraints>
                                                     <state key="normal" image="Thumb Up"/>
                                                     <connections>
                                                         <action selector="thumbsUpClicked:" destination="ODO-bc-5w9" eventType="touchUpInside" id="Aof-cm-cIK"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlf-xq-jqb">
-                                                    <rect key="frame" x="278" y="159" width="82" height="30"/>
+                                                    <rect key="frame" x="278" y="156" width="82" height="33"/>
                                                     <state key="normal" title="0 Replies ➡︎">
                                                         <color key="titleColor" red="0.84313725490000002" green="0.19215686269999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -1139,14 +1146,14 @@
                                                 <constraint firstItem="Rzb-w6-dZV" firstAttribute="leading" secondItem="5E6-tm-x0B" secondAttribute="trailing" constant="38" id="0ZZ-gJ-i3Z"/>
                                                 <constraint firstItem="5E6-tm-x0B" firstAttribute="leading" secondItem="NaT-aJ-1uL" secondAttribute="leadingMargin" id="7f6-S5-9Am"/>
                                                 <constraint firstAttribute="bottom" secondItem="5E6-tm-x0B" secondAttribute="bottom" constant="10.666666666666657" id="8li-gF-yEr"/>
-                                                <constraint firstItem="Rzb-w6-dZV" firstAttribute="top" secondItem="NaT-aJ-1uL" secondAttribute="topMargin" constant="31" id="AeU-mX-Uh1"/>
                                                 <constraint firstItem="57k-ef-bqM" firstAttribute="leading" secondItem="NaT-aJ-1uL" secondAttribute="leadingMargin" id="I2y-er-PaU"/>
-                                                <constraint firstItem="oH8-qP-D03" firstAttribute="top" secondItem="4eE-v0-9By" secondAttribute="bottom" constant="10" id="TP2-ms-qTX"/>
+                                                <constraint firstItem="wlf-xq-jqb" firstAttribute="top" secondItem="oH8-qP-D03" secondAttribute="bottom" constant="8.6666666666666856" id="J2q-Pm-MTK"/>
+                                                <constraint firstItem="4eE-v0-9By" firstAttribute="centerY" secondItem="NaT-aJ-1uL" secondAttribute="centerY" id="MDq-j1-sXv"/>
+                                                <constraint firstItem="oH8-qP-D03" firstAttribute="top" secondItem="4eE-v0-9By" secondAttribute="bottom" constant="8" id="TP2-ms-qTX"/>
                                                 <constraint firstItem="wlf-xq-jqb" firstAttribute="leading" secondItem="5E6-tm-x0B" secondAttribute="trailing" constant="-6" id="a4O-gb-Fp2"/>
                                                 <constraint firstItem="57k-ef-bqM" firstAttribute="top" secondItem="NaT-aJ-1uL" secondAttribute="topMargin" id="a9i-T0-xLd"/>
                                                 <constraint firstItem="4eE-v0-9By" firstAttribute="top" secondItem="Rzb-w6-dZV" secondAttribute="bottom" constant="8" id="ef8-PX-lCY"/>
                                                 <constraint firstAttribute="bottom" secondItem="wlf-xq-jqb" secondAttribute="bottom" constant="10.666666666666657" id="iBY-4M-QtT"/>
-                                                <constraint firstItem="wlf-xq-jqb" firstAttribute="top" secondItem="oH8-qP-D03" secondAttribute="bottom" constant="20" id="n3I-f7-tbX"/>
                                                 <constraint firstItem="oH8-qP-D03" firstAttribute="leading" secondItem="5E6-tm-x0B" secondAttribute="trailing" constant="38" id="vN8-mD-2ib"/>
                                                 <constraint firstItem="5E6-tm-x0B" firstAttribute="top" secondItem="57k-ef-bqM" secondAttribute="bottom" constant="8" id="w3a-Th-XRc"/>
                                                 <constraint firstItem="4eE-v0-9By" firstAttribute="leading" secondItem="5E6-tm-x0B" secondAttribute="trailing" constant="48" id="yr8-er-au3"/>
@@ -1541,7 +1548,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="359" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bob Johnson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-Da-ELY">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bob Johnson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-Da-ELY">
                                                             <rect key="frame" x="129" y="11" width="101" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -1553,7 +1560,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UB-qo-SS4">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UB-qo-SS4">
                                                             <rect key="frame" x="305" y="11" width="43" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="43" id="guj-P0-hZt"/>
@@ -1566,6 +1573,7 @@
                                                     <constraints>
                                                         <constraint firstItem="U89-yR-t2f" firstAttribute="leading" secondItem="Hmu-cU-Fqo" secondAttribute="leadingMargin" id="31i-Eu-YYw"/>
                                                         <constraint firstItem="U89-yR-t2f" firstAttribute="baseline" secondItem="KNC-Da-ELY" secondAttribute="baseline" id="5VM-B0-5yj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0UB-qo-SS4" secondAttribute="trailing" constant="11" id="6Ma-CA-laK"/>
                                                         <constraint firstItem="KNC-Da-ELY" firstAttribute="baseline" secondItem="0UB-qo-SS4" secondAttribute="baseline" id="8zJ-cf-RJi"/>
                                                         <constraint firstItem="KNC-Da-ELY" firstAttribute="centerX" secondItem="Hmu-cU-Fqo" secondAttribute="centerX" id="Iyl-fI-noA"/>
                                                         <constraint firstItem="U89-yR-t2f" firstAttribute="centerY" secondItem="Hmu-cU-Fqo" secondAttribute="centerY" id="fKJ-Z3-8rq"/>
@@ -1682,12 +1690,10 @@
                         <color key="barTintColor" red="0.066666666669999999" green="0.4431372549" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="2"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1711,12 +1717,10 @@
                         <color key="barTintColor" red="0.066666666669999999" green="0.4431372549" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="2"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
