@@ -12,6 +12,7 @@ import Firebase
 
 class FirebaseAPI: NSObject {
     
+    // MARK: - Instance variables
     var ref: DatabaseReference!
     var appDelegate: AppDelegate!
     static let shared = FirebaseAPI()
@@ -22,6 +23,7 @@ class FirebaseAPI: NSObject {
         }
     }
     
+    // MARK: - initialization
     private override init() {
         super.init()
     }
@@ -36,7 +38,7 @@ class FirebaseAPI: NSObject {
         FirebaseAPI.shared.ref = Database.database().reference()
     }
     
-    // MARK: Firebase Authentication
+    // MARK: - Firebase Authentication
     
     func signoutUser() {
         try? Auth.auth().signOut()
@@ -115,7 +117,7 @@ class FirebaseAPI: NSObject {
         }
     }
     
-    // MARK: - Firebase Database Operations
+    // MARK: - Save
     
     // Sets the user's tags
     func save(tags: [Tag]) {
@@ -160,6 +162,14 @@ class FirebaseAPI: NSObject {
         incrementUsersSolutionCount(forUserUID: userUID)
     }
     
+    func save(reply: String, postUID: String, solutionUID: String) {
+        // postUID/solutions(user uid)/replies
+        if let currentUser = self.currentUser {
+            self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies\(currentUser.uid)").setValue(reply)
+        }
+    }
+    
+    // MARK: - Get
     func getPosts(completion: @escaping ([Post]) -> Void) {
         self.ref.child("posts").observe(DataEventType.value, with: { (snapshot) in
             let postsDict = snapshot.value as? [String : AnyObject] ?? [:]
@@ -239,16 +249,41 @@ class FirebaseAPI: NSObject {
         })
     }
     
-    // THIS FUNCTION IS ONLY USED TO LOAD DEFAULT TAGS INITIALLY IN FIREBASE
-    func tempSave(tags: [Tag]) {
-        // Convert Tag array into a valid JSON object (arrays are not valid)
-        var tagsDict = [String: String]()
-        for tag in tags {
-            tagsDict[tag.name] = tag.name
+    func getUserVoteHistory(postUID: String, ownerUID: String, completion: @escaping (Int) -> Void) {
+        if let currentUserName = self.currentUser?.displayName {
+            ref.child("/posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                if snapshot.exists() {
+                    if let scoreValue = snapshot.value as? Int {
+                        completion(scoreValue)
+                    }
+                    
+                } else {
+                    completion(0)
+                }
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
         }
-        self.ref.child("tags").setValue(tagsDict)
     }
     
+    func getUserStatistics(userUID: String, completion: @escaping (Int, Int, Int) -> Void) {
+        self.ref.child("users/\(userUID)/").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let responseDict = snapshot.value as? NSDictionary {
+                if let totalScore = responseDict["totalScore"] as? Int, let totalNumPosts = responseDict["totalNumPosts"] as? Int, let totalNumSolutions = responseDict["totalNumSolutions"] as? Int {
+                    completion(totalScore, totalNumPosts, totalNumSolutions)
+                }
+            } else {
+                print("Error retrieving user statistics!")
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    // MARK: - Update
     func updateUsersTotalScore(by addedScore: Int, forUserUID: String) {
         self.ref.child("users/\(forUserUID)/totalScore").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
             if var currentScore = currentData.value as? Int, let currentUserUid = self.currentUser {
@@ -286,6 +321,7 @@ class FirebaseAPI: NSObject {
         }
     }
     
+    // MARK: - Increment
     func incrementUsersSolutionCount(forUserUID: String) {
         self.ref.child("users/\(forUserUID)/totalNumSolutions").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
             if var currentTotalNumSolutions = currentData.value as? Int {
@@ -316,6 +352,16 @@ class FirebaseAPI: NSObject {
         }
     }
     
+    // MARK: - Helper functions
+    
+    func tagsToStringsArray(tagArray: [Tag]) -> [String] {
+        var tags = [String]()
+        for tag in tagArray {
+            tags.append(tag.name)
+        }
+        return tags
+    }
+    
     func checkUserNameAlreadyExist(newUserName: String, completion: @escaping(Bool) -> Void) {
         let ref = Database.database().reference()
         ref.child("users").queryOrdered(byChild: "username").queryEqual(toValue: newUserName)
@@ -327,50 +373,6 @@ class FirebaseAPI: NSObject {
                     completion(false)
                 }
             })
-    }
-    
-    func getUserVoteHistory(postUID: String, ownerUID: String, completion: @escaping (Int) -> Void) {
-        if let currentUserName = self.currentUser?.displayName {
-            ref.child("/posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").observeSingleEvent(of: .value, with: { (snapshot) in
-                // Get user value
-                if snapshot.exists() {
-                    if let scoreValue = snapshot.value as? Int {
-                        completion(scoreValue)
-                    }
-                    
-                } else {
-                    completion(0)
-                }
-                
-            }) { (error) in
-                print(error.localizedDescription)
-            }
-            
-        }
-    }
-    
-    func getUserStatistics(userUID: String, completion: @escaping (Int, Int, Int) -> Void) {
-        self.ref.child("users/\(userUID)/").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let responseDict = snapshot.value as? NSDictionary {
-                if let totalScore = responseDict["totalScore"] as? Int, let totalNumPosts = responseDict["totalNumPosts"] as? Int, let totalNumSolutions = responseDict["totalNumSolutions"] as? Int {
-                    completion(totalScore, totalNumPosts, totalNumSolutions)
-                }
-            } else {
-                print("Error retrieving user statistics!")
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
-    // MARK: - Helper functions
-    
-    func tagsToStringsArray(tagArray: [Tag]) -> [String] {
-        var tags = [String]()
-        for tag in tagArray {
-            tags.append(tag.name)
-        }
-        return tags
     }
     
 }
