@@ -10,15 +10,6 @@ import Foundation
 import UIKit
 
 class DetailedPostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var postTitleLbl: UILabel!
-    @IBOutlet weak var postAuthorLbl: UILabel!
-
-    @IBOutlet weak var wrapperView: UIView!
-    @IBOutlet weak var postDecripLbl: UILabel!
-    
-    @IBOutlet weak var rapperView: UIView!
-//    @IBOutlet weak var postAuthLbl: UILabel!
-//    @IBOutlet weak var postDesLbl: UILabel!
     
     @IBOutlet weak var solutionTblView: UITableView!
     
@@ -50,6 +41,9 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         
         solutionTblView.estimatedSectionHeaderHeight = 100
         solutionTblView.sectionHeaderHeight = UITableViewAutomaticDimension
+        
+        solutionTblView.estimatedRowHeight = 100
+        solutionTblView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,6 +57,10 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return solutions.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -92,7 +90,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         
         sectionHeaderCell?.titleLabel.text = postTitle
         sectionHeaderCell?.descriptionLbl.text = postDescrip
-        sectionHeaderCell?.contentView.backgroundColor = UIColor.gray
+        sectionHeaderCell?.authorLbl.text = "By: \(postAuthor)"
         return sectionHeaderCell?.contentView
     }
     

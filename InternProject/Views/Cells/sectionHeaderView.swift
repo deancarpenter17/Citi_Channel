@@ -11,6 +11,7 @@ import UIKit
 
 class sectionHeaderView: UITableViewCell {
     
+    @IBOutlet weak var authorLbl: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
 }
