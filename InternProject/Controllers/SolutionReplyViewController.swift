@@ -19,14 +19,15 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        replyTableView.estimatedRowHeight = 100
-        replyTableView.rowHeight = UITableViewAutomaticDimension
+        repliesTableView.estimatedRowHeight = 100
+        repliesTableView.rowHeight = UITableViewAutomaticDimension
         FirebaseAPI.shared.getSolutionReplies(postUID: postUID, solutionUID: solutionUID) { (replies) in
             DispatchQueue.main.async {
                 self.replies = replies
                 self.repliesTableView.reloadData()
             }
         }
+        repliesTableView.tableFooterView = UIView()
     }
     
     @IBAction func closeBtn(_ sender: Any) {
@@ -58,7 +59,7 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
         let replyCell = tableView.dequeueReusableCell(withIdentifier: "replyCell", for: indexPath)
         if let replyCell = replyCell as? SolutionReplyCell {
             replyCell.usernameLbl.text = replies[indexPath.row].username
-            replyCell.replyDescripText.text = replies[indexPath.row].replyText
+            replyCell.replyDescripLbl.text = replies[indexPath.row].replyText
         }
         
         return replyCell
