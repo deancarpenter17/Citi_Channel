@@ -22,6 +22,9 @@
 		76CC989820F1479D00E25E2B /* DetailedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989720F1479D00E25E2B /* DetailedPostViewController.swift */; };
 		76CC989A20F1496F00E25E2B /* CreatePostPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989920F1496F00E25E2B /* CreatePostPopupViewController.swift */; };
 		76CC989D20F149C500E25E2B /* LogoExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CC989C20F149C500E25E2B /* LogoExtention.swift */; };
+		76D0D625210A465700F75358 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0D624210A465700F75358 /* FilterViewController.swift */; };
+		76D0D627210A497000F75358 /* SortingOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0D626210A497000F75358 /* SortingOptionsCell.swift */; };
+		76D0D629210A498700F75358 /* FilterPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D0D628210A498700F75358 /* FilterPickerCell.swift */; };
 		CB716A9FEBBF6C662DF826E3 /* Pods_InternProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */; };
 		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E310856B21065A2F004C008E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310856A21065A2F004C008E /* Constants.swift */; };
@@ -82,6 +85,9 @@
 		76CC989720F1479D00E25E2B /* DetailedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostViewController.swift; sourceTree = "<group>"; };
 		76CC989920F1496F00E25E2B /* CreatePostPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostPopupViewController.swift; sourceTree = "<group>"; };
 		76CC989C20F149C500E25E2B /* LogoExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoExtention.swift; sourceTree = "<group>"; };
+		76D0D624210A465700F75358 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		76D0D626210A497000F75358 /* SortingOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingOptionsCell.swift; sourceTree = "<group>"; };
+		76D0D628210A498700F75358 /* FilterPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerCell.swift; sourceTree = "<group>"; };
 		8713B279A45A9BEBF89CC6C9 /* Pods-InternProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternProject/Pods-InternProject.release.xcconfig"; sourceTree = "<group>"; };
 		9EC68681D015F27374A279AD /* Pods_InternProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A880F9F24E415AE5682C83CA /* Pods-InternProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectTests/Pods-InternProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +163,8 @@
 				76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */,
 				761348BF210782F70009CE0D /* SolutionReplyCell.swift */,
 				7615739621090BF3002BC51F /* sectionHeaderView.swift */,
+				76D0D626210A497000F75358 /* SortingOptionsCell.swift */,
+				76D0D628210A498700F75358 /* FilterPickerCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				E32C60BE20F45EB000B4787C /* SignupViewController.swift */,
 				76C6C70020F5433700D146E1 /* CreateSolutionPopupViewController.swift */,
 				761348BD21077E670009CE0D /* SolutionReplyViewController.swift */,
+				76D0D624210A465700F75358 /* FilterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -532,6 +541,7 @@
 				E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */,
 				76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */,
 				761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */,
+				76D0D627210A497000F75358 /* SortingOptionsCell.swift in Sources */,
 				E32C60CB20FD87A300B4787C /* Post.swift in Sources */,
 				E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */,
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
@@ -550,6 +560,8 @@
 				E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */,
 				76C3BBF320F3EE1900938B46 /* RewardsCollectionViewCell.swift in Sources */,
 				E3449B2B20E2BB8B009CD696 /* AppDelegate.swift in Sources */,
+				76D0D629210A498700F75358 /* FilterPickerCell.swift in Sources */,
+				76D0D625210A465700F75358 /* FilterViewController.swift in Sources */,
 				76CC989620F1460100E25E2B /* DetailedPostTableViewCell.swift in Sources */,
 				E3B095B220E6D8D4004DB9D0 /* FirebaseAPI.swift in Sources */,
 				76CC989420F1450900E25E2B /* PostTableViewCell.swift in Sources */,
