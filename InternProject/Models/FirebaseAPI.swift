@@ -164,8 +164,13 @@ class FirebaseAPI: NSObject {
     
     func save(reply: String, postUID: String, solutionUID: String) {
         // postUID/solutions(user uid)/replies
-        if let currentUser = self.currentUser {
-            self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies\(currentUser.uid)").setValue(reply)
+        if let currentUser = self.currentUser, let username = currentUser.displayName {
+            let replyDict = [
+                "username": username,
+                "userUID": currentUser.uid,
+                "replyText": reply
+            ]
+            self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies/\(currentUser.uid)").setValue(replyDict)
         }
     }
     
@@ -197,7 +202,6 @@ class FirebaseAPI: NSObject {
     func getSolutions(postUID: String, completion: @escaping ([Solution]) -> Void) {
         self.ref.child("posts/\(postUID)/solutions").observe(DataEventType.value, with: { (snapshot) in
             let solutionsDict = snapshot.value as? [String : AnyObject] ?? [:]
-            print(solutionsDict)
             var solutions = [Solution]()
             // Convert solutionsDict to [Solution]
             for solutionsDictKey in solutionsDict {
@@ -209,7 +213,6 @@ class FirebaseAPI: NSObject {
                 let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, score: score)
                 solutions.append(solution)
             }
-            print(solutions)
             completion(solutions)
         })
     }
@@ -247,6 +250,23 @@ class FirebaseAPI: NSObject {
             
             completion(users)
         })
+    }
+    
+    func getSolutionReplies(postUID: String, solutionUID: String, completion: @escaping ([Reply]) -> Void) {
+        self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies").observe(DataEventType.value, with: { (snapshot) in
+            let responseDict = snapshot.value as? [String: AnyObject] ?? [:]
+            var replies = [Reply]()
+            for repliesDictKey in responseDict {
+                let username = responseDict[repliesDictKey.key]?["username"] as? String ?? ""
+                let userUID = responseDict[repliesDictKey.key]?["userUID"] as? String ?? ""
+                let replyText = responseDict[repliesDictKey.key]?["replyText"] as? String ?? ""
+                let reply = Reply(username: username, userUID: userUID, replyText: replyText)
+                replies.append(reply)
+            }
+            completion(replies)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func getUserVoteHistory(postUID: String, ownerUID: String, completion: @escaping (Int) -> Void) {

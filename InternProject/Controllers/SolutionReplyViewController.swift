@@ -11,9 +11,20 @@ import UIKit
 class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var replyTextField: UITextField!
+    @IBOutlet weak var repliesTableView: UITableView!
+    
+    var postUID: String!
+    var solutionUID: String!
+    var replies = [Reply]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseAPI.shared.getSolutionReplies(postUID: postUID, solutionUID: solutionUID) { (replies) in
+            DispatchQueue.main.async {
+                self.replies = replies
+                self.repliesTableView.reloadData()
+            }
+        }
     }
     
     @IBAction func closeBtn(_ sender: Any) {
@@ -22,7 +33,8 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBAction func replyButtonPressed(_ sender: UIButton) {
         if let replyText = replyTextField.text, !replyText.isEmpty {
-            
+            FirebaseAPI.shared.save(reply: replyText, postUID: postUID, solutionUID: solutionUID)
+            self.performSegueToReturnBack()
         }
     }
     
@@ -33,11 +45,15 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //dumby variable making sure it works
-        return 3
+        return replies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let replyCell = tableView.dequeueReusableCell(withIdentifier: "replyCell", for: indexPath)
+        if let replyCell = replyCell as? SolutionReplyCell {
+            replyCell.usernameLbl.text = replies[indexPath.row].username
+            replyCell.replyDescripText.text = replies[indexPath.row].replyText
+        }
         
         return replyCell
     }

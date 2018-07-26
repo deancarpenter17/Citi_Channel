@@ -104,6 +104,22 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
                 createSolutionVC.postUID = postUID
             }
         }
+        
+        if segue.identifier == "SolutionReplySegue" {
+            if let sender = sender as? UIButton {
+                if let solutionReplyVC = segue.destination as? SolutionReplyViewController {
+                    guard let cell = sender.superview?.superview as? DetailedPostTableViewCell else {
+                        print("Error! DetailedPostViewController:prepareForSegue.  Cannot cast sender to DetailedPostTableViewCell!")
+                        return // or fatalError() or whatever
+                    }
+                    
+                    if let indexPath = self.solutionTblView.indexPath(for: cell), let postUID = postUID {
+                        solutionReplyVC.solutionUID = self.solutions[indexPath.row].ownerUID
+                        solutionReplyVC.postUID = postUID
+                    }
+                }
+            }
+        }
     }
     
     fileprivate func setupViews() {

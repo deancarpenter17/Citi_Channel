@@ -26,6 +26,7 @@
 		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E310856B21065A2F004C008E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310856A21065A2F004C008E /* Constants.swift */; };
 		E32AF3782108C3CB009871D6 /* UserNF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF3772108C3CB009871D6 /* UserNF.swift */; };
+		E32AF37C210A6071009871D6 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF37B210A6071009871D6 /* Reply.swift */; };
 		E32C60B920F1589D00B4787C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60B820F1589D00B4787C /* ProfileViewController.swift */; };
 		E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60BC20F45E9300B4787C /* LoginViewController.swift */; };
 		E32C60BF20F45EB000B4787C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60BE20F45EB000B4787C /* SignupViewController.swift */; };
@@ -90,6 +91,7 @@
 		E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTagsViewController.swift; sourceTree = "<group>"; };
 		E310856A21065A2F004C008E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E32AF3772108C3CB009871D6 /* UserNF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNF.swift; sourceTree = "<group>"; };
+		E32AF37B210A6071009871D6 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		E32C60B820F1589D00B4787C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E32C60BC20F45E9300B4787C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E32C60BE20F45EB000B4787C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				E32C60CC20FF9A5400B4787C /* Solution.swift */,
 				E310856A21065A2F004C008E /* Constants.swift */,
 				E32AF3772108C3CB009871D6 /* UserNF.swift */,
+				E32AF37B210A6071009871D6 /* Reply.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				76CC989A20F1496F00E25E2B /* CreatePostPopupViewController.swift in Sources */,
 				E32C60C920F9400E00B4787C /* ViewControllerExtensions.swift in Sources */,
 				76CC989D20F149C500E25E2B /* LogoExtention.swift in Sources */,
+				E32AF37C210A6071009871D6 /* Reply.swift in Sources */,
 				7615739721090BF3002BC51F /* sectionHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
