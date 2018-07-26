@@ -19,6 +19,8 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        replyTableView.estimatedRowHeight = 100
+        replyTableView.rowHeight = UITableViewAutomaticDimension
         FirebaseAPI.shared.getSolutionReplies(postUID: postUID, solutionUID: solutionUID) { (replies) in
             DispatchQueue.main.async {
                 self.replies = replies
@@ -46,6 +48,10 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //dumby variable making sure it works
         return replies.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

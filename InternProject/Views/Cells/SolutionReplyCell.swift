@@ -11,6 +11,6 @@ import UIKit
 
 class SolutionReplyCell: UITableViewCell{
     
-    @IBOutlet weak var replyDescripText: UITextView!
+    @IBOutlet weak var replyDescripLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
 }
