@@ -1323,24 +1323,35 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="276" height="124.66666666666667"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVC-7f-Lk6">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVC-7f-Lk6">
                                                                         <rect key="frame" x="15" y="11" width="246" height="21"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="60n-CK-91y"/>
+                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu." translatesAutoresizingMaskIntoConstraints="NO" id="Uxi-m8-68T">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugZ-UQ-H4r">
                                                                         <rect key="frame" x="15" y="40" width="246" height="74"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                    </textView>
+                                                                        <string key="text">Label faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfj</string>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="bVC-7f-Lk6" firstAttribute="top" secondItem="dxn-Ge-I9p" secondAttribute="top" constant="11" id="AAW-D7-CYg"/>
+                                                                    <constraint firstItem="bVC-7f-Lk6" firstAttribute="leading" secondItem="dxn-Ge-I9p" secondAttribute="leading" constant="15" id="MUv-mz-dNB"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="bVC-7f-Lk6" secondAttribute="trailing" constant="15" id="NZx-eT-q5u"/>
+                                                                    <constraint firstItem="ugZ-UQ-H4r" firstAttribute="top" secondItem="bVC-7f-Lk6" secondAttribute="bottom" constant="8" id="UL4-10-yLJ"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="ugZ-UQ-H4r" secondAttribute="bottom" constant="10.666666666666671" id="cWk-VP-Sih"/>
+                                                                    <constraint firstItem="ugZ-UQ-H4r" firstAttribute="leading" secondItem="dxn-Ge-I9p" secondAttribute="leading" constant="15" id="dQB-qO-x5g"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="ugZ-UQ-H4r" secondAttribute="trailing" constant="15" id="tyS-SV-Wfs"/>
+                                                                </constraints>
                                                             </tableViewCellContentView>
                                                             <connections>
-                                                                <outlet property="replyDescripText" destination="Uxi-m8-68T" id="Z8p-qV-XD6"/>
+                                                                <outlet property="replyDescripLbl" destination="ugZ-UQ-H4r" id="MUE-Un-j2k"/>
                                                                 <outlet property="usernameLbl" destination="bVC-7f-Lk6" id="9oy-pZ-urz"/>
                                                             </connections>
                                                         </tableViewCell>
@@ -1353,6 +1364,7 @@
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wf4-uu-aSe">
                                                     <rect key="frame" x="8" y="457" width="276" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -1390,6 +1402,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="igc-Vx-Xj9"/>
                     </view>
+                    <connections>
+                        <outlet property="replyTableView" destination="1Nu-eq-Aml" id="unA-4O-sWk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYv-Mp-RhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
