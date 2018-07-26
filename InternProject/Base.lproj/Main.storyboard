@@ -1026,7 +1026,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="D8D-2o-h1k">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="KZi-tr-KEi"/>
                                     <constraint firstAttribute="height" constant="735" id="xI9-WF-Lu8"/>
@@ -1099,7 +1099,6 @@
                                                     <rect key="frame" x="15" y="40" width="269" height="149"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="269" id="5DI-i2-M1c"/>
-                                                        <constraint firstAttribute="height" constant="149" id="JYa-QA-A2C"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -1152,6 +1151,7 @@
                                                 <constraint firstItem="4eE-v0-9By" firstAttribute="leading" secondItem="5E6-tm-x0B" secondAttribute="trailing" constant="48" id="yr8-er-au3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="answerDescriptionLbl" destination="5E6-tm-x0B" id="OPu-5A-xT9"/>
                                             <outlet property="answerNameLbl" destination="57k-ef-bqM" id="51g-eS-N5A"/>
@@ -1180,7 +1180,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z31-37-aMU" firstAttribute="top" secondItem="D8D-2o-h1k" secondAttribute="bottom" constant="-2" id="Ecp-HL-QOH"/>
                             <constraint firstItem="D8D-2o-h1k" firstAttribute="top" secondItem="eib-1c-vAS" secondAttribute="top" id="W5R-Ki-a6i"/>
