@@ -134,6 +134,7 @@ class FirebaseAPI: NSObject {
             "postDescription": post.description,
             "postTags": tagsToStringsArray(tagArray: post.tags),
             "postTitle": post.title,
+            "timestamp": ServerValue.timestamp()
             ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
         
@@ -150,6 +151,7 @@ class FirebaseAPI: NSObject {
             "solution": solution,
             "ownerName": username,
             "ownerUID": userUID,
+            "timestamp": ServerValue.timestamp(),
             "score": ScoreConstants.InitialSolutionUpvotes
         ]
         
@@ -168,8 +170,9 @@ class FirebaseAPI: NSObject {
             let replyDict = [
                 "username": username,
                 "userUID": currentUser.uid,
-                "replyText": reply
-            ]
+                "replyText": reply,
+                "timestamp": ServerValue.timestamp()
+                ] as [String : Any]
             self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies/\(currentUser.uid)").setValue(replyDict)
         }
     }
@@ -182,17 +185,21 @@ class FirebaseAPI: NSObject {
             // Convert postsDict to [Post]
             for postsDictKey in postsDict {
                 let postUID = postsDictKey.key as String
-                let ownerName = postsDict[postsDictKey.key]!["ownerName"] as? String ?? ""
-                let ownerUID = postsDict[postsDictKey.key]!["ownerUID"] as? String ?? ""
-                let postDescription = postsDict[postsDictKey.key]!["postDescription"] as? String ?? ""
-                let postTagsStrings = postsDict[postsDictKey.key]!["postTags"] as? [String] ?? []
+                let ownerName = postsDict[postsDictKey.key]?["ownerName"] as? String ?? ""
+                let ownerUID = postsDict[postsDictKey.key]?["ownerUID"] as? String ?? ""
+                let postDescription = postsDict[postsDictKey.key]?["postDescription"] as? String ?? ""
+                let postTagsStrings = postsDict[postsDictKey.key]?["postTags"] as? [String] ?? []
+                var postDate = Date()
+                if let t = postsDict[postsDictKey.key]?["timestamp"] as? TimeInterval {
+                    postDate = Date(timeIntervalSince1970: t/1000)
+                }
                 // Convert [String] to [Post]
                 var postTags = [Tag]()
                 for tag in postTagsStrings {
                     postTags.append(Tag(name: tag))
                 }
-                let postTitle = postsDict[postsDictKey.key]!["postTitle"] as? String ?? ""
-                let post = Post(ownerUID: ownerUID, ownerName: ownerName, description: postDescription, tags: postTags, title: postTitle, postUID: postUID)
+                let postTitle = postsDict[postsDictKey.key]?["postTitle"] as? String ?? ""
+                let post = Post(ownerUID: ownerUID, ownerName: ownerName, description: postDescription, tags: postTags, title: postTitle, postUID: postUID, postDate: postDate)
                 posts.append(post)
             }
             completion(posts)
@@ -209,12 +216,36 @@ class FirebaseAPI: NSObject {
                 let ownerUID = solutionsDict[solutionsDictKey.key]?["ownerUID"] as? String ?? ""
                 let solutionText = solutionsDict[solutionsDictKey.key]?["solution"] as? String ?? ""
                 let score = solutionsDict[solutionsDictKey.key]?["score"] as? Int ?? 1
-                
-                let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, score: score)
+                var solutionDate = Date()
+                if let t = solutionsDict[solutionsDictKey.key]?["timestamp"] as? TimeInterval {
+                    solutionDate = Date(timeIntervalSince1970: t/1000)
+                }
+                let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, score: score, solutionDate: solutionDate)
                 solutions.append(solution)
             }
             completion(solutions)
         })
+    }
+    
+    func getSolutionReplies(postUID: String, solutionUID: String, completion: @escaping ([Reply]) -> Void) {
+        self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies").observe(DataEventType.value, with: { (snapshot) in
+            let responseDict = snapshot.value as? [String: AnyObject] ?? [:]
+            var replies = [Reply]()
+            for repliesDictKey in responseDict {
+                let username = responseDict[repliesDictKey.key]?["username"] as? String ?? ""
+                let userUID = responseDict[repliesDictKey.key]?["userUID"] as? String ?? ""
+                let replyText = responseDict[repliesDictKey.key]?["replyText"] as? String ?? ""
+                var solutionReplyDate = Date()
+                if let t = responseDict[repliesDictKey.key]?["timestamp"] as? TimeInterval {
+                    solutionReplyDate = Date(timeIntervalSince1970: t/1000)
+                }
+                let reply = Reply(username: username, userUID: userUID, replyText: replyText, replyDate: solutionReplyDate)
+                replies.append(reply)
+            }
+            completion(replies)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func getTags(completion: @escaping ([Tag]) -> Void) {
@@ -252,23 +283,6 @@ class FirebaseAPI: NSObject {
         })
     }
     
-    func getSolutionReplies(postUID: String, solutionUID: String, completion: @escaping ([Reply]) -> Void) {
-        self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies").observe(DataEventType.value, with: { (snapshot) in
-            let responseDict = snapshot.value as? [String: AnyObject] ?? [:]
-            var replies = [Reply]()
-            for repliesDictKey in responseDict {
-                let username = responseDict[repliesDictKey.key]?["username"] as? String ?? ""
-                let userUID = responseDict[repliesDictKey.key]?["userUID"] as? String ?? ""
-                let replyText = responseDict[repliesDictKey.key]?["replyText"] as? String ?? ""
-                let reply = Reply(username: username, userUID: userUID, replyText: replyText)
-                replies.append(reply)
-            }
-            completion(replies)
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
     func getUserVoteHistory(postUID: String, ownerUID: String, completion: @escaping (Int) -> Void) {
         if let currentUserName = self.currentUser?.displayName {
             ref.child("/posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -301,6 +315,10 @@ class FirebaseAPI: NSObject {
         }) { (error) in
             print(error.localizedDescription)
         }
+    }
+    
+    func getTimestamp() -> [AnyHashable : Any] {
+        return ServerValue.timestamp()
     }
     
     // MARK: - Update
@@ -394,5 +412,4 @@ class FirebaseAPI: NSObject {
                 }
             })
     }
-    
 }

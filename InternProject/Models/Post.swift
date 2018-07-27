@@ -15,4 +15,5 @@ struct Post {
     var tags: [Tag]
     var title: String
     var postUID: String
+    var postDate: Date
 }

@@ -12,4 +12,5 @@ struct Reply {
     var username: String
     var userUID: String
     var replyText: String
+    var replyDate: Date
 }

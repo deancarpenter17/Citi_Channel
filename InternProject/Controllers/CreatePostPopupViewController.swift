@@ -51,7 +51,7 @@ class CreatePostPopupViewController: UIViewController {
         if !textFieldsEmpty() {
             if let user = FirebaseAPI.shared.currentUser {
                 let uid = UUID().uuidString
-                post = Post(ownerUID: user.uid, ownerName: user.displayName!, description: userPostDescrip.text, tags: [Tag(name: userPostTags.text!)], title: userPostTitle.text!, postUID: uid)
+                post = Post(ownerUID: user.uid, ownerName: user.displayName!, description: userPostDescrip.text, tags: [Tag(name: userPostTags.text!)], title: userPostTitle.text!, postUID: uid, postDate: Date())
                 FirebaseAPI.shared.save(post: post!)
                 
                 // Once they click submit, let's pop back to the HomeViewController

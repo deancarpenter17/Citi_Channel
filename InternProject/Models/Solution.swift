@@ -13,4 +13,5 @@ struct Solution {
     var username: String
     var ownerUID: String
     var score: Int
+    var solutionDate: Date
 }
