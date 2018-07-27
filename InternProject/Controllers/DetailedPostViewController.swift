@@ -78,6 +78,12 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
                     print("Users vote history: \(score)")
                 }
             }
+            FirebaseAPI.shared.getSolutionReplies(postUID: postUID, solutionUID: solutions[indexPath.row].ownerUID) { (replies) in
+                DispatchQueue.main.async {
+                    let replyString = replies.count == 1 ? "Reply ➡︎" : "Replies ➡︎"
+                    solutionCell.repliesLbl.setTitle("\(replies.count.description) \(replyString)", for: .normal)
+                }
+            }
         } else {
             print("Error! Can't get post UID!!")
         }
