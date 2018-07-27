@@ -11,13 +11,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Ubuntu-B.ttf">
+        <array key="Ubuntu-Bold.ttf">
             <string>Ubuntu-Bold</string>
         </array>
-        <array key="Ubuntu-L.ttf">
+        <array key="Ubuntu-Light.ttf">
             <string>Ubuntu-Light</string>
         </array>
-        <array key="Ubuntu-R-hinting.ttf">
+        <array key="Ubuntu-Regular.ttf">
             <string>Ubuntu</string>
         </array>
     </customFonts>
@@ -34,18 +34,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overflow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FB-f0-jC4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CodeLab" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FB-f0-jC4">
                                 <rect key="frame" x="31" y="399" width="312" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="45"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="0.0" height="3"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-PM-F7p" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
-                                <rect key="frame" x="66" y="588" width="107" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-PM-F7p" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
+                                <rect key="frame" x="45" y="524" width="284" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Sign Up">
+                                <state key="normal" image="CreateAccountBtn">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -59,11 +60,10 @@
                                 <rect key="frame" x="31" y="124" width="312" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-VL-UVv" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
-                                <rect key="frame" x="219" y="588" width="107" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-VL-UVv" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
+                                <rect key="frame" x="45" y="588" width="284" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" image="LoginBtn">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -103,14 +103,13 @@
                                             <constraint firstAttribute="height" constant="219" id="dqm-tL-faU"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k86-bA-B0R" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
-                                        <rect key="frame" x="118" y="555" width="138" height="41"/>
-                                        <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k86-bA-B0R" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="555" width="260" height="51"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="LrZ-4P-MJW"/>
-                                            <constraint firstAttribute="width" constant="138" id="oZe-Bw-Vz0"/>
+                                            <constraint firstAttribute="height" constant="51" id="LrZ-4P-MJW"/>
+                                            <constraint firstAttribute="width" constant="260" id="oZe-Bw-Vz0"/>
                                         </constraints>
-                                        <state key="normal" title="Sign up">
+                                        <state key="normal" image="CreateAccountBtn">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -128,7 +127,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -150,7 +149,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="username"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -172,7 +171,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -193,7 +192,7 @@
                                     <constraint firstItem="f7i-WF-fzZ" firstAttribute="leading" secondItem="NSQ-Zk-eaQ" secondAttribute="leading" id="DyH-zl-giC"/>
                                     <constraint firstItem="yTc-oi-Km3" firstAttribute="top" secondItem="wY7-mE-anp" secondAttribute="top" constant="37" id="HZa-IR-Vi9"/>
                                     <constraint firstItem="f7i-WF-fzZ" firstAttribute="top" secondItem="wY7-mE-anp" secondAttribute="top" constant="358" id="IPh-Hc-jab"/>
-                                    <constraint firstAttribute="bottom" secondItem="k86-bA-B0R" secondAttribute="bottom" constant="128" id="OuN-tu-gMa"/>
+                                    <constraint firstAttribute="bottom" secondItem="k86-bA-B0R" secondAttribute="bottom" constant="118" id="OuN-tu-gMa"/>
                                     <constraint firstItem="dEs-aC-B6P" firstAttribute="top" secondItem="NSQ-Zk-eaQ" secondAttribute="bottom" constant="8" symbolic="YES" id="P64-jz-yzP"/>
                                     <constraint firstItem="f7i-WF-fzZ" firstAttribute="trailing" secondItem="NSQ-Zk-eaQ" secondAttribute="trailing" id="Q3T-AY-KSh"/>
                                     <constraint firstItem="f7i-WF-fzZ" firstAttribute="leading" secondItem="wY7-mE-anp" secondAttribute="leading" constant="57" id="YbO-Br-fAd"/>
@@ -260,27 +259,26 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srf-O5-PZL">
-                                        <rect key="frame" x="67" y="498" width="99" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="67" y="498" width="95" height="26"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="12"/>
                                         <state key="normal" title="Forgot Username">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-eY-Y2B">
-                                        <rect key="frame" x="213" y="498" width="95" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="209" y="498" width="92" height="26"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="12"/>
                                         <state key="normal" title="Forgot Password">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd0-5v-AW2" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
-                                        <rect key="frame" x="118" y="590" width="138" height="41"/>
-                                        <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kd0-5v-AW2" customClass="RoundedLoginButton" customModule="InternProject" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="589" width="260" height="51"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="SYm-T3-Xh8"/>
-                                            <constraint firstAttribute="width" constant="138" id="ucV-G2-awj"/>
+                                            <constraint firstAttribute="height" constant="51" id="SYm-T3-Xh8"/>
+                                            <constraint firstAttribute="width" constant="260" id="ucV-G2-awj"/>
                                         </constraints>
-                                        <state key="normal" title="Login">
+                                        <state key="normal" image="LoginBtn">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -299,7 +297,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -321,7 +319,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.1215686275" green="0.3294117647" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
@@ -346,7 +344,7 @@
                                     <constraint firstItem="ipE-cR-RJ7" firstAttribute="centerX" secondItem="kd0-5v-AW2" secondAttribute="centerX" id="LON-wE-UrC"/>
                                     <constraint firstAttribute="trailing" secondItem="iZI-8b-rtk" secondAttribute="trailing" constant="32" id="P0p-ke-IMZ"/>
                                     <constraint firstItem="kd0-5v-AW2" firstAttribute="top" secondItem="Srf-O5-PZL" secondAttribute="bottom" constant="65" id="P11-dB-YTI"/>
-                                    <constraint firstAttribute="bottom" secondItem="kd0-5v-AW2" secondAttribute="bottom" constant="93" id="RVg-pR-cDT"/>
+                                    <constraint firstAttribute="bottom" secondItem="kd0-5v-AW2" secondAttribute="bottom" constant="84" id="RVg-pR-cDT"/>
                                     <constraint firstItem="ipE-cR-RJ7" firstAttribute="top" secondItem="mAu-TZ-P27" secondAttribute="bottom" constant="3" id="Rre-S9-th0"/>
                                     <constraint firstItem="iZI-8b-rtk" firstAttribute="centerX" secondItem="mAu-TZ-P27" secondAttribute="centerX" id="Ywi-1j-0Ug"/>
                                     <constraint firstItem="Srf-O5-PZL" firstAttribute="top" secondItem="ipE-cR-RJ7" secondAttribute="bottom" constant="46" id="cTY-5c-39e"/>
@@ -520,6 +518,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="19"/>
                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -628,10 +627,10 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3D-Iy-6EZ">
-                                            <rect key="frame" x="144" y="710" width="86" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3D-Iy-6EZ">
+                                            <rect key="frame" x="60" y="707" width="254" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Save"/>
+                                            <state key="normal" image="SaveBtn"/>
                                             <connections>
                                                 <action selector="saveFilterBtn:" destination="BvU-p1-ccq" eventType="touchUpInside" id="hzK-bo-oMj"/>
                                             </connections>
@@ -938,24 +937,46 @@
                                     <constraint firstItem="I2x-DC-Xhx" firstAttribute="leading" secondItem="Lf7-np-QqC" secondAttribute="trailing" constant="8" symbolic="YES" id="zT5-Ny-GEr"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-LC-Q1J">
-                                <rect key="frame" x="18" y="268" width="339" height="35"/>
-                                <state key="normal" title="My Tags" backgroundImage="MyTagsBtn-1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td7-LC-Q1J">
+                                <rect key="frame" x="18" y="267" width="339" height="35"/>
+                                <state key="normal" image="MyTagsBtn-2">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="myTagsBtnClicked:" destination="YiU-aK-H1H" eventType="touchUpInside" id="gOR-3v-D1S"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omg-Wk-One">
+                                <rect key="frame" x="18" y="311" width="339" height="35"/>
+                                <state key="normal" image="My Rewards"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sx-DS-VQE">
+                                <rect key="frame" x="18" y="356" width="339" height="35"/>
+                                <state key="normal" image="Related Post"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvv-ds-ZRn">
+                                <rect key="frame" x="18" y="401" width="339" height="35"/>
+                                <state key="normal" image="Change Password"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Omg-Wk-One" firstAttribute="leading" secondItem="oiv-Fs-djI" secondAttribute="leading" constant="18" id="1ou-LY-8A0"/>
                             <constraint firstItem="oiv-Fs-djI" firstAttribute="trailing" secondItem="Sgy-ui-TJV" secondAttribute="trailing" constant="18" id="Eam-8z-5Px"/>
+                            <constraint firstItem="oiv-Fs-djI" firstAttribute="trailing" secondItem="Omg-Wk-One" secondAttribute="trailing" constant="18" id="FCM-m2-sqk"/>
                             <constraint firstItem="oiv-Fs-djI" firstAttribute="trailing" secondItem="Td7-LC-Q1J" secondAttribute="trailing" constant="18" id="H3z-UF-oe0"/>
-                            <constraint firstItem="Td7-LC-Q1J" firstAttribute="top" secondItem="Sgy-ui-TJV" secondAttribute="bottom" constant="31" id="H5P-Wx-eOZ"/>
+                            <constraint firstItem="Td7-LC-Q1J" firstAttribute="top" secondItem="Sgy-ui-TJV" secondAttribute="bottom" constant="30" id="H5P-Wx-eOZ"/>
+                            <constraint firstItem="Yvv-ds-ZRn" firstAttribute="leading" secondItem="oiv-Fs-djI" secondAttribute="leading" constant="18" id="NfF-dS-EOt"/>
                             <constraint firstItem="Sgy-ui-TJV" firstAttribute="leading" secondItem="oiv-Fs-djI" secondAttribute="leading" constant="18" id="Q4U-Eg-3qo"/>
+                            <constraint firstItem="oiv-Fs-djI" firstAttribute="trailing" secondItem="Yvv-ds-ZRn" secondAttribute="trailing" constant="18" id="Qee-2X-KTs"/>
                             <constraint firstItem="Td7-LC-Q1J" firstAttribute="leading" secondItem="oiv-Fs-djI" secondAttribute="leading" constant="18" id="aAb-py-dGN"/>
+                            <constraint firstItem="3sx-DS-VQE" firstAttribute="top" secondItem="Omg-Wk-One" secondAttribute="bottom" constant="10" id="flF-X9-4aK"/>
                             <constraint firstItem="Sgy-ui-TJV" firstAttribute="top" secondItem="oiv-Fs-djI" secondAttribute="top" constant="20" id="gJg-NM-h9e"/>
+                            <constraint firstItem="3sx-DS-VQE" firstAttribute="leading" secondItem="oiv-Fs-djI" secondAttribute="leading" constant="18" id="k5r-Yp-b2B"/>
+                            <constraint firstItem="oiv-Fs-djI" firstAttribute="bottom" secondItem="Yvv-ds-ZRn" secondAttribute="bottom" constant="293" id="pN3-Fk-tmc"/>
+                            <constraint firstItem="oiv-Fs-djI" firstAttribute="trailing" secondItem="3sx-DS-VQE" secondAttribute="trailing" constant="18" id="uUE-3p-Rah"/>
+                            <constraint firstItem="Omg-Wk-One" firstAttribute="top" secondItem="Td7-LC-Q1J" secondAttribute="bottom" constant="9" id="uxf-qw-Zwn"/>
+                            <constraint firstItem="Yvv-ds-ZRn" firstAttribute="top" secondItem="3sx-DS-VQE" secondAttribute="bottom" constant="10" id="voS-dT-oVp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oiv-Fs-djI"/>
                     </view>
@@ -1059,14 +1080,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yz7-lP-AD3">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yz7-lP-AD3">
                                                             <rect key="frame" x="17" y="546" width="265" height="48"/>
-                                                            <color key="backgroundColor" red="0.066666666666666666" green="0.44313725490196076" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="peC-fY-xF3"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="21"/>
-                                                            <state key="normal" title="Submit">
+                                                            <state key="normal" image="SubmitBtn">
                                                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
@@ -1385,12 +1404,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-0y-EMY">
-                                                    <rect key="frame" x="13" y="505" width="265" height="48"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-0y-EMY">
+                                                    <rect key="frame" x="19" y="511" width="254" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.066666666666666666" green="0.44313725490196076" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="21"/>
-                                                    <state key="normal" title="Submit">
+                                                    <state key="normal" image="SubmitBtn">
                                                         <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -1506,18 +1523,17 @@
                                                         </tableView>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wf4-uu-aSe">
                                                             <rect key="frame" x="8" y="457" width="276" height="30"/>
-                                                            <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.098779965750000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-Lv-LIx">
-                                                            <rect key="frame" x="14" y="495" width="265" height="48"/>
-                                                            <color key="backgroundColor" red="0.066666666669999999" green="0.4431372549" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-Lv-LIx">
+                                                            <rect key="frame" x="8" y="495" width="276" height="48"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="kIG-yW-Bfh"/>
                                                             </constraints>
-                                                            <state key="normal" title="Reply">
+                                                            <state key="normal" image="ReplyBtn">
                                                                 <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
@@ -1530,7 +1546,7 @@
                                                         <constraint firstItem="qxI-Lv-LIx" firstAttribute="top" secondItem="Wf4-uu-aSe" secondAttribute="bottom" constant="8" symbolic="YES" id="0we-0p-w8Q"/>
                                                         <constraint firstItem="1Nu-eq-Aml" firstAttribute="top" secondItem="Vzk-TD-GwB" secondAttribute="topMargin" id="1Mq-0Y-mMT"/>
                                                         <constraint firstAttribute="bottom" secondItem="kg2-cY-N8x" secondAttribute="bottom" constant="-7" id="235-cm-8rs"/>
-                                                        <constraint firstItem="qxI-Lv-LIx" firstAttribute="leading" secondItem="Vzk-TD-GwB" secondAttribute="leading" constant="14" id="3dG-kx-vRa"/>
+                                                        <constraint firstItem="qxI-Lv-LIx" firstAttribute="leading" secondItem="Vzk-TD-GwB" secondAttribute="leading" constant="8" id="3dG-kx-vRa"/>
                                                         <constraint firstAttribute="bottom" secondItem="qxI-Lv-LIx" secondAttribute="bottom" constant="23" id="8Ub-79-Xzn"/>
                                                         <constraint firstItem="Wf4-uu-aSe" firstAttribute="centerX" secondItem="qxI-Lv-LIx" secondAttribute="centerX" id="Ed2-mp-Vfd"/>
                                                         <constraint firstItem="1Nu-eq-Aml" firstAttribute="leading" secondItem="Wf4-uu-aSe" secondAttribute="leading" id="Ie5-bA-t4E"/>
@@ -1927,15 +1943,23 @@
     </scenes>
     <resources>
         <image name="AnswerBtn-1" width="359" height="36"/>
+        <image name="Change Password" width="339" height="35"/>
         <image name="CloseBtn" width="34" height="34"/>
+        <image name="CreateAccountBtn" width="284" height="56"/>
         <image name="Default Img" width="100" height="95"/>
         <image name="Filter Button" width="40" height="29"/>
         <image name="Group 2" width="26" height="24"/>
+        <image name="LoginBtn" width="284" height="56"/>
         <image name="Logo Enhanced" width="305" height="231"/>
-        <image name="MyTagsBtn-1" width="339" height="35"/>
+        <image name="My Rewards" width="339" height="35"/>
+        <image name="MyTagsBtn-2" width="339" height="35"/>
         <image name="Profile Icon" width="26" height="24"/>
         <image name="Rectangle 6" width="317" height="578"/>
+        <image name="Related Post" width="339" height="35"/>
+        <image name="ReplyBtn" width="254" height="37"/>
         <image name="RewardsIcon" width="25" height="23"/>
+        <image name="SaveBtn" width="254" height="37"/>
+        <image name="SubmitBtn" width="254" height="37"/>
         <image name="Thumb Down" width="31" height="29"/>
         <image name="Thumb Up" width="31" height="29"/>
         <image name="gradientBackground" width="375" height="812"/>
