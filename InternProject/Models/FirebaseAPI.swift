@@ -135,7 +135,7 @@ class FirebaseAPI: NSObject {
             "postTags": tagsToStringsArray(tagArray: post.tags),
             "postTitle": post.title,
             "timestamp": ServerValue.timestamp()
-            ]
+        ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
         
         // update the user's score who created the new Post
@@ -338,12 +338,7 @@ class FirebaseAPI: NSObject {
     }
     
     func updateSolutionScore(by addedScore: Int, postUID: String, ownerUID: String) {
-        
         if let currentUserName = self.currentUser?.displayName {
-            
-            // First, record that the user has voted on this solution so they can't continue voting
-            self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").setValue(addedScore)
-            
             self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/score").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
                 if var currentScore = currentData.value as? Int {
                     currentScore += addedScore
@@ -356,6 +351,12 @@ class FirebaseAPI: NSObject {
                     print(error.localizedDescription)
                 }
             }
+        }
+    }
+    
+    func updateUsersVoteHistory(to score: Int, postUID: String, ownerUID: String) {
+        if let currentUserName = self.currentUser?.displayName {
+            self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").setValue(score)
         }
     }
     
