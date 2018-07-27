@@ -19,6 +19,9 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let footview = UIView()
+        footview.backgroundColor = UIColor.clear
+        filterTableView.tableFooterView = footview
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,5 +44,9 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return sortCell
     }
     
-
+    @IBAction func saveFilterBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

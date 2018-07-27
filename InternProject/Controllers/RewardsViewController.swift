@@ -45,6 +45,7 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
         self.navigationItem.title = "Rewards"
         
         rewardsTableView.tableFooterView = UIView()
+        
     }
 
     override func didReceiveMemoryWarning() {
