@@ -1322,6 +1322,7 @@
                                         <connections>
                                             <outlet property="answerDescriptionLbl" destination="5E6-tm-x0B" id="OPu-5A-xT9"/>
                                             <outlet property="answerNameLbl" destination="57k-ef-bqM" id="51g-eS-N5A"/>
+                                            <outlet property="repliesLbl" destination="wlf-xq-jqb" id="A1L-NS-PvB"/>
                                             <outlet property="solutionScoreLbl" destination="4eE-v0-9By" id="zXf-MF-Hq3"/>
                                             <outlet property="thumbsDownBtn" destination="oH8-qP-D03" id="kwl-20-5ii"/>
                                             <outlet property="thumbsUpBtn" destination="Rzb-w6-dZV" id="f2Y-Ts-DL9"/>
