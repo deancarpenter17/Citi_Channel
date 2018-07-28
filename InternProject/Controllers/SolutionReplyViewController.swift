@@ -25,10 +25,10 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
         registerForKeyboardNotifications()
         repliesTableView.estimatedRowHeight = 100
         repliesTableView.rowHeight = UITableViewAutomaticDimension
-        FirebaseAPI.shared.getSolutionReplies(postUID: postUID, solutionUID: solutionUID) { (replies) in
+        FirebaseAPI.shared.getSolutionReplies(postUID: postUID, solutionUID: solutionUID) { [weak self] (replies) in
             DispatchQueue.main.async {
-                self.replies = replies
-                self.repliesTableView.reloadData()
+                self?.replies = replies
+                self?.repliesTableView.reloadData()
             }
         }
         repliesTableView.tableFooterView = UIView()

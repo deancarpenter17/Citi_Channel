@@ -22,11 +22,11 @@ class ProfileViewController: UIViewController {
         // We want to update the user's statistics on the Profile Page everytime they come back to this screen
         if let currentUser = FirebaseAPI.shared.currentUser {
             nameLbl.text = currentUser.displayName
-            FirebaseAPI.shared.getUserStatistics(userUID: currentUser.uid) { (totalPoints, totalNumPosts, totalNumSolutions) in
+            FirebaseAPI.shared.getUserStatistics(userUID: currentUser.uid) { [weak self] (totalPoints, totalNumPosts, totalNumSolutions) in
                 DispatchQueue.main.async {
-                    self.numPostsLbl.text = totalNumPosts.description
-                    self.numSolutionsLbl.text = totalNumSolutions.description
-                    self.pointsLbl.text = totalPoints.description
+                    self?.numPostsLbl.text = totalNumPosts.description
+                    self?.numSolutionsLbl.text = totalNumSolutions.description
+                    self?.pointsLbl.text = totalPoints.description
                 }
             }
         }

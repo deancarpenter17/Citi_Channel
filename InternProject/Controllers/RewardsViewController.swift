@@ -19,19 +19,18 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewWillAppear(_ animated: Bool) {
         // Get the total score and all the users for the leaderboard
         if let currentUser = FirebaseAPI.shared.currentUser {
-            FirebaseAPI.shared.getUserStatistics(userUID: currentUser.uid) { (totalScore, _, _) in
+            FirebaseAPI.shared.getUserStatistics(userUID: currentUser.uid) { [weak self] (totalScore, _, _) in
                 DispatchQueue.main.async {
-                    self.scoreLabel.text = totalScore.description
+                    self?.scoreLabel.text = totalScore.description
                 }
             }
             
-            FirebaseAPI.shared.getUsers() { (users) in
+            FirebaseAPI.shared.getUsers() { [weak self] (users) in
                 DispatchQueue.main.async {
-                    self.users = users
-                    self.users = self.users.sorted(by: { (user1, user2) -> Bool in
+                    self?.users = users.sorted(by: { (user1, user2) -> Bool in
                         return user1.totalScore > user2.totalScore
                     })
-                    self.rewardsTableView.reloadData()
+                    self?.rewardsTableView.reloadData()
                 }
             }
         }

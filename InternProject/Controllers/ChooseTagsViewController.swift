@@ -21,10 +21,10 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         tagCollectionView.dataSource = self
         tagCollectionView.delegate = self
         
-        FirebaseAPI.shared.getTags() { (tags) in
+        FirebaseAPI.shared.getTags() { [weak self] (tags) in
             DispatchQueue.main.async {
-                self.tags = tags
-                self.tagCollectionView.reloadData()
+                self?.tags = tags
+                self?.tagCollectionView.reloadData()
             }
         }
         setupCollectionViewLayout()
@@ -73,8 +73,6 @@ class ChooseTagsViewController: UIViewController, UICollectionViewDataSource, UI
         }
         cell?.layer.borderWidth = 2.0
         cell?.layer.borderColor = UIColor.black.cgColor
-        // Citi red color
-        //cell?.layer.backgroundColor = UIColor(red: 219.0/255, green: 35.0/255, blue: 11.0/255, alpha: 0.95).cgColor
         return true
     }
     

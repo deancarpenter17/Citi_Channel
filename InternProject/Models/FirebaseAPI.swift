@@ -134,6 +134,7 @@ class FirebaseAPI: NSObject {
             "postDescription": post.description,
             "postTags": tagsToStringsArray(tagArray: post.tags),
             "postTitle": post.title,
+            "popularity": 0,
             "timestamp": ServerValue.timestamp()
         ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
@@ -162,6 +163,9 @@ class FirebaseAPI: NSObject {
         
         // update the user's total number of solutions
         incrementUsersSolutionCount(forUserUID: userUID)
+        
+        // update the post's popularity
+        updatePostPopularity(by: 1, for: postUID)
     }
     
     func save(reply: String, postUID: String, solutionUID: String) {
@@ -175,6 +179,9 @@ class FirebaseAPI: NSObject {
                 ] as [String : Any]
             self.ref.child("posts/\(postUID)/solutions/\(solutionUID)/replies/\(currentUser.uid)").setValue(replyDict)
         }
+        
+        // update the post's popularity
+        updatePostPopularity(by: 1, for: postUID)
     }
     
     // MARK: - Get
@@ -338,25 +345,40 @@ class FirebaseAPI: NSObject {
     }
     
     func updateSolutionScore(by addedScore: Int, postUID: String, ownerUID: String) {
-        if let currentUserName = self.currentUser?.displayName {
-            self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/score").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
-                if var currentScore = currentData.value as? Int {
-                    currentScore += addedScore
-                    currentData.value = currentScore
-                    return TransactionResult.success(withValue: currentData)
-                }
+        self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/score").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var currentScore = currentData.value as? Int {
+                currentScore += addedScore
+                currentData.value = currentScore
                 return TransactionResult.success(withValue: currentData)
-            }) { (error, committed, snapshot) in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
             }
         }
+        
     }
     
     func updateUsersVoteHistory(to score: Int, postUID: String, ownerUID: String) {
         if let currentUserName = self.currentUser?.displayName {
             self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").setValue(score)
+        }
+    }
+    
+    // This function increases a post's popularity by 1 everytime a solution or reply is created under it
+    func updatePostPopularity(by: Int, for postUID: String) {
+        self.ref.child("posts/\(postUID)/popularity").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var currentPopularity = currentData.value as? Int {
+                currentPopularity += 1
+                currentData.value = currentPopularity
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
         }
     }
     
