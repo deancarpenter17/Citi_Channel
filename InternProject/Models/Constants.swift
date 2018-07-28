@@ -22,6 +22,6 @@ struct ScoreConstants {
     static let UserPreviouslyNotVoted = 0
 }
 
-struct Algolia {
+struct AlgoliaPublicConstants {
     static let postIndex = "posts"
 }

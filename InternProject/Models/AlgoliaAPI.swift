@@ -9,15 +9,19 @@
 import Foundation
 import AlgoliaSearch
 
-class AlgoliaAPI {
+class AlgoliaAPI: NSObject {
     
-    static let shared = FirebaseAPI()
+    static let shared = AlgoliaAPI()
     
-    let client = Client(appID: PrivateConstants.Algolia.APP_ID, apiKey: PrivateConstants.Algolia.ADMIN_API_KEY)
-    let index = client.index(withName: Constants.Algolia.postIndex)
+    var client: AlgoliaSearch.Client?
+    var index: AlgoliaSearch.Index?
     
     // MARK: - initialization
     private override init() {
         super.init()
+        client = Client(appID: AlgoliaPrivateConstants.APP_ID, apiKey: AlgoliaPrivateConstants.ADMIN_API_KEY)
+        if let client = client {
+            index = client.index(withName: AlgoliaPublicConstants.postIndex)
+        }
     }
 }

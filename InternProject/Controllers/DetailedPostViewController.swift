@@ -13,10 +13,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var solutionTblView: UITableView!
     
-    var postTitle = ""
-    var postAuthor = ""
-    var postDescrip = ""
-    var postUID: String?
+    var post: Post?
     
     var solutions = [Solution]()
     
@@ -26,7 +23,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         setupViews()
         
         // Set the listener on the solutions for this particular post
-        if let postUID = postUID {
+        if let postUID = post?.postUID {
             FirebaseAPI.shared.getSolutions(postUID: postUID) { [weak self] newSolutions in
                 DispatchQueue.main.async {
                     self?.solutions = newSolutions
@@ -70,7 +67,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         solutionCell.answerNameLbl.text = solutions[indexPath.row].username
         solutionCell.score = solutions[indexPath.row].score
         solutionCell.ownerUID = solutions[indexPath.row].ownerUID
-        if let postUID = postUID {
+        if let postUID = post?.postUID {
             solutionCell.postUID = postUID
             FirebaseAPI.shared.getUserVoteHistory(postUID: postUID, ownerUID: solutions[indexPath.row].ownerUID) { (score) in
                 DispatchQueue.main.async {
@@ -94,9 +91,11 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         let cellIdentifier = "sectionHeader"
         let sectionHeaderCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? sectionHeaderView
         
-        sectionHeaderCell?.titleLabel.text = postTitle
-        sectionHeaderCell?.descriptionLbl.text = postDescrip
-        sectionHeaderCell?.authorLbl.text = "By: \(postAuthor)"
+        if let post = post {
+            sectionHeaderCell?.titleLabel.text = post.title
+            sectionHeaderCell?.descriptionLbl.text = post.description
+            sectionHeaderCell?.authorLbl.text = "By: \(post.ownerName)"
+        }
         return sectionHeaderCell?.contentView
     }
     
@@ -106,7 +105,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CreateSolutionSegue" {
-            if let createSolutionVC = segue.destination as? CreateSolutionPopupViewController {
+            if let createSolutionVC = segue.destination as? CreateSolutionPopupViewController, let postUID = post?.postUID {
                 createSolutionVC.postUID = postUID
             }
         }
@@ -119,7 +118,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
                         return // or fatalError() or whatever
                     }
                     
-                    if let indexPath = self.solutionTblView.indexPath(for: cell), let postUID = postUID {
+                    if let indexPath = self.solutionTblView.indexPath(for: cell), let postUID = post?.postUID {
                         solutionReplyVC.solutionUID = self.solutions[indexPath.row].ownerUID
                         solutionReplyVC.postUID = postUID
                     }

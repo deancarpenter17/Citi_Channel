@@ -74,7 +74,7 @@ class FirebaseAPI: NSObject {
                             let userToSave = [
                                 "username": username,
                                 "email": email,
-                                "uid": user.uid,
+                                "UID": user.uid,
                                 "totalScore": 0,
                                 "totalNumSolutions": 0,
                                 "totalNumPosts": 0
@@ -135,7 +135,8 @@ class FirebaseAPI: NSObject {
             "postTags": tagsToStringsArray(tagArray: post.tags),
             "postTitle": post.title,
             "popularity": 0,
-            "timestamp": ServerValue.timestamp()
+            "timestamp": ServerValue.timestamp(),
+            "postUID": post.postUID
         ]
         self.ref.child("posts/\(post.postUID)").setValue(postDict)
         
