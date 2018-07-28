@@ -1,4 +1,5 @@
 PODS:
+  - AlgoliaSearch-Client-Swift (5.1.7)
   - Firebase/Auth (5.3.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.1)
@@ -38,6 +39,7 @@ PODS:
   - SearchTextField (1.2.1)
 
 DEPENDENCIES:
+  - AlgoliaSearch-Client-Swift
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -45,6 +47,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AlgoliaSearch-Client-Swift
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -58,6 +61,7 @@ SPEC REPOS:
     - SearchTextField
 
 SPEC CHECKSUMS:
+  AlgoliaSearch-Client-Swift: 13f8abe012615ed3ccc35dc61ce0401a191be0ff
   Firebase: 68afeeb05461db02d7c9e3215cda28068670f4aa
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
   FirebaseAuth: 463b8ce33bd5d05f706dcd4615499e3212b4132b
@@ -70,6 +74,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SearchTextField: 261b0febd49194492f29555fff3c5c0019ca84d2
 
-PODFILE CHECKSUM: f5322ed352bf450af2d7a3d5cd9f3abe38bd1f8c
+PODFILE CHECKSUM: 86e6a30285eaffd8eca687d271d670e747adfbce
 
 COCOAPODS: 1.5.3

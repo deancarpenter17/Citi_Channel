@@ -21,3 +21,7 @@ struct ScoreConstants {
     static let UserPreviouslyDownvoted = -1
     static let UserPreviouslyNotVoted = 0
 }
+
+struct Algolia {
+    static let postIndex = "posts"
+}

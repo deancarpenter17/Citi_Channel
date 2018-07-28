@@ -10,6 +10,7 @@ target 'InternProject' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod "SearchTextField"
+  pod 'AlgoliaSearch-Client-Swift'
 
 
   target 'InternProjectTests' do

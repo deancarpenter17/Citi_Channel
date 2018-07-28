@@ -95,5 +95,7 @@ fastlane/test_output
 # Server Details
 /instance_details
 
+# Private constants
+*PrivateConstants.swift
 
 # End of https://www.gitignore.io/api/swift,xcode

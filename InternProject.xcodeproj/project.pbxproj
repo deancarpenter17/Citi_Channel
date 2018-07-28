@@ -63,6 +63,8 @@
 		CB716A9FEBBF6C662DF826E3 /* Pods_InternProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */; };
 		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E310856B21065A2F004C008E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310856A21065A2F004C008E /* Constants.swift */; };
+		E31EAF5F210CF799007E4C5E /* AlgoliaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF5E210CF799007E4C5E /* AlgoliaAPI.swift */; };
+		E31EAF61210CF824007E4C5E /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF60210CF824007E4C5E /* PrivateConstants.swift */; };
 		E32AF3782108C3CB009871D6 /* UserNF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF3772108C3CB009871D6 /* UserNF.swift */; };
 		E32AF37C210A6071009871D6 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF37B210A6071009871D6 /* Reply.swift */; };
 		E32C60B920F1589D00B4787C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60B820F1589D00B4787C /* ProfileViewController.swift */; };
@@ -166,6 +168,8 @@
 		C87B4051FC694B738024396E /* Pods-InternProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProject/Pods-InternProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTagsViewController.swift; sourceTree = "<group>"; };
 		E310856A21065A2F004C008E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E31EAF5E210CF799007E4C5E /* AlgoliaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaAPI.swift; sourceTree = "<group>"; };
+		E31EAF60210CF824007E4C5E /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		E32AF3772108C3CB009871D6 /* UserNF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNF.swift; sourceTree = "<group>"; };
 		E32AF37B210A6071009871D6 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		E32C60B820F1589D00B4787C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -335,12 +339,14 @@
 			isa = PBXGroup;
 			children = (
 				E3B095B120E6D8D4004DB9D0 /* FirebaseAPI.swift */,
+				E31EAF5E210CF799007E4C5E /* AlgoliaAPI.swift */,
 				E375230F20E993000017691A /* Tag.swift */,
 				E32C60CA20FD87A300B4787C /* Post.swift */,
 				E32C60CC20FF9A5400B4787C /* Solution.swift */,
 				E310856A21065A2F004C008E /* Constants.swift */,
 				E32AF3772108C3CB009871D6 /* UserNF.swift */,
 				E32AF37B210A6071009871D6 /* Reply.swift */,
+				E31EAF60210CF824007E4C5E /* PrivateConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-InternProject/Pods-InternProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AlgoliaSearch-Client-Swift/AlgoliaSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
@@ -633,6 +640,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlgoliaSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
@@ -688,9 +696,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32C60CD20FF9A5400B4787C /* Solution.swift in Sources */,
+				E31EAF61210CF824007E4C5E /* PrivateConstants.swift in Sources */,
 				E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */,
 				E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */,
 				76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */,
+				E31EAF5F210CF799007E4C5E /* AlgoliaAPI.swift in Sources */,
 				761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */,
 				76D0D627210A497000F75358 /* SortingOptionsCell.swift in Sources */,
 				E32C60CB20FD87A300B4787C /* Post.swift in Sources */,
