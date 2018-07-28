@@ -169,7 +169,6 @@ class FirebaseAPI: NSObject {
     }
     
     func save(reply: String, postUID: String, solutionUID: String) {
-        // postUID/solutions(user uid)/replies
         if let currentUser = self.currentUser, let username = currentUser.displayName {
             let replyDict = [
                 "username": username,
