@@ -92,5 +92,8 @@ fastlane/test_output
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+# Server Details
+/instance_details
+
 
 # End of https://www.gitignore.io/api/swift,xcode
