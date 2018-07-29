@@ -292,8 +292,8 @@ class FirebaseAPI: NSObject {
     }
     
     func getUserVoteHistory(postUID: String, ownerUID: String, completion: @escaping (Int) -> Void) {
-        if let currentUserName = self.currentUser?.displayName {
-            ref.child("/posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").observeSingleEvent(of: .value, with: { (snapshot) in
+        if let currentUserUID = self.currentUser?.uid {
+            ref.child("/posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserUID)").observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 if snapshot.exists() {
                     if let scoreValue = snapshot.value as? Int {
@@ -362,8 +362,8 @@ class FirebaseAPI: NSObject {
     }
     
     func updateUsersVoteHistory(to score: Int, postUID: String, ownerUID: String) {
-        if let currentUserName = self.currentUser?.displayName {
-            self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserName)").setValue(score)
+        if let currentUserUID = self.currentUser?.uid {
+            self.ref.child("posts/\(postUID)/solutions/\(ownerUID)/scorers/\(currentUserUID)").setValue(score)
         }
     }
     
