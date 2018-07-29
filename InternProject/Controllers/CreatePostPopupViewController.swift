@@ -61,7 +61,7 @@ class CreatePostPopupViewController: UIViewController {
             if let user = FirebaseAPI.shared.currentUser {
                 let uid = UUID().uuidString
                 if let tags = userPostTags.text, let title = userPostTitle.text, let displayName = user.displayName {
-                    post = Post(ownerUID: user.uid, ownerName: displayName, description: userPostDescrip.text, tags: [Tag(name: tags)], title: title, postUID: uid, postDate: Date())
+                    post = Post(ownerUID: user.uid, ownerName: displayName, description: userPostDescrip.text, tags: [Tag(name: tags)], title: title, postUID: uid, postDate: Date(), popularity: 0)
                     if let post = post {
                         FirebaseAPI.shared.save(post: post)
                     }

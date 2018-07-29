@@ -16,4 +16,5 @@ struct Post {
     var title: String
     var postUID: String
     var postDate: Date
+    var popularity: Int
 }

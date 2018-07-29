@@ -90,15 +90,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - Search
     
+    @IBAction func searchButtonItemPressed(_ sender: UIBarButtonItem) {
+        searchController.isActive = true
+    }
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredPosts = posts.filter({( post : Post) -> Bool in
-            return post.title.lowercased().contains(searchText.lowercased())
-        })
+        
+        AlgoliaAPI.shared.searchPosts(for: searchText) { [weak self] (posts) in
+            print(posts)
+            self?.filteredPosts = posts
+        }
         
         tableView.reloadData()
     }
@@ -144,6 +149,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         // Changes the cursor color of the search bar
         searchController.searchBar.subviews[0].subviews.flatMap(){ $0 as? UITextField }.first?.tintColor = UIColor.black
+        // this line fixes an iOS bug where a white line appears in the search controller animation
+        navigationController?.navigationBar.isTranslucent = false
     }
 }
 

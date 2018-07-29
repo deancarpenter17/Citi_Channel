@@ -134,7 +134,7 @@ class FirebaseAPI: NSObject {
             "postDescription": post.description,
             "postTags": tagsToStringsArray(tagArray: post.tags),
             "postTitle": post.title,
-            "popularity": 0,
+            "popularity": post.popularity,
             "timestamp": ServerValue.timestamp(),
             "postUID": post.postUID
         ]
@@ -206,7 +206,8 @@ class FirebaseAPI: NSObject {
                     postTags.append(Tag(name: tag))
                 }
                 let postTitle = postsDict[postsDictKey.key]?["postTitle"] as? String ?? ""
-                let post = Post(ownerUID: ownerUID, ownerName: ownerName, description: postDescription, tags: postTags, title: postTitle, postUID: postUID, postDate: postDate)
+                let postPopularity = postsDict[postsDictKey.key]?["popularity"] as? Int ?? 0
+                let post = Post(ownerUID: ownerUID, ownerName: ownerName, description: postDescription, tags: postTags, title: postTitle, postUID: postUID, postDate: postDate, popularity: postPopularity)
                 posts.append(post)
             }
             completion(posts)

@@ -259,14 +259,14 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srf-O5-PZL">
-                                        <rect key="frame" x="67" y="498" width="95" height="26"/>
+                                        <rect key="frame" x="67" y="498" width="94" height="26"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="12"/>
                                         <state key="normal" title="Forgot Username">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-eY-Y2B">
-                                        <rect key="frame" x="209" y="498" width="92" height="26"/>
+                                        <rect key="frame" x="208" y="498" width="92" height="26"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="12"/>
                                         <state key="normal" title="Forgot Password">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -801,6 +801,9 @@
                     <navigationItem key="navigationItem" id="6E8-Qw-rwm">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="bWc-Sg-2Sa">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="searchButtonItemPressed:" destination="yzO-w6-jyP" id="I7A-cH-jaF"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DSH-wL-YrI">
                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
