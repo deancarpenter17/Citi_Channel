@@ -99,13 +99,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        
         AlgoliaAPI.shared.searchPosts(for: searchText) { [weak self] (posts) in
-            print(posts)
-            self?.filteredPosts = posts
+            DispatchQueue.main.async {
+                print(posts)
+                self?.filteredPosts = posts
+                self?.tableView.reloadData()
+            }
         }
-        
-        tableView.reloadData()
     }
     
     func isFiltering() -> Bool {
