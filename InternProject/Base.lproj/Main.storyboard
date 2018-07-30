@@ -1787,7 +1787,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bob Johnson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-Da-ELY">
-                                                            <rect key="frame" x="129" y="11.333333333333336" width="101" height="20"/>
+                                                            <rect key="frame" x="62" y="11" width="235" height="20"/>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1815,7 +1815,7 @@
                                                         <constraint firstItem="KNC-Da-ELY" firstAttribute="baseline" secondItem="0UB-qo-SS4" secondAttribute="baseline" id="8zJ-cf-RJi"/>
                                                         <constraint firstItem="KNC-Da-ELY" firstAttribute="centerX" secondItem="Hmu-cU-Fqo" secondAttribute="centerX" id="Iyl-fI-noA"/>
                                                         <constraint firstItem="U89-yR-t2f" firstAttribute="centerY" secondItem="Hmu-cU-Fqo" secondAttribute="centerY" id="fKJ-Z3-8rq"/>
-                                                        <constraint firstItem="0UB-qo-SS4" firstAttribute="leading" secondItem="KNC-Da-ELY" secondAttribute="trailing" constant="75" id="waD-eQ-ius"/>
+                                                        <constraint firstItem="0UB-qo-SS4" firstAttribute="leading" secondItem="KNC-Da-ELY" secondAttribute="trailing" constant="8" id="waD-eQ-ius"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
