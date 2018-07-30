@@ -12,8 +12,8 @@
 		761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761348BD21077E670009CE0D /* SolutionReplyViewController.swift */; };
 		761348C0210782F70009CE0D /* SolutionReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761348BF210782F70009CE0D /* SolutionReplyCell.swift */; };
 		7615739721090BF3002BC51F /* sectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615739621090BF3002BC51F /* sectionHeaderView.swift */; };
-		7653161D210F748C00FA11C5 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653161C210F748C00FA11C5 /* PrivateConstants.swift */; };
 		7653161F210FAF7400FA11C5 /* TableViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653161E210FAF7400FA11C5 /* TableViewDesign.swift */; };
+		76531621210FC32600FA11C5 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76531620210FC32600FA11C5 /* PrivateConstants.swift */; };
 		76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */; };
 		76C3BBF320F3EE1900938B46 /* RewardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */; };
 		76C3BBF520F3EE6400938B46 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */; };
@@ -115,8 +115,8 @@
 		761348BD21077E670009CE0D /* SolutionReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionReplyViewController.swift; sourceTree = "<group>"; };
 		761348BF210782F70009CE0D /* SolutionReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionReplyCell.swift; sourceTree = "<group>"; };
 		7615739621090BF3002BC51F /* sectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sectionHeaderView.swift; sourceTree = "<group>"; };
-		7653161C210F748C00FA11C5 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		7653161E210FAF7400FA11C5 /* TableViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDesign.swift; sourceTree = "<group>"; };
+		76531620210FC32600FA11C5 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 				E310856A21065A2F004C008E /* Constants.swift */,
 				E32AF3772108C3CB009871D6 /* UserNF.swift */,
 				E32AF37B210A6071009871D6 /* Reply.swift */,
-				7653161C210F748C00FA11C5 /* PrivateConstants.swift */,
+				76531620210FC32600FA11C5 /* PrivateConstants.swift */,
 				7653161E210FAF7400FA11C5 /* TableViewDesign.swift */,
 			);
 			path = Models;
@@ -702,13 +702,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32C60CD20FF9A5400B4787C /* Solution.swift in Sources */,
-				7653161D210F748C00FA11C5 /* PrivateConstants.swift in Sources */,
 				E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */,
 				E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */,
 				76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */,
 				E31EAF5F210CF799007E4C5E /* AlgoliaAPI.swift in Sources */,
 				761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */,
 				76D0D627210A497000F75358 /* SortingOptionsCell.swift in Sources */,
+				76531621210FC32600FA11C5 /* PrivateConstants.swift in Sources */,
 				E32C60CB20FD87A300B4787C /* Post.swift in Sources */,
 				E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */,
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
