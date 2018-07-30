@@ -46,7 +46,10 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func replyButtonPressed(_ sender: UIButton) {
         if let replyText = replyTextField.text, !replyText.isEmpty {
             FirebaseAPI.shared.save(reply: replyText, postUID: postUID, solutionUID: solutionUID)
-            self.performSegueToReturnBack()
+        } else {
+            let alert = UIAlertController(title: "Error Posting Reply!", message: "Please fill in all fields.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         }
     }
     
