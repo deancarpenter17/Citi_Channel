@@ -16,15 +16,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let searchController = UISearchController(searchResultsController: nil)
     
     var posts = [Post]()
+    var userTags = [Tag]()
     var filteredPosts = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        FirebaseAPI.shared.getPosts() { [weak self] newPosts in
-            DispatchQueue.main.async {
-                self?.posts = newPosts
-                self?.tableView.reloadData()
+        // First, get the user's tags so we can show those first
+        if let currentUser = FirebaseAPI.shared.currentUser {
+            FirebaseAPI.shared.getUser(uid: currentUser.uid) { [weak self] user in
+                self?.userTags = user.tags
+                FirebaseAPI.shared.getPosts() { [weak self] newPosts in
+                    DispatchQueue.main.async {
+                        let userTags = user.tags
+                        
+                        self?.posts = newPosts
+                        self?.tableView.reloadData()
+                    }
+                }
             }
         }
         setupViews()
