@@ -16,6 +16,8 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let sorts = ["Newest","Oldest","Popular"]
     var posts: [Post]?
     
+    var lastSelection: NSIndexPath!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +45,18 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         sortCell.sortingLbl.text = sorts[indexPath.row]
         
         return sortCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.lastSelection != nil {
+            self.filterTableView.cellForRow(at: self.lastSelection as IndexPath)?.accessoryType = .none
+        }
+        
+        self.filterTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        
+        self.lastSelection = indexPath as NSIndexPath
+        
+        self.filterTableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func saveFilterBtn(_ sender: Any) {
