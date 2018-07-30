@@ -1515,22 +1515,30 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugZ-UQ-H4r">
-                                                                                <rect key="frame" x="15" y="40" width="246" height="64"/>
-                                                                                <string key="text">Label faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfj</string>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel faklsdjfaklsdklfjakljsdklfjLabel " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugZ-UQ-H4r">
+                                                                                <rect key="frame" x="15" y="40" width="246" height="46.666666666666657"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time stamp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igI-cb-jDq">
+                                                                                <rect key="frame" x="165" y="106" width="96" height="11"/>
+                                                                                <fontDescription key="fontDescription" name="Ubuntu-LightItalic" family="Ubuntu" pointSize="9"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="igI-cb-jDq" secondAttribute="trailing" constant="15" id="3my-vC-05e"/>
+                                                                            <constraint firstItem="igI-cb-jDq" firstAttribute="leading" secondItem="dxn-Ge-I9p" secondAttribute="leading" constant="165" id="Mbv-Z4-GTP"/>
                                                                             <constraint firstItem="bVC-7f-Lk6" firstAttribute="leading" secondItem="dxn-Ge-I9p" secondAttribute="leadingMargin" id="RE7-aQ-yaI"/>
                                                                             <constraint firstItem="bVC-7f-Lk6" firstAttribute="leading" secondItem="ugZ-UQ-H4r" secondAttribute="leading" id="Zj1-Bp-vZ8"/>
                                                                             <constraint firstItem="bVC-7f-Lk6" firstAttribute="top" secondItem="dxn-Ge-I9p" secondAttribute="topMargin" id="c2D-Gq-tMn"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="igI-cb-jDq" secondAttribute="bottom" constant="7.6666666666666714" id="cVx-zs-WYv"/>
                                                                             <constraint firstItem="bVC-7f-Lk6" firstAttribute="centerX" secondItem="dxn-Ge-I9p" secondAttribute="centerX" id="jct-Yu-5Yz"/>
                                                                             <constraint firstItem="bVC-7f-Lk6" firstAttribute="trailing" secondItem="ugZ-UQ-H4r" secondAttribute="trailing" id="jf3-tH-UfK"/>
                                                                             <constraint firstItem="ugZ-UQ-H4r" firstAttribute="top" secondItem="bVC-7f-Lk6" secondAttribute="bottom" constant="8" symbolic="YES" id="mBa-st-arB"/>
-                                                                            <constraint firstItem="ugZ-UQ-H4r" firstAttribute="bottom" secondItem="dxn-Ge-I9p" secondAttribute="bottomMargin" constant="-10" id="zWu-xW-FM4"/>
+                                                                            <constraint firstItem="igI-cb-jDq" firstAttribute="top" secondItem="ugZ-UQ-H4r" secondAttribute="bottom" constant="19.333333333333343" id="poy-Yu-ubO"/>
                                                                         </constraints>
                                                                     </tableViewCellContentView>
                                                                     <connections>
