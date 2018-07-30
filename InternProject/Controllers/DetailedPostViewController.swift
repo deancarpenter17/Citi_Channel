@@ -19,9 +19,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
-        
         // Set the listener on the solutions for this particular post
         if let postUID = post?.postUID {
             FirebaseAPI.shared.getSolutions(postUID: postUID) { [weak self] newSolutions in
@@ -63,10 +61,11 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let solutionCell = tableView.dequeueReusableCell(withIdentifier: "answerCell", for: indexPath) as! DetailedPostTableViewCell
         solutionCell.answerDescriptionLbl.text = solutions[indexPath.row].solution
-
+        
         solutionCell.answerNameLbl.text = solutions[indexPath.row].username
         solutionCell.score = solutions[indexPath.row].score
         solutionCell.ownerUID = solutions[indexPath.row].ownerUID
+        solutionCell.answerTimeStampLbl.text = CustomDateFormatter.shortDateTimeString(for: solutions[indexPath.row].solutionDate)
         if let postUID = post?.postUID {
             solutionCell.postUID = postUID
             FirebaseAPI.shared.getUserVoteHistory(postUID: postUID, ownerUID: solutions[indexPath.row].ownerUID) { (score) in
@@ -130,8 +129,6 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
     fileprivate func setupViews() {
         // Do any additional setup after loading the view.
         
-
-        
         //Make nav title the title of the post selected
         self.navigationItem.title = "Post"
         
@@ -143,7 +140,7 @@ class DetailedPostViewController: UIViewController, UITableViewDelegate, UITable
         
         solutionTblView.tableFooterView = UIView()
     }
-
+    
 }
 
 

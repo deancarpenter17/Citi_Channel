@@ -9,7 +9,7 @@
 import UIKit
 
 class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var replyTextField: UITextField!
     @IBOutlet weak var repliesTableView: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -69,6 +69,7 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
         if let replyCell = replyCell as? SolutionReplyCell {
             replyCell.usernameLbl.text = replies[indexPath.row].username
             replyCell.replyDescripLbl.text = replies[indexPath.row].replyText
+            replyCell.replyTimeStamp.text = CustomDateFormatter.shortDateTimeString(for: replies[indexPath.row].replyDate)
         }
         
         return replyCell
