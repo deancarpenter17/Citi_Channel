@@ -17,6 +17,7 @@ class DetailedPostTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbsUpBtn: UIButton!
     @IBOutlet weak var thumbsDownBtn: UIButton!
     @IBOutlet weak var repliesLbl: UIButton!
+    @IBOutlet weak var answerTimeStampLbl: UILabel!
     
     var ownerUID: String?
     var postUID: String?
