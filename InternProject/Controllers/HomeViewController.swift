@@ -53,7 +53,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         setupViews()
-    
     }
     
     override func didReceiveMemoryWarning() {
@@ -179,6 +178,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchController.searchBar.subviews[0].subviews.flatMap(){ $0 as? UITextField }.first?.tintColor = UIColor.black
         // this line fixes an iOS bug where a white line appears in the search controller animation
         navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "filterSegue" {
+            if let filterVC = segue.destination as? FilterViewController {
+                filterVC.posts = self.posts
+            }
+        }
     }
 }
 

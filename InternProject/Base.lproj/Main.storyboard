@@ -14,13 +14,13 @@
         <array key="Ubuntu-B-hinting.ttf">
             <string>Ubuntu-Bold</string>
         </array>
-        <array key="Ubuntu-L.ttf">
-            <string>Ubuntu-Light</string>
-        </array>
-        <array key="Ubuntu-LightItalic.ttf">
+        <array key="Ubuntu-LI-hinting.ttf">
             <string>Ubuntu-LightItalic</string>
         </array>
-        <array key="Ubuntu-Regular.ttf">
+        <array key="Ubuntu-Light.ttf">
+            <string>Ubuntu-Light</string>
+        </array>
+        <array key="Ubuntu-R-hinting.ttf">
             <string>Ubuntu</string>
         </array>
     </customFonts>
@@ -787,7 +787,7 @@
                                 </constraints>
                                 <state key="normal" image="Filter Button"/>
                                 <connections>
-                                    <segue destination="BvU-p1-ccq" kind="showDetail" id="7wK-CH-xsn"/>
+                                    <segue destination="BvU-p1-ccq" kind="showDetail" identifier="filterSegue" id="7wK-CH-xsn"/>
                                 </connections>
                             </button>
                         </subviews>

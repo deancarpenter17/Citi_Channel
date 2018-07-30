@@ -14,6 +14,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var filterTableView: UITableView!
     
     let sorts = ["Newest","Oldest","Popular"]
+    var posts: [Post]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
