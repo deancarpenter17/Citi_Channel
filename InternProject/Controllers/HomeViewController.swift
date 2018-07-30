@@ -71,6 +71,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.tagLbl.text = tagString
             cell.descriptionLbl.text = post.description
             cell.nameLbl.text = "By: \(post.ownerName)"
+            cell.timeStamp.text = CustomDateFormatter.shortDateTimeString(for: post.postDate)
         }
         return cell
     }

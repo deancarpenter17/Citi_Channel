@@ -14,6 +14,9 @@
         <array key="Ubuntu-B-hinting.ttf">
             <string>Ubuntu-Bold</string>
         </array>
+        <array key="Ubuntu-LI-hinting.ttf">
+            <string>Ubuntu-LightItalic</string>
+        </array>
         <array key="Ubuntu-Light.ttf">
             <string>Ubuntu-Light</string>
         </array>
@@ -259,14 +262,14 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srf-O5-PZL">
-                                        <rect key="frame" x="67" y="498" width="94" height="26"/>
+                                        <rect key="frame" x="67" y="498" width="95" height="26"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="12"/>
                                         <state key="normal" title="Forgot Username">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ1-eY-Y2B">
-                                        <rect key="frame" x="208" y="498" width="92" height="26"/>
+                                        <rect key="frame" x="209" y="498" width="92" height="26"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="12"/>
                                         <state key="normal" title="Forgot Password">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -716,10 +719,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-oy-Xyr">
-                                                            <rect key="frame" x="290" y="150" width="53" height="12"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="10"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Stamp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfc-oy-Xyr">
+                                                            <rect key="frame" x="227" y="151" width="116" height="10.333333333333343"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="116" id="Y0g-yR-jfb"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Ubuntu-LightItalic" family="Ubuntu" pointSize="9"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -731,12 +736,14 @@
                                                         <constraint firstItem="Pfa-Jg-cAd" firstAttribute="leading" secondItem="zxO-11-vnA" secondAttribute="leading" id="Lcg-5q-r72"/>
                                                         <constraint firstItem="AEB-Cw-rUc" firstAttribute="leading" secondItem="nj0-up-qGA" secondAttribute="leading" id="OmM-bp-jnC"/>
                                                         <constraint firstItem="zxO-11-vnA" firstAttribute="top" secondItem="nj0-up-qGA" secondAttribute="top" constant="57" id="UMT-fm-3Yz"/>
+                                                        <constraint firstItem="sfc-oy-Xyr" firstAttribute="centerY" secondItem="Pfa-Jg-cAd" secondAttribute="centerY" id="WPY-T2-O0H"/>
                                                         <constraint firstItem="zxO-11-vnA" firstAttribute="leading" secondItem="nj0-up-qGA" secondAttribute="leading" id="YvP-1o-WAM"/>
                                                         <constraint firstItem="AEB-Cw-rUc" firstAttribute="top" secondItem="nj0-up-qGA" secondAttribute="top" id="c7t-PG-73J"/>
                                                         <constraint firstItem="zxO-11-vnA" firstAttribute="top" secondItem="nj0-up-qGA" secondAttribute="top" constant="57" id="dNh-9X-VLo"/>
                                                         <constraint firstItem="Pfa-Jg-cAd" firstAttribute="leading" secondItem="nj0-up-qGA" secondAttribute="leading" id="gkv-Bu-Oj6"/>
                                                         <constraint firstItem="dMn-fs-vE4" firstAttribute="top" secondItem="zxO-11-vnA" secondAttribute="bottom" id="nvJ-A9-QLv"/>
                                                         <constraint firstItem="zxO-11-vnA" firstAttribute="leading" secondItem="nj0-up-qGA" secondAttribute="leading" id="xgP-CX-B2O"/>
+                                                        <constraint firstItem="sfc-oy-Xyr" firstAttribute="trailing" secondItem="AEB-Cw-rUc" secondAttribute="trailing" id="xy8-dw-3M7"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -745,6 +752,7 @@
                                                     <outlet property="nameLbl" destination="zxO-11-vnA" id="T7s-YP-hOx"/>
                                                     <outlet property="postTitleLbl" destination="AEB-Cw-rUc" id="uzu-VJ-gBM"/>
                                                     <outlet property="tagLbl" destination="Pfa-Jg-cAd" id="rVe-aF-tja"/>
+                                                    <outlet property="timeStamp" destination="sfc-oy-Xyr" id="epv-Dd-Fcp"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

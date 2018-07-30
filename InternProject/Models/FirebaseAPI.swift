@@ -227,6 +227,7 @@ class FirebaseAPI: NSObject {
                 var solutionDate = Date()
                 if let t = solutionsDict[solutionsDictKey.key]?["timestamp"] as? TimeInterval {
                     solutionDate = Date(timeIntervalSince1970: t/1000)
+                    print(solutionDate.description)
                 }
                 let solution = Solution(solution: solutionText, username: ownerName, ownerUID: ownerUID, score: score, solutionDate: solutionDate)
                 solutions.append(solution)

@@ -65,6 +65,7 @@
 		E310856B21065A2F004C008E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310856A21065A2F004C008E /* Constants.swift */; };
 		E31EAF5F210CF799007E4C5E /* AlgoliaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF5E210CF799007E4C5E /* AlgoliaAPI.swift */; };
 		E31EAF61210CF824007E4C5E /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF60210CF824007E4C5E /* PrivateConstants.swift */; };
+		E31EAF6D210F41F1007E4C5E /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF6C210F41F1007E4C5E /* CustomDateFormatter.swift */; };
 		E32AF3782108C3CB009871D6 /* UserNF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF3772108C3CB009871D6 /* UserNF.swift */; };
 		E32AF37C210A6071009871D6 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF37B210A6071009871D6 /* Reply.swift */; };
 		E32C60B920F1589D00B4787C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32C60B820F1589D00B4787C /* ProfileViewController.swift */; };
@@ -170,6 +171,7 @@
 		E310856A21065A2F004C008E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E31EAF5E210CF799007E4C5E /* AlgoliaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaAPI.swift; sourceTree = "<group>"; };
 		E31EAF60210CF824007E4C5E /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
+		E31EAF6C210F41F1007E4C5E /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		E32AF3772108C3CB009871D6 /* UserNF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNF.swift; sourceTree = "<group>"; };
 		E32AF37B210A6071009871D6 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		E32C60B820F1589D00B4787C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				E32C60C020F848DB00B4787C /* AlertViewController.swift */,
+				E31EAF6C210F41F1007E4C5E /* CustomDateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				E32C60B920F1589D00B4787C /* ProfileViewController.swift in Sources */,
 				E32C60BF20F45EB000B4787C /* SignupViewController.swift in Sources */,
 				76CC989820F1479D00E25E2B /* DetailedPostViewController.swift in Sources */,
+				E31EAF6D210F41F1007E4C5E /* CustomDateFormatter.swift in Sources */,
 				E32AF3782108C3CB009871D6 /* UserNF.swift in Sources */,
 				E375231A20EB26320017691A /* TagCollectionViewCell.swift in Sources */,
 				E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */,

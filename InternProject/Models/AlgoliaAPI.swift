@@ -42,7 +42,6 @@ class AlgoliaAPI: NSObject {
                 self?.postIndex?.search(Query(query: searchString), completionHandler: { (content, error) -> Void in
                     if error == nil {
                         if let contentDict = content as NSDictionary? {
-                            print(contentDict)
                             if let postsArray = contentDict["hits"] as? [[String: AnyObject]] {
                                 var posts = [Post]()
                                 for postDict in postsArray {
