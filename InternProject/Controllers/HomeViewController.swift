@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     // nil here tells the search controller that you want use the same view you’re searching to display the results.
@@ -24,12 +24,29 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // First, get the user's tags so we can show those first
         if let currentUser = FirebaseAPI.shared.currentUser {
             FirebaseAPI.shared.getUser(uid: currentUser.uid) { [weak self] user in
+                print(user)
                 self?.userTags = user.tags
                 FirebaseAPI.shared.getPosts() { [weak self] newPosts in
                     DispatchQueue.main.async {
-                        let userTags = user.tags
-                        
-                        self?.posts = newPosts
+                        print(user.tags)
+                        let userTagsSet: Set<Tag> = Set(user.tags)
+                        print("****USER TAGS****")
+                        print(userTagsSet)
+                        var filteredPosts = [Post]()
+                        // First, put all the tags that the user is interested in in the array
+                        for post in newPosts {
+                            let postTagsSet = Set(post.tags)
+                            if !userTagsSet.intersection(postTagsSet).isEmpty {
+                                filteredPosts.append(post)
+                            }
+                        }
+                        print("****Filtered Posts****")
+                        print(filteredPosts)
+                        // Then, put the un-interested tags at the end of the filteredPosts array
+                        let newPostsSet: Set<Post> = Set(newPosts)
+                        let filteredPostsSet: Set<Post> = Set(filteredPosts)
+                        filteredPosts.append(contentsOf: newPostsSet.symmetricDifference(filteredPostsSet))
+                        self?.posts = filteredPosts
                         self?.tableView.reloadData()
                     }
                 }
@@ -37,7 +54,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         setupViews()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +63,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         tableView.showsVerticalScrollIndicator = false
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

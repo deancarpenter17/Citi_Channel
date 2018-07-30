@@ -8,7 +8,10 @@
 
 import Foundation
 
-struct Post {
+struct Post: Hashable {
+    var hashValue: Int {
+        return ownerUID.hashValue ^ postDate.timeIntervalSince1970.hashValue
+    }
     var ownerUID: String
     var ownerName: String
     var description: String

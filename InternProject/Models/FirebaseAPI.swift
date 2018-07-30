@@ -270,11 +270,13 @@ class FirebaseAPI: NSObject {
     
     func getUser(uid: String, completion: @escaping (UserNF) -> Void) {
         self.ref.child("users/\(uid)").observeSingleEvent(of: .value, with: { (snapshot) in
+            print("***SNAPSHOT***")
             if let userDict = snapshot.value as? [String: AnyObject] {
                 let uid = userDict["UID"] as? String ?? ""
                 let username = userDict["username"] as? String ?? ""
                 let email = userDict["email"] as? String ?? ""
-                let tagsStringArray = snapshot.value as? [String] ?? []
+                let tagsStringArray = userDict["tags"] as? [String] ?? []
+                print(tagsStringArray)
                 var tagsArray = [Tag]()
                 for stringTag in tagsStringArray {
                     tagsArray.append(Tag(name: stringTag))
