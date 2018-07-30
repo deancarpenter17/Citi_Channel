@@ -1775,61 +1775,73 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m8P-7L-RCh">
-                                        <rect key="frame" x="8" y="57.333333333333314" width="359" height="285.66666666666669"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leaderboardCell" id="HSy-wV-Y7Z" customClass="LeaderboardTableViewCell" customModule="InternProject" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="359" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HSy-wV-Y7Z" id="Hmu-cU-Fqo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="43.666666666666664"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bob Johnson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-Da-ELY">
-                                                            <rect key="frame" x="62" y="11" width="235" height="20"/>
-                                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U89-yR-t2f">
-                                                            <rect key="frame" x="15" y="11.999999999999998" width="9" height="19.333333333333329"/>
-                                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UB-qo-SS4">
-                                                            <rect key="frame" x="305" y="11.999999999999998" width="43" height="19.333333333333329"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hs-9C-jBZ">
+                                        <rect key="frame" x="8" y="57.333333333333329" width="359" height="285.66666666666663"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YAB-XE-Jhf">
+                                                <rect key="frame" x="0.0" y="-0.3333333333333286" width="359" height="285.66666666666663"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m8P-7L-RCh">
+                                                <rect key="frame" x="0.0" y="-0.33333333333327175" width="359" height="285.66666666666669"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="leaderboardCell" id="HSy-wV-Y7Z" customClass="LeaderboardTableViewCell" customModule="InternProject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HSy-wV-Y7Z" id="Hmu-cU-Fqo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.666666666666664"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bob Johnson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-Da-ELY">
+                                                                    <rect key="frame" x="62" y="11" width="235" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U89-yR-t2f">
+                                                                    <rect key="frame" x="15" y="11.999999999999998" width="9" height="19.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UB-qo-SS4">
+                                                                    <rect key="frame" x="305" y="11.999999999999998" width="43" height="19.333333333333329"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="43" id="guj-P0-hZt"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="43" id="guj-P0-hZt"/>
+                                                                <constraint firstItem="U89-yR-t2f" firstAttribute="leading" secondItem="Hmu-cU-Fqo" secondAttribute="leadingMargin" id="31i-Eu-YYw"/>
+                                                                <constraint firstItem="U89-yR-t2f" firstAttribute="baseline" secondItem="KNC-Da-ELY" secondAttribute="baseline" id="5VM-B0-5yj"/>
+                                                                <constraint firstAttribute="trailing" secondItem="0UB-qo-SS4" secondAttribute="trailing" constant="11" id="6Ma-CA-laK"/>
+                                                                <constraint firstItem="KNC-Da-ELY" firstAttribute="baseline" secondItem="0UB-qo-SS4" secondAttribute="baseline" id="8zJ-cf-RJi"/>
+                                                                <constraint firstItem="KNC-Da-ELY" firstAttribute="centerX" secondItem="Hmu-cU-Fqo" secondAttribute="centerX" id="Iyl-fI-noA"/>
+                                                                <constraint firstItem="U89-yR-t2f" firstAttribute="centerY" secondItem="Hmu-cU-Fqo" secondAttribute="centerY" id="fKJ-Z3-8rq"/>
+                                                                <constraint firstItem="0UB-qo-SS4" firstAttribute="leading" secondItem="KNC-Da-ELY" secondAttribute="trailing" constant="8" id="waD-eQ-ius"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="U89-yR-t2f" firstAttribute="leading" secondItem="Hmu-cU-Fqo" secondAttribute="leadingMargin" id="31i-Eu-YYw"/>
-                                                        <constraint firstItem="U89-yR-t2f" firstAttribute="baseline" secondItem="KNC-Da-ELY" secondAttribute="baseline" id="5VM-B0-5yj"/>
-                                                        <constraint firstAttribute="trailing" secondItem="0UB-qo-SS4" secondAttribute="trailing" constant="11" id="6Ma-CA-laK"/>
-                                                        <constraint firstItem="KNC-Da-ELY" firstAttribute="baseline" secondItem="0UB-qo-SS4" secondAttribute="baseline" id="8zJ-cf-RJi"/>
-                                                        <constraint firstItem="KNC-Da-ELY" firstAttribute="centerX" secondItem="Hmu-cU-Fqo" secondAttribute="centerX" id="Iyl-fI-noA"/>
-                                                        <constraint firstItem="U89-yR-t2f" firstAttribute="centerY" secondItem="Hmu-cU-Fqo" secondAttribute="centerY" id="fKJ-Z3-8rq"/>
-                                                        <constraint firstItem="0UB-qo-SS4" firstAttribute="leading" secondItem="KNC-Da-ELY" secondAttribute="trailing" constant="8" id="waD-eQ-ius"/>
-                                                    </constraints>
-                                                </tableViewCellContentView>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="rankNameLbl" destination="KNC-Da-ELY" id="FLn-qj-2fb"/>
+                                                            <outlet property="rankPointsLbl" destination="0UB-qo-SS4" id="Bgx-1t-cfs"/>
+                                                            <outlet property="rankingLbl" destination="U89-yR-t2f" id="BeT-jl-52l"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
                                                 <connections>
-                                                    <outlet property="rankNameLbl" destination="KNC-Da-ELY" id="FLn-qj-2fb"/>
-                                                    <outlet property="rankPointsLbl" destination="0UB-qo-SS4" id="Bgx-1t-cfs"/>
-                                                    <outlet property="rankingLbl" destination="U89-yR-t2f" id="BeT-jl-52l"/>
+                                                    <outlet property="dataSource" destination="NT5-BP-cMP" id="ach-zS-nza"/>
+                                                    <outlet property="delegate" destination="NT5-BP-cMP" id="C2j-YF-5S1"/>
                                                 </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="NT5-BP-cMP" id="ach-zS-nza"/>
-                                            <outlet property="delegate" destination="NT5-BP-cMP" id="C2j-YF-5S1"/>
-                                        </connections>
-                                    </tableView>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K1a-TP-RJJ">
                                         <rect key="frame" x="169" y="34.666666666666686" width="92" height="14.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="13"/>
@@ -1863,12 +1875,8 @@
                                     <constraint firstItem="DqW-uQ-hNr" firstAttribute="leading" secondItem="K1a-TP-RJJ" secondAttribute="trailing" constant="14" id="J5m-Mc-Vh5"/>
                                     <constraint firstAttribute="trailing" secondItem="DqW-uQ-hNr" secondAttribute="trailing" constant="19" id="JFY-XF-jck"/>
                                     <constraint firstItem="tmC-L4-tHR" firstAttribute="baseline" secondItem="K1a-TP-RJJ" secondAttribute="baseline" id="LKM-eO-uGf"/>
-                                    <constraint firstItem="fSt-Ye-Pad" firstAttribute="leading" secondItem="m8P-7L-RCh" secondAttribute="leading" id="ZnG-Dq-5lF"/>
                                     <constraint firstItem="fSt-Ye-Pad" firstAttribute="trailing" secondItem="Yhu-y6-eAC" secondAttribute="trailingMargin" id="ac2-mX-rvC"/>
                                     <constraint firstItem="K1a-TP-RJJ" firstAttribute="leading" secondItem="tmC-L4-tHR" secondAttribute="trailing" constant="71" id="czG-tM-y1E"/>
-                                    <constraint firstItem="m8P-7L-RCh" firstAttribute="top" secondItem="tmC-L4-tHR" secondAttribute="bottom" constant="8" symbolic="YES" id="fO1-kj-apc"/>
-                                    <constraint firstItem="m8P-7L-RCh" firstAttribute="bottom" secondItem="Yhu-y6-eAC" secondAttribute="bottomMargin" id="jzP-Jd-Skd"/>
-                                    <constraint firstItem="fSt-Ye-Pad" firstAttribute="trailing" secondItem="m8P-7L-RCh" secondAttribute="trailing" id="n7A-cs-vgH"/>
                                     <constraint firstItem="fSt-Ye-Pad" firstAttribute="leading" secondItem="Yhu-y6-eAC" secondAttribute="leadingMargin" id="waH-jN-QEW"/>
                                     <constraint firstItem="tmC-L4-tHR" firstAttribute="top" secondItem="fSt-Ye-Pad" secondAttribute="bottom" constant="4" id="xyg-Z0-9i4"/>
                                 </constraints>

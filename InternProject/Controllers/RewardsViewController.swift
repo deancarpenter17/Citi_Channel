@@ -16,6 +16,10 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var users = [UserNF]()
     
+    var rewardImages = [#imageLiteral(resourceName: "targetLogo"),#imageLiteral(resourceName: "citiLogo"),#imageLiteral(resourceName: "bestbuyLogo"),#imageLiteral(resourceName: "starbucksLogo")]
+    var rewardDescriptions = ["Target $25 Gift Card", "VIP Parking Space", "Best Buy $25 Gift Card", "Starbucks $15 Gift Card"]
+    var rewardPoints = ["150 Points", "300 Points", "150 Points", "100 Points"]
+ 
     override func viewWillAppear(_ animated: Bool) {
         // Get the total score and all the users for the leaderboard
         if let currentUser = FirebaseAPI.shared.currentUser {
@@ -55,11 +59,15 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: - CollectionView functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //dumby variable making sure it works
-        return 6
+        return rewardImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let rewardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "rewardCell", for: indexPath) as! RewardsCollectionViewCell
+        
+        rewardCell.rewardImg.image = rewardImages[indexPath.row]
+        rewardCell.rewardTitleLbl.text = rewardDescriptions[indexPath.row]
+        rewardCell.rewardPointsLbl.text = rewardPoints[indexPath.row]
         
         
         return rewardCell
