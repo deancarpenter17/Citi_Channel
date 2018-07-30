@@ -1543,6 +1543,7 @@
                                                                     </tableViewCellContentView>
                                                                     <connections>
                                                                         <outlet property="replyDescripLbl" destination="ugZ-UQ-H4r" id="MUE-Un-j2k"/>
+                                                                        <outlet property="replyTimeStamp" destination="igI-cb-jDq" id="EBU-i0-pcj"/>
                                                                         <outlet property="usernameLbl" destination="bVC-7f-Lk6" id="9oy-pZ-urz"/>
                                                                     </connections>
                                                                 </tableViewCell>

@@ -13,4 +13,5 @@ class SolutionReplyCell: UITableViewCell{
     
     @IBOutlet weak var replyDescripLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var replyTimeStamp: UILabel!
 }
