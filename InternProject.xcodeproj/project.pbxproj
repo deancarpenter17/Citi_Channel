@@ -12,6 +12,7 @@
 		761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761348BD21077E670009CE0D /* SolutionReplyViewController.swift */; };
 		761348C0210782F70009CE0D /* SolutionReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761348BF210782F70009CE0D /* SolutionReplyCell.swift */; };
 		7615739721090BF3002BC51F /* sectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615739621090BF3002BC51F /* sectionHeaderView.swift */; };
+		7653161D210F748C00FA11C5 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653161C210F748C00FA11C5 /* PrivateConstants.swift */; };
 		76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */; };
 		76C3BBF320F3EE1900938B46 /* RewardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */; };
 		76C3BBF520F3EE6400938B46 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */; };
@@ -64,7 +65,6 @@
 		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E310856B21065A2F004C008E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310856A21065A2F004C008E /* Constants.swift */; };
 		E31EAF5F210CF799007E4C5E /* AlgoliaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF5E210CF799007E4C5E /* AlgoliaAPI.swift */; };
-		E31EAF61210CF824007E4C5E /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF60210CF824007E4C5E /* PrivateConstants.swift */; };
 		E31EAF6D210F41F1007E4C5E /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31EAF6C210F41F1007E4C5E /* CustomDateFormatter.swift */; };
 		E32AF3782108C3CB009871D6 /* UserNF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF3772108C3CB009871D6 /* UserNF.swift */; };
 		E32AF37C210A6071009871D6 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AF37B210A6071009871D6 /* Reply.swift */; };
@@ -114,6 +114,7 @@
 		761348BD21077E670009CE0D /* SolutionReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionReplyViewController.swift; sourceTree = "<group>"; };
 		761348BF210782F70009CE0D /* SolutionReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionReplyCell.swift; sourceTree = "<group>"; };
 		7615739621090BF3002BC51F /* sectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sectionHeaderView.swift; sourceTree = "<group>"; };
+		7653161C210F748C00FA11C5 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -170,7 +171,6 @@
 		E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTagsViewController.swift; sourceTree = "<group>"; };
 		E310856A21065A2F004C008E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E31EAF5E210CF799007E4C5E /* AlgoliaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaAPI.swift; sourceTree = "<group>"; };
-		E31EAF60210CF824007E4C5E /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		E31EAF6C210F41F1007E4C5E /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		E32AF3772108C3CB009871D6 /* UserNF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNF.swift; sourceTree = "<group>"; };
 		E32AF37B210A6071009871D6 /* Reply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 				E310856A21065A2F004C008E /* Constants.swift */,
 				E32AF3772108C3CB009871D6 /* UserNF.swift */,
 				E32AF37B210A6071009871D6 /* Reply.swift */,
-				E31EAF60210CF824007E4C5E /* PrivateConstants.swift */,
+				7653161C210F748C00FA11C5 /* PrivateConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -699,7 +699,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32C60CD20FF9A5400B4787C /* Solution.swift in Sources */,
-				E31EAF61210CF824007E4C5E /* PrivateConstants.swift in Sources */,
+				7653161D210F748C00FA11C5 /* PrivateConstants.swift in Sources */,
 				E32C60BD20F45E9300B4787C /* LoginViewController.swift in Sources */,
 				E32C60C120F848DB00B4787C /* AlertViewController.swift in Sources */,
 				76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */,
@@ -910,13 +910,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DTMU96G24N;
+				DEVELOPMENT_TEAM = VHR8SJQWXF;
 				INFOPLIST_FILE = InternProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = internproject1;
+				PRODUCT_BUNDLE_IDENTIFIER = internproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -931,13 +931,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DTMU96G24N;
+				DEVELOPMENT_TEAM = VHR8SJQWXF;
 				INFOPLIST_FILE = InternProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = internproject1;
+				PRODUCT_BUNDLE_IDENTIFIER = internproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
