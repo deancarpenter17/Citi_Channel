@@ -16,9 +16,9 @@ class RewardsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var users = [UserNF]()
     
-    var rewardImages = [#imageLiteral(resourceName: "targetLogo"),#imageLiteral(resourceName: "citiLogo"),#imageLiteral(resourceName: "bestbuyLogo"),#imageLiteral(resourceName: "starbucksLogo")]
-    var rewardDescriptions = ["Target $25 Gift Card", "VIP Parking Space", "Best Buy $25 Gift Card", "Starbucks $15 Gift Card"]
-    var rewardPoints = ["150 Points", "300 Points", "150 Points", "100 Points"]
+    var rewardImages = [#imageLiteral(resourceName: "targetLogo"),#imageLiteral(resourceName: "citiLogo"),#imageLiteral(resourceName: "Bitmap"),#imageLiteral(resourceName: "bestbuyLogo"),#imageLiteral(resourceName: "starbucksLogo")]
+    var rewardDescriptions = ["Target $25 Gift Card", "VIP Parking Space","2019 Ferrari 488 Spider", "Best Buy $25 Gift Card", "Starbucks $15 Gift Card"]
+    var rewardPoints = ["150 Points", "300 Points","10,000 Points", "150 Points", "100 Points"]
  
     override func viewWillAppear(_ animated: Bool) {
         // Get the total score and all the users for the leaderboard

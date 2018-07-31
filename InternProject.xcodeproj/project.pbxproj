@@ -13,7 +13,6 @@
 		761348C0210782F70009CE0D /* SolutionReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761348BF210782F70009CE0D /* SolutionReplyCell.swift */; };
 		7615739721090BF3002BC51F /* sectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7615739621090BF3002BC51F /* sectionHeaderView.swift */; };
 		7653161F210FAF7400FA11C5 /* TableViewDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7653161E210FAF7400FA11C5 /* TableViewDesign.swift */; };
-		76531621210FC32600FA11C5 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76531620210FC32600FA11C5 /* PrivateConstants.swift */; };
 		76C3BBF120F3ED5400938B46 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */; };
 		76C3BBF320F3EE1900938B46 /* RewardsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */; };
 		76C3BBF520F3EE6400938B46 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */; };
@@ -62,6 +61,7 @@
 		76D0D66E210A756B00F75358 /* UbuntuMono-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76D0D63F210A753D00F75358 /* UbuntuMono-R.ttf */; };
 		76D0D66F210A756B00F75358 /* UbuntuMono-RI-hinting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76D0D62B210A753700F75358 /* UbuntuMono-RI-hinting.ttf */; };
 		76D0D670210A756B00F75358 /* UbuntuMono-RI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76D0D62F210A753800F75358 /* UbuntuMono-RI.ttf */; };
+		76D61333211018A30014A527 /* PrivateConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D61332211018A20014A527 /* PrivateConstants.swift */; };
 		CB716A9FEBBF6C662DF826E3 /* Pods_InternProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A7F5D0917D51E4785D5F73 /* Pods_InternProjectTests.framework */; };
 		E30D91F420E87C8D0053EB55 /* ChooseTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D91F320E87C8D0053EB55 /* ChooseTagsViewController.swift */; };
 		E310856B21065A2F004C008E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310856A21065A2F004C008E /* Constants.swift */; };
@@ -116,7 +116,6 @@
 		761348BF210782F70009CE0D /* SolutionReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionReplyCell.swift; sourceTree = "<group>"; };
 		7615739621090BF3002BC51F /* sectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sectionHeaderView.swift; sourceTree = "<group>"; };
 		7653161E210FAF7400FA11C5 /* TableViewDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDesign.swift; sourceTree = "<group>"; };
-		76531620210FC32600FA11C5 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		76C3BBF020F3ED5400938B46 /* RewardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		76C3BBF220F3EE1900938B46 /* RewardsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsCollectionViewCell.swift; sourceTree = "<group>"; };
 		76C3BBF420F3EE6400938B46 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +164,7 @@
 		76D0D64B210A754100F75358 /* Ubuntu-M.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-M.ttf"; sourceTree = "<group>"; };
 		76D0D64C210A754100F75358 /* Ubuntu-C-hinting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-C-hinting.ttf"; sourceTree = "<group>"; };
 		76D0D64D210A754100F75358 /* Ubuntu-MI-hinting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-MI-hinting.ttf"; sourceTree = "<group>"; };
+		76D61332211018A20014A527 /* PrivateConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateConstants.swift; sourceTree = "<group>"; };
 		8713B279A45A9BEBF89CC6C9 /* Pods-InternProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternProject/Pods-InternProject.release.xcconfig"; sourceTree = "<group>"; };
 		9EC68681D015F27374A279AD /* Pods_InternProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A880F9F24E415AE5682C83CA /* Pods-InternProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternProjectTests/Pods-InternProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -350,8 +350,8 @@
 				E310856A21065A2F004C008E /* Constants.swift */,
 				E32AF3772108C3CB009871D6 /* UserNF.swift */,
 				E32AF37B210A6071009871D6 /* Reply.swift */,
-				76531620210FC32600FA11C5 /* PrivateConstants.swift */,
 				7653161E210FAF7400FA11C5 /* TableViewDesign.swift */,
+				76D61332211018A20014A527 /* PrivateConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -708,7 +708,7 @@
 				E31EAF5F210CF799007E4C5E /* AlgoliaAPI.swift in Sources */,
 				761348BE21077E670009CE0D /* SolutionReplyViewController.swift in Sources */,
 				76D0D627210A497000F75358 /* SortingOptionsCell.swift in Sources */,
-				76531621210FC32600FA11C5 /* PrivateConstants.swift in Sources */,
+				76D61333211018A30014A527 /* PrivateConstants.swift in Sources */,
 				E32C60CB20FD87A300B4787C /* Post.swift in Sources */,
 				E35EED8620E4826800BF3984 /* RoundedLoginButton.swift in Sources */,
 				E35EED8120E41C7900BF3984 /* SplashScreenViewController.swift in Sources */,
