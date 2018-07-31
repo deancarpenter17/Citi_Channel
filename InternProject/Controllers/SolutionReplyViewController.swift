@@ -51,6 +51,8 @@ class SolutionReplyViewController: UIViewController, UITableViewDelegate, UITabl
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
+        self.view.endEditing(true)
+        self.replyTextField.text = ""
     }
     
     // MARK: - TableView lifecycle functions
