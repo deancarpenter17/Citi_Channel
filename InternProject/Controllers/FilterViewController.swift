@@ -9,7 +9,6 @@
 import UIKit
 
 class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
     
     @IBOutlet weak var filterTableView: UITableView!
     
@@ -20,13 +19,13 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         let footview = UIView()
         footview.backgroundColor = UIColor.clear
         filterTableView.tableFooterView = footview
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,7 +59,32 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func saveFilterBtn(_ sender: Any) {
+        let filteredPosts = filter(by: self.lastSelection.row)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshTableViewWithFilteredPosts"), object: nil, userInfo: ["filteredPosts": filteredPosts])
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func filter(by index: Int) -> [Post]? {
+        if let posts = self.posts {
+            switch sorts[index] {
+            case "Newest":
+                return posts.sorted() { (post1, post2) in
+                    return post1.postDate > post2.postDate
+                }
+            case "Oldest":
+                return posts.sorted() { (post1, post2) in
+                    return post1.postDate < post2.postDate
+                }
+            case "Popular":
+                return posts.sorted() { (post1, post2) in
+                    return post1.popularity > post2.popularity
+                }
+            default:
+                return posts
+            }
+        } else {
+            return self.posts
+        }
     }
     
     

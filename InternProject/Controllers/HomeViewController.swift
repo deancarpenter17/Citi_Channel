@@ -21,6 +21,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshTableViewWithFilteredPosts(_:)), name: NSNotification.Name(rawValue: "refreshTableViewWithFilteredPosts"), object: nil)
+
         // First, get the user's tags so we can show those first
         if let currentUser = FirebaseAPI.shared.currentUser {
             FirebaseAPI.shared.getUser(uid: currentUser.uid) { [weak self] user in
@@ -55,13 +57,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupViews()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         tableView.showsVerticalScrollIndicator = false
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -178,6 +176,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchController.searchBar.subviews[0].subviews.flatMap(){ $0 as? UITextField }.first?.tintColor = UIColor.black
         // this line fixes an iOS bug where a white line appears in the search controller animation
         navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    @objc func refreshTableViewWithFilteredPosts(_ notification: NSNotification) {
+        if let filteredPosts = notification.userInfo?["filteredPosts"] as? [Post] {
+            self.posts = filteredPosts
+            self.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
