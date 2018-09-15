@@ -1,7 +1,10 @@
 # Citi_Overflow
 
 # Demo
-Click on the video below for demo.
+Click video image below to watch demo
+
+
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=OH4eXqRDZRQ
 " target="_blank"><img src="http://img.youtube.com/vi/OH4eXqRDZRQ/0.jpg" 
 alt="Citi Channel Demo" width="240" height="180" border="10" /></a>
